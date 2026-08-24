@@ -1,0 +1,94 @@
+<?php
+
+namespace App\Action\Club;
+
+use App\Dto\ClubByRegionDto;
+use App\Dto\TeamByAlphaDto;
+use App\Entity\Club;
+use App\Enum\Region;
+use App\Helper\Common;
+use App\Repository\ClubRepository;
+use Doctrine\Common\Collections\Criteria;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Serializer\SerializerInterface;
+
+class ListAction extends AbstractController
+{
+    const ROUTE_NAME = 'club_list';
+    private const string QUERY_PARAM_SORT_VIEW = 'sort_view';
+    private const string SORT_VIEW_REGION = 'region';
+    private const string SORT_VIEW_ALPHANUMERIC = 'alpha';
+    private const string SORT_VIEW_DEFAULT_VALUE = self::SORT_VIEW_REGION;
+    private const string QUERY_PARAM_FILTERS_ACTIVITY = 'activity';
+    private const string FILTERS_SHOW_CLOSED_DISBAND_ACTIVE = 'active';
+    private const string FILTERS_SHOW_CLOSED_DISBAND_INACTIVE = 'inactive';
+    private const string FILTERS_SHOW_CLOSED_DISBAND_BOTH = 'both';
+    public function __construct(
+        private readonly ClubRepository $clubRepository,
+        private readonly SerializerInterface $serializer,
+    ){}
+
+    #[Route('/clubs', name: self::ROUTE_NAME)]
+    public function list(Request $request): Response
+    {
+        $criteria = new Criteria();
+        $this->bindFilterByCriteria($request, $criteria);
+        $this->bindOrderByCriteria($request, $criteria);
+
+        $clubs = $this->clubRepository->matching($criteria);
+        $sortedClubs = [];
+
+//        /** @var Club $club */
+//        foreach ($clubs as $club) {
+//            switch ($request->query->get(self::QUERY_PARAM_SORT_VIEW) ?? self::SORT_VIEW_DEFAULT_VALUE) {
+//                case self::SORT_VIEW_REGION:
+//                    $sortedClubs[Region::getName($club->getRegionCode())][] = $club;
+//                    break;
+//                case self::SORT_VIEW_ALPHANUMERIC:
+//                    $sortedClubs[Common::GetFirstLetter($club->getName())][] = $club;
+//                    break;
+//            }
+//        }
+
+        $clubs = ClubByRegionDto::fromEntities($clubs);
+        $jsonResponse = $this->serializer->serialize($clubs, 'json');
+
+        return new JsonResponse($jsonResponse, Response::HTTP_OK, [], true);
+    }
+
+    private function bindFilterByCriteria(Request $request, Criteria $criteria): void
+    {
+        $filters = $request->query->get('filters') ?? [];
+
+        switch ($filters[self::QUERY_PARAM_FILTERS_ACTIVITY] ?? null) {
+            // case self::FILTERS_SHOW_CLOSED_DISBAND_ACTIVE:
+            case self::FILTERS_SHOW_CLOSED_DISBAND_INACTIVE:
+                $criteria->andWhere(Criteria::expr()->isNotNull('closedAt'));break;
+            case self::FILTERS_SHOW_CLOSED_DISBAND_BOTH:break;
+            default:
+                $criteria->andWhere(Criteria::expr()->eq('closedAt', null));break;
+
+        }
+    }
+
+    private function bindOrderByCriteria(Request $request, Criteria $criteria): void
+    {
+        $sortView = $request->query->get(self::QUERY_PARAM_SORT_VIEW) ?? self::SORT_VIEW_DEFAULT_VALUE;
+
+        $orderBy = [];
+        switch ($sortView) {
+            case self::SORT_VIEW_REGION:
+                $orderBy = ['regionCode' => 'ASC', "name" => "ASC"];
+                break;
+            case self::SORT_VIEW_ALPHANUMERIC:
+                $orderBy = ["name" => "ASC"];
+                break;
+        }
+
+        $criteria->orderBy($orderBy);
+    }
+}

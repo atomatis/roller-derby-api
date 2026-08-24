@@ -6,15 +6,33 @@
     "require": {
         "php": ">=8.4",
         "ext-ctype": "*",
+        "ext-exif": "*",
+        "ext-gd": "*",
         "ext-iconv": "*",
+        "ext-intl": "*",
+        "doctrine/dbal": "*",
+        "doctrine/doctrine-bundle": "*",
+        "doctrine/doctrine-migrations-bundle": "*",
+        "doctrine/orm": "*",
+        "league/flysystem-bundle": "*",
+        "liip/imagine-bundle": "*",
+        "nelmio/cors-bundle": "^2.6",
+        "paquettg/php-html-parser": "*",
+        "phpoffice/phpspreadsheet": "*",
+        "predis/predis": "*",
         "symfony/console": "8.1.*",
         "symfony/dotenv": "8.1.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "8.1.*",
+        "symfony/http-client": "8.1.*",
+        "symfony/mailer": "8.1.*",
         "symfony/runtime": "8.1.*",
-        "symfony/yaml": "8.1.*"
-    },
-    "require-dev": {
+        "symfony/security-bundle": "8.1.*",
+        "symfony/serializer": "8.1.*",
+        "symfony/uid": "8.1.*",
+        "symfony/validator": "8.1.*",
+        "symfony/yaml": "8.1.*",
+        "vich/uploader-bundle": "*"
     },
     "config": {
         "allow-plugins": {
