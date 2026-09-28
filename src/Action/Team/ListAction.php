@@ -3,6 +3,7 @@
 namespace App\Action\Team;
 
 use App\Dto\TeamByAlphaDto;
+use App\Dto\TeamByLevelDto;
 use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,6 +16,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 final class ListAction extends AbstractController
 {
     const string ROUTE_NAME = 'team_list';
+    private const string QUERY_PARAM_FILTERS_BY = 'by';
     private const string QUERY_PARAM_FILTERS_CATEGORY = 'category';
     private const string QUERY_PARAM_FILTERS_TYPE = 'type';
     private const string QUERY_PARAM_FILTERS_LEVEL = 'level';
@@ -39,7 +41,13 @@ final class ListAction extends AbstractController
 
         $teams = $this->teamRepository->matching($criteria);
 
-        $teams = TeamByAlphaDto::fromEntities($teams);
+//        $filters = $request->query->get('filters') ?? [];
+//        if (array_key_exists(self::QUERY_PARAM_FILTERS_BY, $filters)) {
+//            $filters[self::QUERY_PARAM_FILTERS_BY]
+//        }
+
+
+        $teams = TeamByLevelDto::fromEntities($teams);
         $jsonResponse = $this->serializer->serialize($teams, 'json');
 
         return new JsonResponse($jsonResponse, Response::HTTP_OK, [], true);

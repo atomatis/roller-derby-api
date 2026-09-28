@@ -3,10 +3,6 @@
 namespace App\Action\Club;
 
 use App\Dto\ClubByRegionDto;
-use App\Dto\TeamByAlphaDto;
-use App\Entity\Club;
-use App\Enum\Region;
-use App\Helper\Common;
 use App\Repository\ClubRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,10 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\SerializerInterface;
-
 class ListAction extends AbstractController
 {
-    const ROUTE_NAME = 'club_list';
+    const string ROUTE_NAME = 'club_list';
     private const string QUERY_PARAM_SORT_VIEW = 'sort_view';
     private const string SORT_VIEW_REGION = 'region';
     private const string SORT_VIEW_ALPHANUMERIC = 'alpha';

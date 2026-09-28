@@ -1,0 +1,30 @@
+@use 'theme/color_set/test' as color;
+
+header {
+  margin-bottom: 50px;
+  padding-top: 60px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 60px 40px auto max-content auto 40px 60px;
+  grid-area: header;
+
+  nav {
+    background-image: url("../images/menu.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    a {
+      display: none;
+    }
+  }
+
+  .lcdr-bar {
+    border-bottom: color.$primary-medium-0 double 10px;
+    height: 15px;
+    margin: 0 10px;
+  }
+
+  h1 {
+  }
+}

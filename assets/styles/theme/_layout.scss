@@ -1,0 +1,85 @@
+/************** style - theme - layout **************/
+
+@use 'color_set/test' as color;
+@use 'mixin/background' as background;
+
+// *** Body ***
+
+body {
+  background-image: url('../images/test.jpg');
+  background-repeat: repeat;
+  margin : 0;
+  position: relative;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: auto 250px 1024px 200px auto;
+  grid-template-areas:
+    'header header header header header'
+    '. sidebar main . .'
+    'footer footer footer footer footer'
+  ;
+}
+
+body::after {
+  @include background.vertical-gradian(color.$primary-medium-1, color.$primary-medium-2, color.$primary-medium-4);
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+// *** Main ***
+
+main {
+  @include background.striped(color.$primary-light-2, color.$primary-medium-0);
+  display: block;
+  width: 1024px;
+  border: solid 2px color.$primary-dark-1;
+  margin: 0 auto;
+  padding: 15px;
+  min-height: 900px;
+  position: relative;
+  z-index: 2;
+  grid-area: main;
+}
+
+// *** Content ***
+
+.content {
+  background-color: rgb(color.$primary-medium-0, 0.5);
+  padding: 10px;
+  position: relative;
+  z-index: 0;
+  margin-bottom: 10px;
+}
+
+// *** Aside ***
+
+aside {
+  @include background.paper(color.$primary-light-2, color.$primary-medium-0);
+  display: block;
+  border: solid 2px color.$primary-dark-1;
+  position: relative;
+  z-index: 2;
+  grid-area: sidebar;
+  margin-right: 25px;
+  padding: 10px;
+}
+
+// *** Article ***
+
+.lcdr-article-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article {
+  background-color: color.$tertiary-medium-1;
+  width: 48%;
+  margin-left: 1%;
+  margin-bottom: 5px;
+}

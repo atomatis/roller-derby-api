@@ -1,0 +1,63 @@
+/************** style - theme - text **************/
+
+@use 'color_set/test' as color;
+
+// *** Font ***
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../font/Raleway-VariableFont_wght.ttf) format("truetype");
+  font-display: fallback;
+}
+
+// *** Default font ***
+
+html {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: bold;
+  color: color.$primary-dark-1;
+}
+
+// *** Title ***
+
+h1 {
+  color: color.$secondary-light-2;
+  text-shadow: color.$primary-dark-1 2px 2px;
+  font-weight: bold;
+}
+
+h2 {
+  color: color.$secondary-medium-4;
+  position: relative;
+  text-shadow: color.$secondary-medium-3 1px 1px;
+  display: block;
+  padding: 0 15px;
+  width: fit-content;
+  margin: 10px 0;
+  font-weight: bold;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 15px;
+    background-color: color.$secondary-medium-1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    margin: 0 auto;
+    opacity: 0.8;
+  }
+}
+
+// *** Selection ***
+
+::selection {
+  background-color: color.$secondary-light-2;
+  color: color.$primary-dark-1;
+}
+
+h2::selection {
+  text-shadow: color.$secondary-medium-4 2px 2px;
+}

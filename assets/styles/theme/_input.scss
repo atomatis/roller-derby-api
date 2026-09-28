@@ -1,0 +1,25 @@
+/************** style - theme - input **************/
+
+@use 'color_set/test' as color;
+
+button  {
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: bold;
+  color: color.$tertiary-dark-1;
+  background-color: color.$tertiary-medium-0;
+  padding: 15px 50px;
+  border-top: solid 1px color.$tertiary-dark-1;
+  border-left: solid 10px color.$tertiary-dark-1;
+  border-right: solid 10px color.$tertiary-dark-1;
+  border-bottom: solid 1px color.$tertiary-dark-1;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover, .hover {
+  background-color: color.$tertiary-light-2;
+}
+
+button:active, .active {
+  background-color: color.$tertiary-light-2;
+}

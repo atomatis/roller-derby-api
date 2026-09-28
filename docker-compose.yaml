@@ -1,15 +1,24 @@
 services:
-  postgresql:
-    image: 'postgres:9.6.22'
-    container_name: rda-pgsql
-    environment:
-      POSTGRES_USER: guest
-      POSTGRES_PASSWORD: guest
+  api:
+    container_name: rda-api
+    build:
+      dockerfile: ./docker/Dockerfile
+    volumes:
+        - .:/var/www/html
+        - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - "13004:5432"
+        - '13000:8080'
+
+  mariadb:
+    image: 'mariadb:11.4.13-ubi9'
+    container_name: rda-mariadb
+    environment:
+        MARIADB_ROOT_PASSWORD: 'root'
+    ports:
+      - '13010:3306'
 
   redis:
     image: 'redis:latest'
-    container_name: rda-redis
+    container_name: rda-redis-cache
     ports:
-      - "13005:6379"
+      - '13011:6379'

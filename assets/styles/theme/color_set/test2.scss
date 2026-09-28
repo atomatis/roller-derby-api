@@ -1,0 +1,62 @@
+/************** styles -> theme -> color set -> test **************/
+
+// *** Base ***
+
+$primary-light-0: #F9EDEB;
+$primary-light-1: #EFCCC8;
+$primary-light-2: #E2A49C;
+$primary-medium-0: #DA8B81;
+$primary-medium-1: #D06A5D;
+$primary-medium-2: #C64A39;
+$primary-medium-3: #A23C2F;
+$primary-medium-4: #7E2F25;
+$primary-dark-0: #5B221A;
+$primary-dark-1: #371510;
+$primary-dark-2: #140706;
+
+$secondary-light-0: #EBF8F9;
+$secondary-light-1: #C8EAEF;
+$secondary-light-2: #9CDAE2;
+$secondary-medium-0: #81D0DA;
+$secondary-medium-1: #5DC3D0;
+$secondary-medium-2: #39B5C6;
+$secondary-medium-3: #2F95A2;
+$secondary-medium-4: #25747E;
+$secondary-dark-0: #1A535B;
+$secondary-dark-1: #103337;
+$secondary-dark-2: #061214;
+
+$tertiary-light-0: #EBF8F9;
+$tertiary-light-1: #C8EAEF;
+$tertiary-light-2: #9CDAE2;
+$tertiary-medium-0: #81D0DA;
+$tertiary-medium-1: #5DC3D0;
+$tertiary-medium-2: #39B5C6;
+$tertiary-medium-3: #2F95A2;
+$tertiary-medium-4: #25747E;
+$tertiary-dark-0: #1A535B;
+$tertiary-dark-1: #103337;
+$tertiary-dark-2: #061214;
+
+// *** Element ***
+
+// Title
+$title-h1: $primary-light-1;
+$title-h2: $primary-light-0;
+$title-h3: $primary-light-0;
+$title-h4: $primary-light-0;
+$title-h5: $primary-light-0;
+
+// Text
+$text: $primary-light-0;
+$link: $primary-light-0;
+$link-hover: $primary-light-0;
+
+// Border
+$border: $primary-light-0;
+$border-highlight: $primary-light-0;
+
+// Background
+$background: $primary-light-0;
+
+// Input

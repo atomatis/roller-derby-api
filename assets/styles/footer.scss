@@ -1,0 +1,9 @@
+@use 'theme/color_set/test' as color;
+
+footer {
+  border-top: color.$primary-medium-0 double 10px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+  grid-area: footer;
+}

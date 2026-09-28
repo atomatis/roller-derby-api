@@ -1,0 +1,26 @@
+/************** style - theme - background **************/
+
+@mixin striped($lightColor, $darkColor) {
+  background-color: $lightColor;
+  background-size: 10px 10px;
+  background-image: repeating-linear-gradient(45deg, $darkColor 0, $darkColor 1px, $lightColor 0, $lightColor 50%);
+}
+
+@mixin paper($lightColor, $darkColor) {
+  background-color: $lightColor;
+  background-image:  linear-gradient($darkColor 2px, transparent 2px), linear-gradient(90deg, $darkColor 2px, transparent 2px), linear-gradient($darkColor 1px, transparent 1px), linear-gradient(90deg, $darkColor 1px, $lightColor 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+
+@mixin vertical-gradian($lightColor, $mediumColor, $darkColor) {
+  background: linear-gradient(0 ,
+  rgba($darkColor, 0.8) 0%,
+  rgba($mediumColor, 0.6) 30%,
+  rgba($lightColor, 0.7) 40%,
+  rgba($lightColor, 0.7) 60%,
+  rgba($mediumColor, 0.6) 70%,
+  rgba($darkColor, 0.8) 100%
+  );
+}

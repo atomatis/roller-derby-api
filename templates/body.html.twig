@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <body>
+    {% block header %}
+        <span class="lcdp-bar"></span>
+        <nav>
+            <a>Évenements</a>
+            <a>Annuaire des associations</a>
+            <a>Équipe disponible</a>
+            <a>Arbitrage</a>
+        </nav>
+        <span class="lcdp-bar"></span>
+        <h1>Évenements</h1>
+        <span class="lcdp-bar"></span>
+        <nav>
+            <a>Évenements</a>
+            <a>Annuaire des associations</a>
+            <a>Équipe disponible</a>
+            <a>Arbitrage</a>
+        </nav>
+        <span class="lcdp-bar"></span>
+    {% endblock %}
+    {% block asidebefore %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block asideafter %}{% endblock %}
+    {% block footer %}
+        <footer>
+        </footer>
+    {% endblock %}
+    </body>
+{% endblock %}
