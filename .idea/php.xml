@@ -10,6 +10,11 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="9630cbe2-d9fb-4880-a128-0081f35ae23f" timeout="30000" />
+    </phpcs_settings>
+  </component>
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/routing" />
@@ -89,26 +94,29 @@
       <path value="$PROJECT_DIR$/vendor/league/flysystem-bundle" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem-local" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psr/clock" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
       <path value="$PROJECT_DIR$/vendor/imagine/imagine" />
-      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
       <path value="$PROJECT_DIR$/vendor/liip/imagine-bundle" />
-      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
-      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
       <path value="$PROJECT_DIR$/vendor/predis/predis" />
       <path value="$PROJECT_DIR$/vendor/paquettg/php-html-parser" />
       <path value="$PROJECT_DIR$/vendor/paquettg/string-encode" />
       <path value="$PROJECT_DIR$/vendor/nelmio/cors-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/stimulus-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/ux-turbo" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/vendor/symfony/asset-mapper" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.5" />
+  <component name="PhpStan">
+    <PhpStan_settings>
+      <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="9630cbe2-d9fb-4880-a128-0081f35ae23f" timeout="60000" />
+    </PhpStan_settings>
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
@@ -116,6 +124,11 @@
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />
     </phpunit_settings>
+  </component>
+  <component name="Psalm">
+    <Psalm_settings>
+      <psalm_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="9630cbe2-d9fb-4880-a128-0081f35ae23f" timeout="60000" />
+    </Psalm_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />

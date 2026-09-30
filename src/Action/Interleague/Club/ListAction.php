@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Action\Club;
+namespace App\Action\Interleague\Club;
 
 use App\Dto\ClubByRegionDto;
 use App\Repository\ClubRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\SerializerInterface;
+
 class ListAction extends AbstractController
 {
     const string ROUTE_NAME = 'club_list';
@@ -24,7 +24,6 @@ class ListAction extends AbstractController
     private const string FILTERS_SHOW_CLOSED_DISBAND_BOTH = 'both';
     public function __construct(
         private readonly ClubRepository $clubRepository,
-        private readonly SerializerInterface $serializer,
     ){}
 
     #[Route('/clubs', name: self::ROUTE_NAME)]
@@ -50,9 +49,12 @@ class ListAction extends AbstractController
 //        }
 
         $clubs = ClubByRegionDto::fromEntities($clubs);
-        $jsonResponse = $this->serializer->serialize($clubs, 'json');
 
-        return new JsonResponse($jsonResponse, Response::HTTP_OK, [], true);
+        {
+            return $this->render('club/list.html.twig', [
+                'clubContainer' => $clubs,
+            ]);
+        }
     }
 
     private function bindFilterByCriteria(Request $request, Criteria $criteria): void

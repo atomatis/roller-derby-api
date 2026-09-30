@@ -1,0 +1,49 @@
+{% extends 'body.html.twig' %}
+
+{% set route = constant('App\\Action\\Interleague\\Team\\ListAction::ROUTE_NAME') %}
+
+{% block title %}{{ 'teams'|trans }} ({{ teamContainer.total }}){% endblock %}
+
+{# body #}
+    {# block header #}
+    {# block asidebefore #}
+    {% block navigation %}
+    <nav class='navigation'>
+        <nav>
+            <a href="{{ path(route, {'filters[category]': 'F+'}) }}">feminine+</a>
+            <a href="{{ path(route, filters) }}">open</a>
+        </nav>
+        <nav>
+            <a class="lcdp-active" href="#">locales</a>
+            <a class="lcdp-disable" href="#">continent</a>
+            <a class="lcdp-disable" href="#">world</a>
+        </nav>
+        <nav>
+            <a href="#">region</a>
+            <a href="#">niveau</a>
+            <a href="#">xxxx</a>
+        </nav>
+    </nav>
+    {% endblock %}
+    {% block content %}
+        <main>
+            {% for sorting, teams in teamContainer.teams %}
+            <section class="content">
+                <h2>{{ sorting }} ({{ teams|length }})</h2>
+                <section class="lcdp-article-box">
+                    {% for team in teams %}
+                        <article>
+                            <a href="">
+                                <img src="https://placehold.co/50x50">
+                                <h3>{{ team.name }}</h3>
+                            </a>
+                        </article>
+                    {% endfor %}
+                </section>
+            </section>
+            {% endfor %}
+        </main>
+    {% endblock %}
+    {# block asideafter #}
+    {# block footer #}
+{# /body #}

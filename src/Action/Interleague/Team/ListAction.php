@@ -1,23 +1,20 @@
 <?php
 
-namespace App\Action\Team;
+namespace App\Action\Interleague\Team;
 
-use App\Dto\TeamByAlphaDto;
 use App\Dto\TeamByLevelDto;
 use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Serializer\SerializerInterface;
 
 final class ListAction extends AbstractController
 {
-    const string ROUTE_NAME = 'team_list';
+    const string ROUTE_NAME = 'interleague_team_list';
     private const string QUERY_PARAM_FILTERS_BY = 'by';
-    private const string QUERY_PARAM_FILTERS_CATEGORY = 'category';
+    const string QUERY_PARAM_FILTERS_CATEGORY = 'category';
     private const string QUERY_PARAM_FILTERS_TYPE = 'type';
     private const string QUERY_PARAM_FILTERS_LEVEL = 'level';
     private const string QUERY_PARAM_FILTERS_ACTIVITY = 'activity';
@@ -27,11 +24,10 @@ final class ListAction extends AbstractController
 
     public function __construct(
         private readonly TeamRepository $teamRepository,
-        private readonly SerializerInterface $serializer,
     ){}
 
-    #[Route('/teams', name: self::ROUTE_NAME)]
-    public function list(Request $request): JsonResponse
+    #[Route('/interleague/teams', name: self::ROUTE_NAME)]
+    public function list(Request $request): Response
     {
         $criteria = new Criteria();
         $criteria->orderBy(["name" => "ASC"]);
@@ -46,18 +42,23 @@ final class ListAction extends AbstractController
 //            $filters[self::QUERY_PARAM_FILTERS_BY]
 //        }
 
-
         $teams = TeamByLevelDto::fromEntities($teams);
-        $jsonResponse = $this->serializer->serialize($teams, 'json');
 
-        return new JsonResponse($jsonResponse, Response::HTTP_OK, [], true);
+        return $this->render('interleague/team/list.html.twig', [
+            'teamContainer' => $teams,
+            'filters' => ['filters[category]' => 'M']
+        ]);
     }
 
     private function bindFilterByCriteria(Request $request, Criteria $criteria): void
     {
-        $filters = $request->query->get('filters') ?? [];
+        $filters = $request->query->filter(key:'filters', default:[], options:['flags' => \FILTER_REQUIRE_ARRAY]);
 
        if (array_key_exists(self::QUERY_PARAM_FILTERS_CATEGORY, $filters)) {
+           if (!is_array($filters[self::QUERY_PARAM_FILTERS_CATEGORY])) {
+               $filters[self::QUERY_PARAM_FILTERS_CATEGORY] = [$filters[self::QUERY_PARAM_FILTERS_CATEGORY]];
+           }
+
            $criteria->andWhere(Criteria::expr()->in('category', $filters[self::QUERY_PARAM_FILTERS_CATEGORY]));
        }
 

@@ -2,26 +2,10 @@
 
 {% block body %}
     <body>
-    {% block header %}
-        <span class="lcdp-bar"></span>
-        <nav>
-            <a>Évenements</a>
-            <a>Annuaire des associations</a>
-            <a>Équipe disponible</a>
-            <a>Arbitrage</a>
-        </nav>
-        <span class="lcdp-bar"></span>
-        <h1>Évenements</h1>
-        <span class="lcdp-bar"></span>
-        <nav>
-            <a>Évenements</a>
-            <a>Annuaire des associations</a>
-            <a>Équipe disponible</a>
-            <a>Arbitrage</a>
-        </nav>
-        <span class="lcdp-bar"></span>
-    {% endblock %}
+    {{ include('./layout/_header.html.twig', {title: block('title')}) }}
+
     {% block asidebefore %}{% endblock %}
+    {% block navigation %}{% endblock %}
     {% block content %}{% endblock %}
     {% block asideafter %}{% endblock %}
     {% block footer %}

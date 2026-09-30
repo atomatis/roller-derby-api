@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action\Club;
+namespace App\Action\Interleague\Club;
 
 use App\Entity\Club;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

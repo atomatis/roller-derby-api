@@ -1,4 +1,4 @@
-@use 'theme/color_set/test' as color;
+@use 'theme/color_set/color' as color;
 
 header {
   margin-bottom: 50px;
@@ -19,7 +19,7 @@ header {
     }
   }
 
-  .lcdr-bar {
+  .lcdp-bar {
     border-bottom: color.$primary-medium-0 double 10px;
     height: 15px;
     margin: 0 10px;

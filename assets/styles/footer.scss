@@ -1,4 +1,4 @@
-@use 'theme/color_set/test' as color;
+@use 'theme/color_set/color' as color;
 
 footer {
   border-top: color.$primary-medium-0 double 10px;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action\Club;
+namespace App\Action\Admin\Club;
 
 use App\Entity\Club;
 use App\Form\ClubType;

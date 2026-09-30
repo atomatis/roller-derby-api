@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action\Team;
+namespace App\Action\Interleague\Team;
 
 use App\App;
 use App\Entity\Team;

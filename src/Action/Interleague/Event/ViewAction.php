@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action\Event;
+namespace App\Action\Interleague\Event;
 
 use App\Entity\Event;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

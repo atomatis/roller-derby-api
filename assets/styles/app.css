@@ -95,6 +95,10 @@ h2::selection {
 
 /************** styles -> theme -> color set -> test **************/
 /************** style - theme - background **************/
+html {
+  background-color: #207483;
+}
+
 body {
   background-image: url("../images/test.jpg");
   background-repeat: repeat;
@@ -103,7 +107,7 @@ body {
   z-index: 0;
   display: grid;
   grid-template-columns: auto 250px 1024px 200px auto;
-  grid-template-areas: "header header header header header" ". sidebar main . ." "footer footer footer footer footer";
+  grid-template-areas: "header header header header header" ". . navigation . ." ". sidebar main . ." "footer footer footer footer footer";
 }
 
 body::after {
@@ -123,7 +127,7 @@ main {
   background-size: 10px 10px;
   background-image: repeating-linear-gradient(45deg, #7CD0DF 0, #7CD0DF 1px, #A1DDE8 0, #A1DDE8 50%);
   display: block;
-  width: 1024px;
+  width: 994px;
   border: solid 2px #0E3339;
   margin: 0 auto;
   padding: 15px;
@@ -131,6 +135,33 @@ main {
   position: relative;
   z-index: 2;
   grid-area: main;
+}
+
+.navigation {
+  background-color: #0E3339;
+  display: block;
+  width: 1024px;
+  border-top: solid 2px #0E3339;
+  border-left: solid 2px #0E3339;
+  border-right: solid 2px #0E3339;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  grid-area: navigation;
+}
+.navigation nav {
+  border-bottom: solid 2px #0E3339;
+}
+.navigation nav:last-child {
+  border-bottom: none;
+}
+.navigation nav a {
+  background: #32B6CD;
+  background: linear-gradient(0deg, #2995A8 0%, #32B6CD 50%);
+}
+.navigation nav a:hover {
+  background: #CD3268;
+  background: linear-gradient(0deg, #A82955 0%, #CD3268 50%);
 }
 
 .content {
@@ -155,7 +186,7 @@ aside {
   padding: 10px;
 }
 
-.lcdr-article-box {
+.lcdp-article-box {
   display: flex;
   flex-wrap: wrap;
 }
@@ -209,7 +240,7 @@ header nav {
 header nav a {
   display: none;
 }
-header .lcdr-bar {
+header .lcdp-bar {
   border-bottom: #7CD0DF double 10px;
   height: 15px;
   margin: 0 10px;

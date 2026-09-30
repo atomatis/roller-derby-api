@@ -1,0 +1,65 @@
+/************** styles -> theme -> color set -> test **************/
+
+@use 'sass:color';
+@use 'color' as base-color;
+
+// *** Base ***
+
+$primary-light-0: color.grayscale(base-color.$primary-light-0);
+$primary-light-1: color.grayscale(base-color.$primary-light-1);
+$primary-light-2: color.grayscale(base-color.$primary-light-2);
+$primary-medium-0: color.grayscale(base-color.$primary-medium-0);
+$primary-medium-1: color.grayscale(base-color.$primary-medium-1);
+$primary-medium-2: color.grayscale(base-color.$primary-medium-2);
+$primary-medium-3: color.grayscale(base-color.$primary-medium-3);
+$primary-medium-4: color.grayscale(base-color.$primary-medium-4);
+$primary-dark-0: color.grayscale(base-color.$primary-dark-0);
+$primary-dark-1: color.grayscale(base-color.$primary-dark-1);
+$primary-dark-2: color.grayscale(base-color.$primary-dark-2);
+
+$secondary-light-0: color.grayscale(base-color.$secondary-light-0);
+$secondary-light-1: color.grayscale(base-color.$secondary-light-1);
+$secondary-light-2: color.grayscale(base-color.$secondary-light-2);
+$secondary-medium-0: color.grayscale(base-color.$secondary-medium-0);
+$secondary-medium-1: color.grayscale(base-color.$secondary-medium-1);
+$secondary-medium-2: color.grayscale(base-color.$secondary-medium-2);
+$secondary-medium-3: color.grayscale(base-color.$secondary-medium-3);
+$secondary-medium-4: color.grayscale(base-color.$secondary-medium-4);
+$secondary-dark-0: color.grayscale(base-color.$secondary-dark-0);
+$secondary-dark-1: color.grayscale(base-color.$secondary-dark-1);
+$secondary-dark-2: color.grayscale(base-color.$secondary-dark-2);
+
+$tertiary-light-0: color.grayscale(base-color.$tertiary-light-0);
+$tertiary-light-1: color.grayscale(base-color.$tertiary-light-1);
+$tertiary-light-2: color.grayscale(base-color.$tertiary-light-2);
+$tertiary-medium-0: color.grayscale(base-color.$tertiary-medium-0);
+$tertiary-medium-1: color.grayscale(base-color.$tertiary-medium-1);
+$tertiary-medium-2: color.grayscale(base-color.$tertiary-medium-2);
+$tertiary-medium-3: color.grayscale(base-color.$tertiary-medium-3);
+$tertiary-medium-4: color.grayscale(base-color.$tertiary-medium-4);
+$tertiary-dark-0: color.grayscale(base-color.$tertiary-dark-0);
+$tertiary-dark-1: color.grayscale(base-color.$tertiary-dark-1);
+$tertiary-dark-2: color.grayscale(base-color.$tertiary-dark-2);
+
+// *** Element ***
+
+// Title
+$title-h1: $primary-light-1;
+$title-h2: $primary-light-0;
+$title-h3: $primary-light-0;
+$title-h4: $primary-light-0;
+$title-h5: $primary-light-0;
+
+// Text
+$text: $primary-light-0;
+$link: $primary-light-0;
+$link-hover: $primary-light-0;
+
+// Border
+$border: $primary-light-0;
+$border-highlight: $primary-light-0;
+
+// Background
+$background: $primary-light-0;
+
+// Input

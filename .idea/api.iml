@@ -26,13 +26,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/flysystem-local" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/liip/imagine-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/maennchen/zipstream-php" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/complex" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/markbaker/matrix" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nelmio/cors-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paquettg/php-html-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paquettg/string-encode" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/phpoffice/phpspreadsheet" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/predis/predis" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/clock" />
@@ -40,7 +36,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/clock" />
@@ -98,6 +93,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/twig-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/twig-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/ux-turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/asset" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/asset-mapper" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

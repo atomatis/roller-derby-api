@@ -1,7 +1,13 @@
 /************** style - theme - layout **************/
 
-@use 'color_set/test' as color;
+@use 'color_set/color' as color;
 @use 'mixin/background' as background;
+
+// *** Html ***
+
+html {
+    background-color:  color.$primary-medium-4;
+}
 
 // *** Body ***
 
@@ -15,6 +21,7 @@ body {
   grid-template-columns: auto 250px 1024px 200px auto;
   grid-template-areas:
     'header header header header header'
+    '. . navigation . .'
     '. sidebar main . .'
     'footer footer footer footer footer'
   ;
@@ -37,7 +44,7 @@ body::after {
 main {
   @include background.striped(color.$primary-light-2, color.$primary-medium-0);
   display: block;
-  width: 1024px;
+  width: 994px;
   border: solid 2px color.$primary-dark-1;
   margin: 0 auto;
   padding: 15px;
@@ -46,6 +53,40 @@ main {
   z-index: 2;
   grid-area: main;
 }
+
+// *** Navigation ***
+
+.navigation {
+    background-color: color.$primary-dark-1;
+    display: block;
+    width: 1024px;
+    border-top: solid 2px color.$primary-dark-1;
+    border-left: solid 2px color.$primary-dark-1;
+    border-right: solid 2px color.$primary-dark-1;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    grid-area: navigation;
+
+    nav {
+        border-bottom: solid 2px color.$primary-dark-1;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        a {
+            background: color.$primary-medium-2;
+            background: linear-gradient(0deg, color.$primary-medium-3 0%, color.$primary-medium-2 50%);
+
+            &:hover {
+                background: color.$secondary-medium-2;
+                background: linear-gradient(0deg, color.$secondary-medium-3 0%, color.$secondary-medium-2 50%);
+            }
+        }
+    }
+}
+
 
 // *** Content ***
 
@@ -72,7 +113,7 @@ aside {
 
 // *** Article ***
 
-.lcdr-article-box {
+.lcdp-article-box {
   display: flex;
   flex-wrap: wrap;
 }

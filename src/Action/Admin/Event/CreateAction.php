@@ -2,6 +2,7 @@
 
 namespace App\Action\Event;
 
+use App\Action\Interleague\Event\ViewAction;
 use App\Entity\Event;
 use App\Form\EventType;
 use Doctrine\ORM\EntityManagerInterface;

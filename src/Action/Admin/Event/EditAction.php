@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Action\Club;
+namespace App\Action\Event;
 
-use App\Entity\Club;
-use App\Form\ClubType;
+use App\Action\Interleague\Event\ViewAction;
+use App\Entity\Event;
+use App\Form\EventType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,23 +13,23 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class EditAction extends AbstractController
 {
-    const ROUTE_NAME = 'club_edit';
+    const ROUTE_NAME = 'event_edit';
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
     ) {}
-    #[Route('/clubs/{id}/edit', name: self::ROUTE_NAME)]
-    public function update(Request $request, Club $club): Response
+    #[Route('/events/{id}/edit', name: self::ROUTE_NAME)]
+    public function update(Request $request, Event $event): Response
     {
-        $form = $this->createForm(ClubType::class, $club);
+        $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $this->entityManager->flush();
-            return $this->redirectToRoute(ViewAction::ROUTE_NAME, ['id' => $club->getId()]);
+            return $this->redirectToRoute(ViewAction::ROUTE_NAME, ['id' => $event->getId()]);
         }
 
-        return $this->render('club/edit.html.twig', [
+        return $this->render('event/edit.html.twig', [
             'form' => $form,
-            'club' => $club,
+            'event' => $event,
         ]);
     }
 }
