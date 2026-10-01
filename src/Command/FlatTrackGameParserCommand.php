@@ -97,7 +97,7 @@ final class FlatTrackGameParserCommand extends Command
 
                 $game = (new Game())
                     ->setId(Uuid::v4()->toString())
-                    ->setFlattrackGameId($bout['gameId'])
+                    ->setFlatTrackStatsGameId($bout['gameId'])
                     ->setPlayedAt($bout['playedAt'])
                     ->setRuleset($bout['ruleset'])
                     ->setSanctioning($bout['sanctioning'])

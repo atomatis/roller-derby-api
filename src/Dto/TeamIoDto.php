@@ -80,7 +80,7 @@ final class TeamIoDto
             ->setLevel($team->getLevel())
             ->setType($team->getType())
             ->setCategory($team->getCategory())
-            ->setFlattrackId($team->getFlattrackId())
+            ->setFlattrackId($team->getFlatTrackStatsId())
             ->setPronoun($team->getPronoun())
             ->setDisbandAt($team->getDisbandAt())
             ->setHistory($team->getHistory())

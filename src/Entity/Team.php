@@ -41,7 +41,7 @@ class Team
     private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $flatTrackId = null;
+    private ?int $flatTrackStatsId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $category = null;
@@ -198,14 +198,14 @@ class Team
         return $this;
     }
 
-    public function getFlatTrackId(): ?int
+    public function getFlatTrackStatsId(): ?int
     {
-        return $this->flatTrackId;
+        return $this->flatTrackStatsId;
     }
 
-    public function setFlatTrackId(?int $flatTrackId): static
+    public function setFlatTrackStatsId(?int $flatTrackStatsId): static
     {
-        $this->flatTrackId = $flatTrackId;
+        $this->flatTrackStatsId = $flatTrackStatsId;
 
         return $this;
     }

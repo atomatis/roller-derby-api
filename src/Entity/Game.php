@@ -19,7 +19,7 @@ class Game
     private ?\DateTimeImmutable $playedAt = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $flatTrackGameId = null;
+    private ?int $flatTrackStatsGameId = null;
 
     #[ORM\Column]
     private ?string $type = null;
@@ -74,14 +74,14 @@ class Game
         return $this;
     }
 
-    public function getFlatTrackGameId(): ?int
+    public function getFlatTrackStatsGameId(): ?int
     {
-        return $this->flatTrackGameId;
+        return $this->flatTrackStatsGameId;
     }
 
-    public function setFlatTrackGameId(?int $flatTrackGameId): static
+    public function setFlatTrackStatsGameId(?int $flatTrackStatsGameId): static
     {
-        $this->flatTrackGameId = $flatTrackGameId;
+        $this->flatTrackStatsGameId = $flatTrackStatsGameId;
 
         return $this;
     }

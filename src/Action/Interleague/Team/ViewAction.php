@@ -29,10 +29,10 @@ final class ViewAction extends AbstractController
         $flattrackTotalClassedEuropeanTeam = 0;
         $flattrackTotalClassedFrenchTeam = 0;
 
-        if ($team->getFlattrackId() !== null) {
+        if ($team->getFlatTrackStatsId() !== null) {
             $gender = $team->getCategory() === "F+" ? Gender::Women : Gender::Men;
 
-            $flattrackRank = $this->flattrackRankingRepository->find($team->getFlattrackId());
+            $flattrackRank = $this->flattrackRankingRepository->find($team->getFlatTrackStatsId());
             $flattrackTotalClassedFrenchTeam =  count($this->flattrackRankingRepository->findBy(['gender' => $gender->value]));
             $cacheKey = "";
             switch ($gender) {

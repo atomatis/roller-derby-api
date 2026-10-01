@@ -29,8 +29,8 @@ final class ImageScavengerCommand extends Command
         $toUnlinkFiles = [];
 
         foreach ($this->entityManager->getRepository(Team::class)->findAll() as $team) {
-            if ($team->getFlattrackId() !== null) {
-                $ftTeam = $this->teamScraper->scrapTeam($team->getFlattrackId());
+            if ($team->getFlatTrackStatsId() !== null) {
+                $ftTeam = $this->teamScraper->scrapTeam($team->getFlatTrackStatsId());
                 $urlParts = explode('/', $ftTeam['logoUrl']);
                 $tmpFile = __DIR__.'/../../var/'.$urlParts[count($urlParts) - 1];
                 copy($ftTeam['logoUrl'], $tmpFile);
