@@ -2,9 +2,11 @@
 
 namespace App\Entity;
 
+use App\Enum\EventStatus;
 use App\Repository\EventRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Types\UuidType;
 
@@ -15,17 +17,20 @@ class Event
     #[ORM\Column(type: UuidType::NAME, unique: true)]
     private ?string $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    #[ORM\Column(type: Types::TEXT)]
+    private string $name;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $startAt = null;
+    #[ORM\Column(type: Types::TEXT, enumType: EventStatus::class)]
+    private string $status;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $endAt = null;
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $description = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $edition = null;
+    #[ORM\Column(type: Types::DATE_IMMUTABLE)]
+    private \DateTimeImmutable $startAt;
+
+    #[ORM\Column(type: Types::DATE_IMMUTABLE)]
+    private \DateTimeImmutable $endAt;
 
     /**
      * @var Collection<int, Game>
@@ -33,17 +38,8 @@ class Event
     #[ORM\OneToMany(targetEntity: Game::class, mappedBy: 'event')]
     private Collection $games;
 
-    #[ORM\Column(nullable: true)]
-    private ?string $description = null;
-
     #[ORM\ManyToOne(inversedBy: 'events')]
     private ?Championship $championship = null;
-
-    #[ORM\OneToOne(targetEntity: self::class, inversedBy: 'previous', cascade: ['persist', 'remove'])]
-    private ?self $next = null;
-
-    #[ORM\OneToOne(targetEntity: self::class, mappedBy: 'next', cascade: ['persist', 'remove'])]
-    private ?self $previous = null;
 
     public function __construct()
     {
@@ -62,7 +58,7 @@ class Event
         return $this;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -74,7 +70,31 @@ class Event
         return $this;
     }
 
-    public function getStartAt(): ?\DateTimeImmutable
+    public function getStatus(): string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): static
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getStartAt(): \DateTimeImmutable
     {
         return $this->startAt;
     }
@@ -86,7 +106,7 @@ class Event
         return $this;
     }
 
-    public function getEndAt(): ?\DateTimeImmutable
+    public function getEndAt(): \DateTimeImmutable
     {
         return $this->endAt;
     }
@@ -94,18 +114,6 @@ class Event
     public function setEndAt(\DateTimeImmutable $endAt): static
     {
         $this->endAt = $endAt;
-
-        return $this;
-    }
-
-    public function getEdition(): ?int
-    {
-        return $this->edition;
-    }
-
-    public function setEdition(?int $edition): static
-    {
-        $this->edition = $edition;
 
         return $this;
     }
@@ -140,18 +148,6 @@ class Event
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(?string $description): static
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
     public function getChampionship(): ?Championship
     {
         return $this->championship;
@@ -160,40 +156,6 @@ class Event
     public function setChampionship(?Championship $championship): static
     {
         $this->championship = $championship;
-
-        return $this;
-    }
-
-    public function getNext(): ?self
-    {
-        return $this->next;
-    }
-
-    public function setNext(?self $next): static
-    {
-        $this->next = $next;
-
-        return $this;
-    }
-
-    public function getPrevious(): ?self
-    {
-        return $this->previous;
-    }
-
-    public function setPrevious(?self $previous): static
-    {
-        // unset the owning side of the relation if necessary
-        if ($previous === null && $this->previous !== null) {
-            $this->previous->setNext(null);
-        }
-
-        // set the owning side of the relation if necessary
-        if ($previous !== null && $previous->getNext() !== $this) {
-            $previous->setNext($this);
-        }
-
-        $this->previous = $previous;
 
         return $this;
     }

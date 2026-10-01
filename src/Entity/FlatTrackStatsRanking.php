@@ -7,25 +7,28 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FlattrackRankingRepository::class)]
-class FlattrackRanking
+class FlatTrackStatsRanking
 {
     #[ORM\Id]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $europeanRank = null;
+    #[ORM\Column(type: Types::INTEGER, nullable: true)]
+    private ?int $countryRank = null;
 
-    #[ORM\Column]
-    private ?int $frenchRank = null;
+    #[ORM\Column(type: Types::INTEGER, nullable: true)]
+    private ?int $continentalRank = null;
+
+    #[ORM\Column(type: Types::INTEGER, nullable: true)]
+    private ?int $worldRank = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 6, scale: 1)]
-    private ?string $rating = null;
+    private ?float $rating = null;
 
     #[ORM\Column(length: 5)]
     private ?string $gender = null;
 
-    #[ORM\OneToOne(inversedBy: 'flattrackRanking', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(inversedBy: 'flatTrackStatsRanking', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?Team $team = null;
 
@@ -41,26 +44,40 @@ class FlattrackRanking
         return $this;
     }
 
-    public function getEuropeanRank(): ?int
+    public function getCountryRank(): ?int
     {
-        return $this->europeanRank;
+        return $this->countryRank;
     }
 
-    public function setEuropeanRank(int $europeanRank): static
+    public function setCountryRank(?int $countryRank): static
     {
-        $this->europeanRank = $europeanRank;
+        $this->countryRank = $countryRank;
 
         return $this;
     }
 
-    public function getFrenchRank(): ?int
+    public function getContinentalRank(): ?int
     {
-        return $this->frenchRank;
+        return $this->continentalRank;
     }
 
-    public function setFrenchRank(?int $frenchRank): void
+    public function setContinentalRank(?int $continentalRank): static
     {
-        $this->frenchRank = $frenchRank;
+        $this->continentalRank = $continentalRank;
+
+        return $this;
+    }
+
+    public function getWorldRank(): ?int
+    {
+        return $this->worldRank;
+    }
+
+    public function setWorldRank(?int $worldRank): static
+    {
+        $this->worldRank = $worldRank;
+
+        return $this;
     }
 
     public function getRating(): ?string
@@ -68,7 +85,7 @@ class FlattrackRanking
         return $this->rating;
     }
 
-    public function setRating(string $rating): static
+    public function setRating(?string $rating): static
     {
         $this->rating = $rating;
 

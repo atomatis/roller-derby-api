@@ -96,7 +96,7 @@ final class ClubIoDto
             ->setLegalId($club->getLegalId())
             ->setAlias($club->getAlias())
             ->setOverview($club->getOverview())
-            ->setHistory($club->getHistory())
+            ->setHistory($club->history)
             ->setGenderDiversityPolicy($club->getGenderDiversityPolicy())
             ->setClosedAt($club->getClosedAt())
             ->setCities($club->getCities())

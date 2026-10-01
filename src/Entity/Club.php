@@ -37,11 +37,15 @@ class Club
     #[ORM\Column(nullable: true)]
     private ?string $history = null;
 
-    #[ORM\Column(length: 6)]
-    private ?string $regionCode = null;
+    // ISO 3166-1
+    #[ORM\Column(nullable: true)]
+    private ?string $countryCode = null;
 
-    #[ORM\Column(length: 6)]
-    private ?string $countyCode = null;
+    #[ORM\Column(nullable: true)]
+    private ?string $countryPrimaryDivisionCode = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $countrySecondaryDivisionCode = null;
 
     /**
      * @var Collection<int, Team>
@@ -177,26 +181,37 @@ class Club
         return $this;
     }
 
-    public function getRegionCode(): ?string
+    public function getCountryCode(): ?string
     {
-        return $this->regionCode;
+        return $this->countryCode;
     }
 
-    public function setRegionCode(string|Region $regionCode): static
+    public function setCountryCode(?string $countryCode): Club
     {
-        $this->regionCode = $regionCode InstanceOf Region ? $regionCode->value : $regionCode;
+        $this->countryCode = $countryCode;
+        return $this;
+    }
+
+    public function getCountryPrimaryDivisionCode(): ?string
+    {
+        return $this->countryPrimaryDivisionCode;
+    }
+
+    public function setCountryPrimaryDivisionCode(?string $countryPrimaryDivisionCode): Club
+    {
+        $this->countryPrimaryDivisionCode = $countryPrimaryDivisionCode;
 
         return $this;
     }
 
-    public function getCountyCode(): ?string
+    public function getCountrySecondaryDivisionCode(): ?string
     {
-        return $this->countyCode;
+        return $this->countrySecondaryDivisionCode;
     }
 
-    public function setCountyCode(string|County $countyCode): static
+    public function setCountrySecondaryDivisionCode(?string $countrySecondaryDivisionCode): Club
     {
-        $this->countyCode = $countyCode InstanceOf County ? $countyCode->value : $countyCode;
+        $this->countrySecondaryDivisionCode = $countrySecondaryDivisionCode;
 
         return $this;
     }

@@ -19,7 +19,7 @@ class Game
     private ?\DateTimeImmutable $playedAt = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $flattrackGameId = null;
+    private ?int $flatTrackGameId = null;
 
     #[ORM\Column]
     private ?string $type = null;
@@ -74,14 +74,14 @@ class Game
         return $this;
     }
 
-    public function getFlattrackGameId(): ?int
+    public function getFlatTrackGameId(): ?int
     {
-        return $this->flattrackGameId;
+        return $this->flatTrackGameId;
     }
 
-    public function setFlattrackGameId(?int $flattrackGameId): static
+    public function setFlatTrackGameId(?int $flatTrackGameId): static
     {
-        $this->flattrackGameId = $flattrackGameId;
+        $this->flatTrackGameId = $flatTrackGameId;
 
         return $this;
     }
@@ -193,7 +193,7 @@ class Game
         return $this->videoLinks;
     }
 
-    public function setVideoLinks(array $videoLinks): self
+    public function setVideoLinks(array $videoLinks): static
     {
         $this->videoLinks = $videoLinks;
 

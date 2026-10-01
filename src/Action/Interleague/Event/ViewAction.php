@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ViewAction extends AbstractController
 {
-    const ROUTE_NAME = 'event_view';
+    const string ROUTE_NAME = 'event_view';
     #[Route('/events/{id}', name: self::ROUTE_NAME)]
     public function view(Event $event): Response
     {

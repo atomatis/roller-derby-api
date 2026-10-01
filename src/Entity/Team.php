@@ -41,7 +41,7 @@ class Team
     private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $flattrackId = null;
+    private ?int $flatTrackId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $category = null;
@@ -51,10 +51,6 @@ class Team
 
     #[ORM\Column(length: 255)]
     private ?string $type = null;
-
-    // ISO 3166-1
-    #[ORM\Column(length: 255)]
-    private ?string $countryCode = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $email = null;
@@ -91,7 +87,7 @@ class Team
     private ?File $logoFile = null;
 
     #[ORM\OneToOne(mappedBy: 'team', cascade: ['persist', 'remove'])]
-    private ?FlattrackRanking $flattrackRanking = null;
+    private ?FlatTrackStatsRanking $flatTrackRanking = null;
 
     /**
      * @var Collection<int, ChampionshipRanking>
@@ -202,14 +198,14 @@ class Team
         return $this;
     }
 
-    public function getFlattrackId(): ?int
+    public function getFlatTrackId(): ?int
     {
-        return $this->flattrackId;
+        return $this->flatTrackId;
     }
 
-    public function setFlattrackId(?int $flattrackId): static
+    public function setFlatTrackId(?int $flatTrackId): static
     {
-        $this->flattrackId = $flattrackId;
+        $this->flatTrackId = $flatTrackId;
 
         return $this;
     }
@@ -262,17 +258,7 @@ class Team
         return $this;
     }
 
-    public function getCountryCode(): ?string
-    {
-        return $this->countryCode;
-    }
 
-    public function setCountryCode(?string $countryCode): Team
-    {
-        $this->countryCode = $countryCode;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Club>
@@ -418,19 +404,19 @@ class Team
         return $this->logo->getName();
     }
 
-    public function getFlattrackRanking(): ?FlattrackRanking
+    public function getFlatTrackRanking(): ?FlatTrackStatsRanking
     {
-        return $this->flattrackRanking;
+        return $this->flatTrackRanking;
     }
 
-    public function setFlattrackRanking(FlattrackRanking $flattrackRanking): static
+    public function setFlatTrackRanking(FlatTrackStatsRanking $flatTrackRanking): static
     {
         // set the owning side of the relation if necessary
-        if ($flattrackRanking->getTeam() !== $this) {
-            $flattrackRanking->setTeam($this);
+        if ($flatTrackRanking->getTeam() !== $this) {
+            $flatTrackRanking->setTeam($this);
         }
 
-        $this->flattrackRanking = $flattrackRanking;
+        $this->flatTrackRanking = $flatTrackRanking;
 
         return $this;
     }

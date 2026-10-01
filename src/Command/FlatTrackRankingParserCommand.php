@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Command;
 
 use App\App;
-use App\Entity\FlattrackRanking;
+use App\Entity\FlatTrackStatsRanking;
 use App\Entity\Team;
 use App\Scraper\Flattrack\EuropeanRankScraper;
 use App\Scraper\Flattrack\Gender;
@@ -39,7 +39,7 @@ final class FlatTrackRankingParserCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->entityManager->getRepository(FlattrackRanking::class)->cleanAll();
+        $this->entityManager->getRepository(FlatTrackStatsRanking::class)->cleanAll();
         $this->regenerateRanking(Gender::Women);
         $this->regenerateRanking(Gender::Men);
 
@@ -79,7 +79,7 @@ final class FlatTrackRankingParserCommand extends Command
 
             if (0 === count($teams)) {continue;}
 
-            $rank = new FlattrackRanking();
+            $rank = new FlatTrackStatsRanking();
             $rank->setId((int)$teamId);
             $rank->setEuropeanRank((int)$europeanRank);
             $rank->setRating($rating);
