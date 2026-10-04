@@ -22,7 +22,7 @@ final class TeamIoDto
 
     private ?\DateTimeImmutable $createdAt = null;
 
-    private ?int $flattrackId = null;
+    private ?int $flatTrackStatsId = null;
 
     private ?string $category = null;
 
@@ -46,7 +46,7 @@ final class TeamIoDto
 
     public function toEntity(): Team
     {
-        return (new Team())
+        return new Team()
             ->setId($this->id)
             ->setName($this->name)
             ->setEmail($this->email)
@@ -54,7 +54,6 @@ final class TeamIoDto
             ->setUpdatedAt(new \DateTimeImmutable())
             ->setLevel($this->level)
             ->setType($this->type)
-            ->setCountryCode($this->countryCode)
             ->setFacebookId($this->facebookId)
             ->setInstagramId($this->instagramId)
             ->setPronoun($this->pronoun)
@@ -63,24 +62,24 @@ final class TeamIoDto
             ->setDisbandAt($this->disbandAt)
             ->setOverview($this->overview)
             ->setHistory($this->history)
-            ->setFlattrackId($this->flattrackId)
+            ->setFlatTrackStatsId($this->flatTrackStatsId)
             ->setCategory($this->category)
         ;
     }
 
     public static function fromEntity(Team $team): self
     {
-        $teamIoDto = (new self())
+        return new self()
             ->setId($team->getId())
             ->setName($team->getName())
             ->setEmail($team->getEmail())
-            ->setCountryCode($team->getCountryCode())
+            ->setCountryCode($team->getClub()->getCountryCode())
             ->setCreatedAt($team->getCreatedAt())
             ->setMediaLinks($team->getMediaLinks())
             ->setLevel($team->getLevel())
             ->setType($team->getType())
             ->setCategory($team->getCategory())
-            ->setFlattrackId($team->getFlatTrackStatsId())
+            ->setFlatTrackStatsId($team->getFlatTrackStatsId())
             ->setPronoun($team->getPronoun())
             ->setDisbandAt($team->getDisbandAt())
             ->setHistory($team->getHistory())
@@ -89,8 +88,6 @@ final class TeamIoDto
             ->setFacebookId($team->getFacebookId())
             ->setLogo($team->getLogo())
         ;
-
-        return $teamIoDto;
     }
 
     public function getId(): ?string
@@ -159,14 +156,14 @@ final class TeamIoDto
         return $this;
     }
 
-    public function getFlattrackId(): ?int
+    public function getFlatTrackStatsId(): ?int
     {
-        return $this->flattrackId;
+        return $this->flatTrackStatsId;
     }
 
-    public function setFlattrackId(?int $flattrackId): self
+    public function setFlatTrackStatsId(?int $flatTrackStatsId): self
     {
-        $this->flattrackId = $flattrackId;
+        $this->flatTrackStatsId = $flatTrackStatsId;
         return $this;
     }
 

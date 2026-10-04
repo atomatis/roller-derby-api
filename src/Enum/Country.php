@@ -1,6 +1,12 @@
 <?php
 
 namespace App\Enum;
+
+/**
+ * Country code from ISO 3166-1 (https://en.wikipedia.org/wiki/ISO_3166-1)
+ *
+ * @author Alexandre Tomatis <alexandre.tomatis@gmail.com>
+ */
 enum Country: string
 {
     case UNKNOWN = 'UNK';

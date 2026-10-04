@@ -29,13 +29,14 @@ final class ListAction extends AbstractController
     #[Route('/interleague/teams', name: self::ROUTE_NAME)]
     public function list(Request $request): Response
     {
-        $criteria = new Criteria();
-        $criteria->orderBy(["name" => "ASC"]);
-        $criteria->where(Criteria::expr()->eq('countryCode', 'FRA'));
-        $this->bindFilterByCriteria($request, $criteria);
-        // $this->bindOrderByCriteria($request, $criteria);
+//        $criteria = new Criteria();
+//        $criteria->orderBy(["name" => "ASC"]);
+//        $criteria->where(Criteria::expr()->eq('clubs.countryCode', 'FRA'));
+//        $this->bindFilterByCriteria($request, $criteria);
+//        // $this->bindOrderByCriteria($request, $criteria);
+//
+        $teams = $this->teamRepository->findAll();
 
-        $teams = $this->teamRepository->matching($criteria);
 
 //        $filters = $request->query->get('filters') ?? [];
 //        if (array_key_exists(self::QUERY_PARAM_FILTERS_BY, $filters)) {

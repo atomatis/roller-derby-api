@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Enum\ClubGenderDiversityPolicy;
 use App\Enum\County;
-use App\Enum\Region;
+use App\Enum\CountrySubdivision;
 use App\Repository\ClubRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -26,9 +26,6 @@ class Club
     private ?string $legalName = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $legalId = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
     private ?string $alias = null;
 
     #[ORM\Column(nullable: true)]
@@ -42,15 +39,18 @@ class Club
     private ?string $countryCode = null;
 
     #[ORM\Column(nullable: true)]
-    private ?string $countryPrimaryDivisionCode = null;
+    private ?string $countrySubdivisionCode = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?string $countrySecondaryDivisionCode = null;
+    /**
+     * @var Collection<int, Club>
+     */
+    #[ORM\OneToMany(targetEntity: Club::class, mappedBy: 'club', cascade: ['persist', 'remove'])]
+    private Collection $events;
 
     /**
      * @var Collection<int, Team>
      */
-    #[ORM\ManyToMany(targetEntity: Team::class, mappedBy: 'clubs', cascade: ['persist', 'remove'])]
+    #[ORM\OneToMany(targetEntity: Team::class, mappedBy: 'club', cascade: ['persist', 'remove'])]
     private Collection $teams;
 
     #[ORM\Column(length: 3, nullable: true)]
@@ -95,6 +95,7 @@ class Club
     public function __construct()
     {
         $this->teams = new ArrayCollection();
+        $this->events = new ArrayCollection();
     }
 
     public function getId(): ?string
@@ -129,18 +130,6 @@ class Club
     public function setLegalName(?string $legalName): static
     {
         $this->legalName = $legalName;
-
-        return $this;
-    }
-
-    public function getLegalId(): ?string
-    {
-        return $this->legalId;
-    }
-
-    public function setLegalId(?string $legalId): static
-    {
-        $this->legalId = $legalId;
 
         return $this;
     }
@@ -192,26 +181,39 @@ class Club
         return $this;
     }
 
-    public function getCountryPrimaryDivisionCode(): ?string
+    public function getCountrySubdivisionCode(): ?string
     {
-        return $this->countryPrimaryDivisionCode;
+        return $this->countrySubdivisionCode;
     }
 
-    public function setCountryPrimaryDivisionCode(?string $countryPrimaryDivisionCode): Club
+    public function setCountrySubdivisionCode(?string $countrySubdivisionCode): Club
     {
-        $this->countryPrimaryDivisionCode = $countryPrimaryDivisionCode;
+        $this->countrySubdivisionCode = $countrySubdivisionCode;
 
         return $this;
     }
 
-    public function getCountrySecondaryDivisionCode(): ?string
+    /**
+     * @return Collection<int, Club>
+     */
+    public function getEvents(): Collection
     {
-        return $this->countrySecondaryDivisionCode;
+        return $this->events;
     }
 
-    public function setCountrySecondaryDivisionCode(?string $countrySecondaryDivisionCode): Club
+    public function addEvent(Event $event): static
     {
-        $this->countrySecondaryDivisionCode = $countrySecondaryDivisionCode;
+        if (!$this->events->contains($event)) {
+            $this->events->add($event);
+            $event->setClub($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEvent(Event $event): static
+    {
+        $this->events->removeElement($event);
 
         return $this;
     }
@@ -228,7 +230,7 @@ class Club
     {
         if (!$this->teams->contains($team)) {
             $this->teams->add($team);
-            $team->addClub($this);
+            $team->setClub($this);
         }
 
         return $this;
@@ -236,9 +238,7 @@ class Club
 
     public function removeTeam(Team $team): static
     {
-        if ($this->teams->removeElement($team)) {
-            $team->removeClub($this);
-        }
+       $this->teams->removeElement($team);
 
         return $this;
     }

@@ -5,12 +5,16 @@ declare(strict_types=1);
 namespace App\Enum;
 
 /**
- * ISO 3166-2:FR (https://fr.wikipedia.org/wiki/ISO_3166-2:FR)
+ * Country subdivision from ISO 3166-2 (https://en.wikipedia.org/wiki/ISO_3166-2)
+ *
+ * By Country:
+ * ** France ISO 3166-2:FR (https://fr.wikipedia.org/wiki/ISO_3166-2:FR)
  *
  * @author Alexandre Tomatis <alexandre.tomatis@gmail.com>
  */
-enum Region: string
+enum CountrySubdivision: string
 {
+    // France
     case FrAra = 'FR-ARA';
     case FrBfc = 'FR-BFC';
     case FrBre = 'FR-BRE';
@@ -26,7 +30,7 @@ enum Region: string
     case Fr20r = 'FR-20R';
     case Fr974 = 'FR-974';
 
-    private const map = [
+    private const array map = [
         self::FrAra->value => 'Auvergne-Rhône-Alpes',
         self::FrBfc->value => 'Bourgogne-Franche-Comté',
         self::FrBre->value => 'Bretagne',
@@ -43,9 +47,9 @@ enum Region: string
         self::Fr974->value => 'La Réunion',
     ];
 
-    // ISO 3166-2:FR
-    static function getName(string $regionCode): string
+    // $code: must be an ISO 3166-2 reference
+    static function getName(string $code): string
     {
-        return self::map[$regionCode];
+        return self::map[$code];
     }
 }

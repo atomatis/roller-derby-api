@@ -61,17 +61,14 @@ class Team
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $instagramId = null;
 
-    /**
-     * @var Collection<int, Club>
-     */
-    #[ORM\ManyToMany(targetEntity: Club::class, inversedBy: 'teams')]
-    private Collection $clubs;
-
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $pronoun = null;
 
     #[ORM\Column(nullable: true)]
     private ?array $mediaLinks = null;
+
+    #[ORM\ManyToOne(targetEntity: Club::class, cascade: ['persist', 'remove'], inversedBy: 'team')]
+    private Club $club;
 
     /**
      * @var Collection<int, TeamGame>
@@ -97,7 +94,6 @@ class Team
 
     public function __construct()
     {
-        $this->clubs = new ArrayCollection();
         $this->teamGames = new ArrayCollection();
         $this->logo = new EmbeddedFile();
         $this->championshipRankings = new ArrayCollection();
@@ -259,31 +255,6 @@ class Team
     }
 
 
-
-    /**
-     * @return Collection<int, Club>
-     */
-    public function getClubs(): Collection
-    {
-        return $this->clubs;
-    }
-
-    public function addClub(Club $club): static
-    {
-        if (!$this->clubs->contains($club)) {
-            $this->clubs->add($club);
-        }
-
-        return $this;
-    }
-
-    public function removeClub(Club $club): static
-    {
-        $this->clubs->removeElement($club);
-
-        return $this;
-    }
-
     public function getPronoun(): ?string
     {
         return $this->pronoun;
@@ -330,6 +301,16 @@ class Team
         $this->instagramId = $instagramId;
 
         return $this;
+    }
+
+    public function getClub(): Club
+    {
+        return $this->club;
+    }
+
+    public function setClub(Club $club): void
+    {
+        $this->club = $club;
     }
 
     /**

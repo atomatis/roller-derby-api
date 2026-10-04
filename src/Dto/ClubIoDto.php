@@ -13,17 +13,13 @@ final class ClubIoDto
 
     private string $name;
 
-    private string $regionCode;
-
-    private string $countyCode;
+    private string $countrySubdivisionCode;
 
     private \DateTimeImmutable $createdAt;
 
     private ?string $email = null;
 
     private ?string $legalName = null;
-
-    private ?string $legalId = null;
 
     private ?string $alias = null;
 
@@ -58,16 +54,14 @@ final class ClubIoDto
 
     public function toEntity(): Club
     {
-        return (new Club())
+        return new Club()
             ->setId($this->id)
             ->setName($this->name)
             ->setEmail($this->email)
-            ->setRegionCode($this->regionCode)
-            ->setCountyCode($this->countyCode)
+            ->setCountrySubdivisionCode($this->countrySubdivisionCode)
             ->setCreatedAt($this->createdAt)
             ->setUpdatedAt(new \DateTimeImmutable())
             ->setLegalName($this->legalName)
-            ->setLegalId($this->legalId)
             ->setAlias($this->alias)
             ->setOverview($this->overview)
             ->setHistory($this->history)
@@ -85,18 +79,17 @@ final class ClubIoDto
 
     public static function fromEntity(Club $club): self
     {
-        $clubIoDto = (new self())
+        $clubIoDto = new self()
             ->setId($club->getId())
             ->setName($club->getName())
             ->setEmail($club->getEmail())
-            ->setRegionCode($club->getRegionCode())
-            ->setCountyCode($club->getCountyCode())
+            ->setCountrySubdivisionCode($club->getCountrySubdivisionCode())
+            ->setCountrySubdivisionCode($club->getCountrySubdivisionCode())
             ->setCreatedAt($club->getCreatedAt())
             ->setLegalName($club->getLegalName())
-            ->setLegalId($club->getLegalId())
             ->setAlias($club->getAlias())
             ->setOverview($club->getOverview())
-            ->setHistory($club->history)
+            ->setHistory($club->getHistory())
             ->setGenderDiversityPolicy($club->getGenderDiversityPolicy())
             ->setClosedAt($club->getClosedAt())
             ->setCities($club->getCities())
@@ -104,7 +97,6 @@ final class ClubIoDto
             ->setInterleagueEmail($club->getInterleagueEmail())
             ->setFacebookId($club->getFacebookId())
             ->setInstagramId($club->getInstagramId())
-            ->setMyRollerDerbyId($club->getMyRollerDerbyId())
             ->setMediaLinks($club->getMediaLinks())
         ;
 
@@ -151,25 +143,15 @@ final class ClubIoDto
         return $this;
     }
 
-    public function getRegionCode(): string
+    public function getCountrySubdivisionCode(): string
     {
-        return $this->regionCode;
+        return $this->countrySubdivisionCode;
     }
 
-    public function setRegionCode(string $regionCode): self
+    public function setCountrySubdivisionCode(string $countrySubdivisionCode): self
     {
-        $this->regionCode = $regionCode;
-        return $this;
-    }
+        $this->countrySubdivisionCode = $countrySubdivisionCode;
 
-    public function getCountyCode(): string
-    {
-        return $this->countyCode;
-    }
-
-    public function setCountyCode(string $countyCode): self
-    {
-        $this->countyCode = $countyCode;
         return $this;
     }
 
@@ -192,17 +174,6 @@ final class ClubIoDto
     public function setLegalName(?string $legalName): self
     {
         $this->legalName = $legalName;
-        return $this;
-    }
-
-    public function getLegalId(): ?string
-    {
-        return $this->legalId;
-    }
-
-    public function setLegalId(?string $legalId): self
-    {
-        $this->legalId = $legalId;
         return $this;
     }
 
@@ -335,17 +306,6 @@ final class ClubIoDto
     public function setInstagramId(?string $instagramId): self
     {
         $this->instagramId = $instagramId;
-        return $this;
-    }
-
-    public function getMyRollerDerbyId(): ?string
-    {
-        return $this->myRollerDerbyId;
-    }
-
-    public function setMyRollerDerbyId(?string $myRollerDerbyId): self
-    {
-        $this->myRollerDerbyId = $myRollerDerbyId;
         return $this;
     }
 

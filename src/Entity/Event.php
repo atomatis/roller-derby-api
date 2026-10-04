@@ -21,7 +21,7 @@ class Event
     private string $name;
 
     #[ORM\Column(type: Types::TEXT, enumType: EventStatus::class)]
-    private string $status;
+    private EventStatus $status;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
@@ -32,14 +32,17 @@ class Event
     #[ORM\Column(type: Types::DATE_IMMUTABLE)]
     private \DateTimeImmutable $endAt;
 
+    #[ORM\ManyToOne(targetEntity: Club::class, inversedBy: 'events')]
+    private Club $club;
+
+    #[ORM\ManyToOne(inversedBy: 'events')]
+    private ?Championship $championship = null;
+
     /**
      * @var Collection<int, Game>
      */
     #[ORM\OneToMany(targetEntity: Game::class, mappedBy: 'event')]
     private Collection $games;
-
-    #[ORM\ManyToOne(inversedBy: 'events')]
-    private ?Championship $championship = null;
 
     public function __construct()
     {
@@ -70,12 +73,12 @@ class Event
         return $this;
     }
 
-    public function getStatus(): string
+    public function getStatus(): EventStatus
     {
         return $this->status;
     }
 
-    public function setStatus(string $status): static
+    public function setStatus(EventStatus $status): static
     {
         $this->status = $status;
 
@@ -144,6 +147,18 @@ class Event
                 $game->setEvent(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getClub(): Club
+    {
+        return $this->club;
+    }
+
+    public function setClub(Club $club): static
+    {
+        $this->club = $club;
 
         return $this;
     }

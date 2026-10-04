@@ -3,21 +3,20 @@
 namespace App\Dto;
 
 use App\Entity\Club;
-use App\Enum\Region;
-use Doctrine\Common\Collections\Collection;
+use App\Enum\CountrySubdivision;
 
 class ClubByRegionDto
 {
     private array $clubs = [];
     private int $total = 0;
 
-    public static function fromEntities(Collection $clubs): self
+    public static function fromEntities(array $clubs): self
     {
         $clubByAlphaDto = new self();
 
         /** @var Club $club */
         foreach ($clubs as $club) {
-            $clubByAlphaDto->clubs[Region::getName($club->getRegionCode())][] = ClubIoDto::fromEntity($club);
+            $clubByAlphaDto->clubs[CountrySubdivision::getName($club->getCountrySubdivisionCode())][] = ClubIoDto::fromEntity($club);
             $clubByAlphaDto->total++;
         }
 

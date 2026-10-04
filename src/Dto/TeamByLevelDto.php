@@ -12,7 +12,7 @@ class TeamByLevelDto
 
     private int $total = 0;
 
-    public static function fromEntities(Collection $teams): self
+    public static function fromEntities(array $teams): self
     {
         $teamByAlphaDto = new self();
 

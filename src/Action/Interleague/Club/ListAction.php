@@ -26,21 +26,21 @@ class ListAction extends AbstractController
         private readonly ClubRepository $clubRepository,
     ){}
 
-    #[Route('/clubs', name: self::ROUTE_NAME)]
+    #[Route('/interleague/clubs', name: self::ROUTE_NAME)]
     public function list(Request $request): Response
     {
         $criteria = new Criteria();
         $this->bindFilterByCriteria($request, $criteria);
         $this->bindOrderByCriteria($request, $criteria);
 
-        $clubs = $this->clubRepository->matching($criteria);
+        $clubs = $this->clubRepository->findAll();
         $sortedClubs = [];
 
 //        /** @var Club $club */
 //        foreach ($clubs as $club) {
 //            switch ($request->query->get(self::QUERY_PARAM_SORT_VIEW) ?? self::SORT_VIEW_DEFAULT_VALUE) {
 //                case self::SORT_VIEW_REGION:
-//                    $sortedClubs[Region::getName($club->getRegionCode())][] = $club;
+//                    $sortedClubs[CountrySubdivision::getName($club->getRegionCode())][] = $club;
 //                    break;
 //                case self::SORT_VIEW_ALPHANUMERIC:
 //                    $sortedClubs[Common::GetFirstLetter($club->getName())][] = $club;
@@ -51,7 +51,7 @@ class ListAction extends AbstractController
         $clubs = ClubByRegionDto::fromEntities($clubs);
 
         {
-            return $this->render('club/list.html.twig', [
+            return $this->render('interleague/club/list.html.twig', [
                 'clubContainer' => $clubs,
             ]);
         }
@@ -79,7 +79,7 @@ class ListAction extends AbstractController
         $orderBy = [];
         switch ($sortView) {
             case self::SORT_VIEW_REGION:
-                $orderBy = ['regionCode' => 'ASC', "name" => "ASC"];
+                $orderBy = ['countrySubdivisionCode' => 'ASC', "name" => "ASC"];
                 break;
             case self::SORT_VIEW_ALPHANUMERIC:
                 $orderBy = ["name" => "ASC"];

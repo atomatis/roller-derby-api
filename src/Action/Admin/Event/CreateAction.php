@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action\Event;
+namespace App\Action\Admin\Event;
 
 use App\Action\Interleague\Event\ViewAction;
 use App\Entity\Event;

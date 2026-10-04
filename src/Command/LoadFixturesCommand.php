@@ -50,9 +50,16 @@ final class LoadFixturesCommand extends Command
         foreach ($teamIoDtos as $teamIoDto) {
             $team = $teamIoDto->toEntity();
 
+            // TODO FIX it
+            $found  = false;
             foreach ($clubMap[$team->getId()] ?? [] as $club) {
                 $output->writeln("+");
-                $team->AddClub($club);
+                $team->setClub($club);
+                $found = true;
+            }
+
+            if (!$found) {
+                continue;
             }
 
             $this->entityManager->persist($team);
