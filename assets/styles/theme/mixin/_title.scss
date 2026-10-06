@@ -1,0 +1,41 @@
+/************** style - theme - title **************/
+
+@mixin main($text, $shadow) {
+    color: $text;
+    text-shadow: $shadow 2px 2px;
+    font-weight: bold;
+}
+
+@mixin underline($text, $shadow, $underline) {
+    color: $text;
+    position: relative;
+    text-shadow: $shadow 1px 1px;
+    display: block;
+    padding: 0 15px;
+    width: fit-content;
+    margin: 10px 0;
+    font-weight: bold;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 15px;
+        background-color: $underline;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: -1;
+        margin: 0 auto;
+        opacity: 0.8;
+    }
+}
+
+@mixin tile($text-color, $background-color-dark, $background-color-medium, $background-color-light , $border-color) {
+    color: $text-color;
+    border-bottom: 2px solid $border-color;
+    background: linear-gradient(0, $background-color-dark 0%, $background-color-medium 50%, $background-color-light 100%);
+    font-weight: bold;
+    text-align: center;
+    text-shadow: $background-color-dark 1px 1px;
+}

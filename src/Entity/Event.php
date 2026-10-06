@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Enum\CountrySubdivision;
 use App\Enum\EventStatus;
 use App\Repository\EventRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -20,7 +21,7 @@ class Event
     #[ORM\Column(type: Types::TEXT)]
     private string $name;
 
-    #[ORM\Column(type: Types::TEXT, enumType: EventStatus::class)]
+    #[ORM\Column(type: Types::ENUM, enumType: EventStatus::class)]
     private EventStatus $status;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -44,9 +45,26 @@ class Event
     #[ORM\OneToMany(targetEntity: Game::class, mappedBy: 'event')]
     private Collection $games;
 
+    /**
+     * @var Collection<int, EventSearchCriteria>
+     */
+    #[ORM\OneToMany(targetEntity: EventSearchCriteria::class, mappedBy: 'event', orphanRemoval: true)]
+    private Collection $searchCriteria;
+
+    /**
+     * @var Collection<int, Ub>
+     */
+    #[ORM\OneToMany(targetEntity: Ub::class, mappedBy: 'event', orphanRemoval: true)]
+    private Collection $ubs;
+
+    #[ORM\OneToOne(mappedBy: 'event', cascade: ['persist', 'remove'])]
+    private ?EventRefereeSearch $refereeSearch = null;
+
     public function __construct()
     {
         $this->games = new ArrayCollection();
+        $this->searchCriteria = new ArrayCollection();
+        $this->ubs = new ArrayCollection();
     }
 
     public function getId(): ?string
@@ -171,6 +189,83 @@ class Event
     public function setChampionship(?Championship $championship): static
     {
         $this->championship = $championship;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, EventSearchCriteria>
+     */
+    public function getSearchCriteria(): Collection
+    {
+        return $this->searchCriteria;
+    }
+
+    public function addSearchCriteria(EventSearchCriteria $searchCriteria): static
+    {
+        if (!$this->searchCriteria->contains($searchCriteria)) {
+            $this->searchCriteria->add($searchCriteria);
+            $searchCriteria->setEvent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSearchCriteria(EventSearchCriteria $searchCriteria): static
+    {
+        if ($this->searchCriteria->removeElement($searchCriteria)) {
+            // set the owning side to null (unless already changed)
+            if ($searchCriteria->getEvent() === $this) {
+                $searchCriteria->setEvent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Ub>
+     */
+    public function getUbs(): Collection
+    {
+        return $this->ubs;
+    }
+
+    public function addUb(Ub $ub): static
+    {
+        if (!$this->ubs->contains($ub)) {
+            $this->ubs->add($ub);
+            $ub->setEvent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUb(Ub $ub): static
+    {
+        if ($this->ubs->removeElement($ub)) {
+            // set the owning side to null (unless already changed)
+            if ($ub->getEvent() === $this) {
+                $ub->setEvent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getRefereeSearch(): ?EventRefereeSearch
+    {
+        return $this->refereeSearch;
+    }
+
+    public function setRefereeSearch(EventRefereeSearch $refereeSearch): static
+    {
+        // set the owning side of the relation if necessary
+        if ($refereeSearch->getEvent() !== $this) {
+            $refereeSearch->setEvent($this);
+        }
+
+        $this->refereeSearch = $refereeSearch;
 
         return $this;
     }

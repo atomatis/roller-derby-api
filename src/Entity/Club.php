@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use App\Enum\ClubGenderDiversityPolicy;
-use App\Enum\County;
+use App\Enum\Country;
 use App\Enum\CountrySubdivision;
 use App\Repository\ClubRepository;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -35,11 +35,14 @@ class Club
     private ?string $history = null;
 
     // ISO 3166-1
-    #[ORM\Column(nullable: true)]
-    private ?string $countryCode = null;
+    #[ORM\Column(type: Types::ENUM, length: 3, nullable: true, enumType: Country::class)]
+    private Country $countryCode;
 
-    #[ORM\Column(nullable: true)]
-    private ?string $countrySubdivisionCode = null;
+    #[ORM\Column(type: Types::ENUM, length: 3, nullable: true, enumType: CountrySubdivision::class)]
+    private ?CountrySubdivision $countrySubdivisionCode = null;
+
+    #[ORM\Column(type: Types::ENUM, length: 3, nullable: true, enumType: ClubGenderDiversityPolicy::class)]
+    private ClubGenderDiversityPolicy $genderDiversityPolicy;
 
     /**
      * @var Collection<int, Club>
@@ -52,9 +55,6 @@ class Club
      */
     #[ORM\OneToMany(targetEntity: Team::class, mappedBy: 'club', cascade: ['persist', 'remove'])]
     private Collection $teams;
-
-    #[ORM\Column(length: 3, nullable: true)]
-    private ?string $genderDiversityPolicy = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
@@ -170,25 +170,38 @@ class Club
         return $this;
     }
 
-    public function getCountryCode(): ?string
+    public function getCountryCode(): Country
     {
         return $this->countryCode;
     }
 
-    public function setCountryCode(?string $countryCode): Club
+    public function setCountryCode(Country $countryCode): self
     {
         $this->countryCode = $countryCode;
+
         return $this;
     }
 
-    public function getCountrySubdivisionCode(): ?string
+    public function getCountrySubdivisionCode(): ?CountrySubdivision
     {
         return $this->countrySubdivisionCode;
     }
 
-    public function setCountrySubdivisionCode(?string $countrySubdivisionCode): Club
+    public function setCountrySubdivisionCode(?CountrySubdivision $countrySubdivisionCode): self
     {
         $this->countrySubdivisionCode = $countrySubdivisionCode;
+
+        return $this;
+    }
+
+    public function getGenderDiversityPolicy(): ClubGenderDiversityPolicy
+    {
+        return $this->genderDiversityPolicy;
+    }
+
+    public function setGenderDiversityPolicy(ClubGenderDiversityPolicy $genderDiversityPolicy): static
+    {
+        $this->genderDiversityPolicy = $genderDiversityPolicy;
 
         return $this;
     }
@@ -251,18 +264,6 @@ class Club
     public function setAlias(?string $alias): static
     {
         $this->alias = $alias;
-
-        return $this;
-    }
-
-    public function getGenderDiversityPolicy(): ?string
-    {
-        return $this->genderDiversityPolicy;
-    }
-
-    public function setGenderDiversityPolicy(null|string|ClubGenderDiversityPolicy $genderDiversityPolicy): static
-    {
-        $this->genderDiversityPolicy = $genderDiversityPolicy InstanceOf ClubGenderDiversityPolicy ? $genderDiversityPolicy->value : $genderDiversityPolicy;
 
         return $this;
     }

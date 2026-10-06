@@ -1,0 +1,33 @@
+{# body #}
+    {# header #}
+    {# block asidebefore #}
+    {# block content #}
+    <aside class="lcdp-aside-right">
+        <h2>Interleague</h2>
+        <nav>
+            <h3>Calendrier</h3>
+            <a href="{{ path(routes.getRoutes.event.list) }}">{{ 'events'|trans }}</a>
+            <a>Championnats</a>
+        </nav>
+        <nav>
+            <h3>Recherche</h3>
+            <a>Match</a>
+            <a>Arbitres</a>
+            <a>UB</a>
+        </nav>
+        <nav>
+            <h3>Annuaire</h3>
+            <a href="{{ path(routes.getRoutes.team.list) }}">Associations</a>
+            <a>Équipes</a>
+        </nav>
+        <nav>
+            <h3>Classements</h3>
+            <a>Flat Track stats F+</a>
+            <a>Flat Track stats Open</a>
+            <a>WFTDA</a>
+            <a>MRDA</a>
+        </nav>
+    </aside>
+
+    {# block footer #}
+{# /body #}

@@ -7,7 +7,9 @@
     {% block asidebefore %}{% endblock %}
     {% block navigation %}{% endblock %}
     {% block content %}{% endblock %}
-    {% block asideafter %}{% endblock %}
+
+    {{ include('./layout/_aside_after.html.twig') }}
+
     {% block footer %}
         <footer>
         </footer>

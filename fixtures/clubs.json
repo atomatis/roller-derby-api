@@ -18,7 +18,7 @@
             "6a7b829d-78be-4fc4-9097-f114e22965d2",
             "479f06a6-d124-42f1-b5f5-a287f49c23ca"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Dijon"
@@ -54,7 +54,7 @@
             "a2e8b470-4b4b-434e-801a-bce41f2510a2",
             "0022da60-eb19-4a4f-8a6e-125ea48f8c5d"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Avignon"
@@ -282,7 +282,7 @@
             "1e0f617e-4fde-49fd-9b0b-ae746fb83596",
             "17ac4f4a-a048-4b0c-b598-714f247df246"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Caen"
@@ -314,7 +314,7 @@
             "099ad87b-5e0e-44a9-b1e7-1ef4f8e8afcc",
             "17f9f440-e966-45a6-aefd-ef4fec990f61"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Paris"
@@ -506,7 +506,7 @@
             "4b81c45c-6cd6-47f0-b39f-c0068b762f73",
             "fb9be423-b328-41e0-9ac4-46c459f79485"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Le Cr\u00e8s",
@@ -833,7 +833,7 @@
             "13f87feb-e214-472e-9c1c-6589a773a827",
             "070447c4-4dc3-4b4e-b89c-ce57a4345c8f"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Lyon"
@@ -867,7 +867,7 @@
             "55b86ec9-2152-4c84-940c-5ccf3c67cd43",
             "61cd192d-aa79-47ed-9c33-480593c88273"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Marseille"
@@ -1325,7 +1325,7 @@
             "82a2a320-fe81-40fa-a116-efd677ed5811",
             "d9cbd687-2839-4b4c-94c1-2c630f743e55"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Dijon"
@@ -1531,7 +1531,7 @@
             "7beb059b-6e79-4f67-9621-d566d1c59805",
             "ec4f6a25-3a7f-4408-b469-c8eab4af1527"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Toulouse"
@@ -1726,7 +1726,7 @@
             "d8f3b4f3-8cb6-4e92-9013-f1384af1301b",
             "22a10e8c-4394-4fc9-8aff-44c4fcdfd9ab"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Lille"
@@ -2031,7 +2031,7 @@
             "8434cc4b-e3e2-4b9d-a78d-fbd2534b02b5",
             "31382ec9-fde1-4bfe-a55e-afb30573393b"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Tours"
@@ -2097,7 +2097,7 @@
             "b05795e3-9fb5-4e05-82af-b1b8383aef26",
             "edc966e0-36a4-440d-a472-309d0b4aae5c"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Nantes"
@@ -2320,7 +2320,7 @@
         "teamIds": [
             "4ca6e779-93b7-4ba3-a5a8-8690076fab19"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Rennes"
@@ -2543,7 +2543,7 @@
             "15f25f69-f26f-4cf2-95a7-f979c4fd5db6",
             "b9a9d5f6-6950-4fb0-aec3-e4b3a3de27cd"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Orcet"
@@ -2575,7 +2575,7 @@
             "237487fe-b07d-4ceb-b1aa-f7e288432528",
             "83a9acbb-daf7-4971-b206-2e40feb179cf"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Paris"
@@ -3021,7 +3021,7 @@
             "576c4a74-4a2f-4155-83dc-372d3542d9f5",
             "71507c0d-96c4-4d91-98e3-9ca24536beff"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "La Rochelle"
@@ -3582,7 +3582,7 @@
         "teamIds": [
             "60935eba-0008-4c47-973b-6830129105bb"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Malakof"
@@ -3644,7 +3644,7 @@
         "teamIds": [
             "799db5c8-1716-4cba-a981-859e2fa69040"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": "2016-12-31T09:42:48+00:00",
         "cities": [
             "Perpignan"
@@ -3677,7 +3677,7 @@
         "teamIds": [
             "194c21c8-822c-4b1c-9a0a-7fd2db9728c1"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": "2015-12-09T09:42:48+00:00",
         "cities": [
             "Le Cr\u00e8s"
@@ -3774,7 +3774,7 @@
             "55a70bc4-9c7c-4ef8-a0a3-0e847c9b5fb9",
             "ce2ded75-1a34-44c7-a439-40700fb94465"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Poitiers"
@@ -3805,7 +3805,7 @@
         "teamIds": [
             "0d269e38-7e5d-4516-9873-948aceabd37b"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": "2020-04-30T09:42:48+00:00",
         "cities": [
             "Uz\u00e8s"
@@ -3901,7 +3901,7 @@
         "teamIds": [
             "b53009f9-5b77-49f9-b743-c433b3132bf1"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": "2016-10-31T09:42:48+00:00",
         "cities": [
             "Metz"
@@ -3932,7 +3932,7 @@
         "teamIds": [
             "befe441e-ece0-42d0-862e-b10e40e32389"
         ],
-        "genderDiversityPolicy": "M",
+        "genderDiversityPolicy": "MIX",
         "closedAt": null,
         "cities": [
             "Grenoble"

@@ -24,3 +24,24 @@
   rgba($darkColor, 0.8) 100%
   );
 }
+
+@mixin honeycomb($lightColor, $darkColor) {
+    background-color: $lightColor;
+    background-image:
+        conic-gradient(from 60deg at 56.25% calc(425% / 6), transparent 0deg, transparent 0.5deg, $darkColor 0.5deg, $darkColor 119.5deg, transparent 119.5deg, transparent 120deg),
+        conic-gradient(from 60deg at 56.25% calc(425% / 6), transparent 0deg, transparent 0.5deg, $darkColor 0.5deg, $darkColor 119.5deg, transparent 119.5deg, transparent 120deg),
+        conic-gradient(from 180deg at 43.75% calc(425% / 6), transparent 0deg, transparent 0.5deg, $darkColor 0.5deg, $darkColor 119.5deg, transparent 119.5deg, transparent 120deg),
+        conic-gradient(from 180deg at 43.75% calc(425% / 6), transparent 0deg, transparent 0.5deg, $darkColor 0.5deg, $darkColor 119.5deg, transparent 119.5deg, transparent 120deg),
+        conic-gradient(from -60deg at 50% calc(175% / 12), transparent 0deg, transparent 0.5deg, $darkColor 0.5deg, $darkColor 119.5deg, transparent 119.5deg, transparent 120deg),
+        conic-gradient(from -60deg at 50% calc(175% / 12), transparent 0deg, transparent 0.5deg, $darkColor 0.5deg, $darkColor 119.5deg, transparent 119.5deg, transparent 120deg);
+    background-position: 0 0, 10px 17px, 0 0, 10px 17px, 10px 0, 0 17px;
+    background-size: 20px 34px;
+}
+
+@mixin light-shadowbox($lightColor) {
+    background-color: rgb($lightColor, 0.5);
+    padding: 10px;
+    position: relative;
+    z-index: 0;
+    margin: 10px;
+}

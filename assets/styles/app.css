@@ -43,6 +43,7 @@ input[type=number] {
 
 /************** style - theme **************/
 /************** styles -> theme -> color set -> test **************/
+/************** style - theme - title **************/
 @font-face {
   font-family: "Raleway";
   src: url(../font/Raleway-VariableFont_wght.ttf) format("truetype");
@@ -55,27 +56,27 @@ html {
 }
 
 h1 {
-  color: #E8A1BA;
+  color: #E8CFA1;
   text-shadow: #0E3339 2px 2px;
   font-weight: bold;
 }
 
-h2 {
-  color: #832043;
+main h2 {
+  color: #836120;
   position: relative;
-  text-shadow: #A82955 1px 1px;
+  text-shadow: #A87C29 1px 1px;
   display: block;
   padding: 0 15px;
   width: fit-content;
   margin: 10px 0;
   font-weight: bold;
 }
-h2::after {
+main h2::after {
   content: "";
   display: block;
   width: 100%;
   height: 15px;
-  background-color: #D65783;
+  background-color: #D6AA57;
   position: absolute;
   top: 50%;
   left: 0;
@@ -84,13 +85,60 @@ h2::after {
   opacity: 0.8;
 }
 
+aside h2 {
+  color: #E8CFA1;
+  border-bottom: 2px solid #0E3339;
+  background: linear-gradient(0, #0E3339 0%, #207483 50%, #57C3D6 100%);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: #0E3339 1px 1px;
+  font-size: 20px;
+  padding: 4px 0;
+}
+aside h3 {
+  color: #836120;
+  position: relative;
+  text-shadow: #57C3D6 1px 1px;
+  display: block;
+  padding: 0 15px;
+  width: fit-content;
+  margin: 10px 0;
+  font-weight: bold;
+}
+aside h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 15px;
+  background-color: #DFBC7C;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+aside h3 {
+  margin: 0 auto 20px;
+}
+
+a:active {
+  color: #D6AA57;
+}
+a:visited {
+  color: #0E3339;
+}
+a:hover {
+  color: #D6AA57;
+}
+
 ::selection {
-  background-color: #E8A1BA;
+  background-color: #E8CFA1;
   color: #0E3339;
 }
 
 h2::selection {
-  text-shadow: #832043 2px 2px;
+  text-shadow: #836120 2px 2px;
 }
 
 /************** styles -> theme -> color set -> test **************/
@@ -106,8 +154,8 @@ body {
   position: relative;
   z-index: 0;
   display: grid;
-  grid-template-columns: auto 250px 1024px 200px auto;
-  grid-template-areas: "header header header header header" ". . navigation . ." ". sidebar main . ." "footer footer footer footer footer";
+  grid-template-columns: auto 250px 1024px 250px auto;
+  grid-template-areas: "header header header header header" ". . navigation . ." ". aside-left main aside-right ." "footer footer footer footer footer";
 }
 
 body::after {
@@ -160,8 +208,8 @@ main {
   background: linear-gradient(0deg, #2995A8 0%, #32B6CD 50%);
 }
 .navigation nav a:hover {
-  background: #CD3268;
-  background: linear-gradient(0deg, #A82955 0%, #CD3268 50%);
+  background: #CD9732;
+  background: linear-gradient(0deg, #A87C29 0%, #CD9732 50%);
 }
 
 .content {
@@ -169,21 +217,41 @@ main {
   padding: 10px;
   position: relative;
   z-index: 0;
-  margin-bottom: 10px;
+  margin: 10px;
 }
 
 aside {
-  background-color: #A1DDE8;
-  background-image: linear-gradient(#7CD0DF 2px, transparent 2px), linear-gradient(90deg, #7CD0DF 2px, transparent 2px), linear-gradient(#7CD0DF 1px, transparent 1px), linear-gradient(90deg, #7CD0DF 1px, #A1DDE8 1px);
-  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
-  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   display: block;
   border: solid 2px #0E3339;
   position: relative;
   z-index: 2;
-  grid-area: sidebar;
+  height: fit-content;
+}
+aside.lcdp-aside-left {
+  background-color: #A1DDE8;
+  background-image: linear-gradient(#7CD0DF 2px, transparent 2px), linear-gradient(90deg, #7CD0DF 2px, transparent 2px), linear-gradient(#7CD0DF 1px, transparent 1px), linear-gradient(90deg, #7CD0DF 1px, #A1DDE8 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  grid-area: aside-left;
   margin-right: 25px;
+}
+aside.lcdp-aside-right {
+  background-color: #A1DDE8;
+  background-image: conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg);
+  background-position: 0 0, 10px 17px, 0 0, 10px 17px, 10px 0, 0 17px;
+  background-size: 20px 34px;
+  grid-area: aside-right;
+  margin-left: 25px;
+}
+aside.lcdp-aside-right nav {
+  background-color: rgba(161, 221, 232, 0.5);
   padding: 10px;
+  position: relative;
+  z-index: 0;
+  margin: 10px;
+}
+aside.lcdp-aside-right nav a {
+  display: block;
 }
 
 .lcdp-article-box {
@@ -192,7 +260,7 @@ aside {
 }
 
 article {
-  background-color: #D6AA57;
+  background-color: #D65783;
   width: 48%;
   margin-left: 1%;
   margin-bottom: 5px;
@@ -203,23 +271,23 @@ article {
 button {
   font-family: "Raleway", Arial, sans-serif;
   font-weight: bold;
-  color: #392A0E;
-  background-color: #DFBC7C;
+  color: #390E1D;
+  background-color: #DF7C9E;
   padding: 15px 50px;
-  border-top: solid 1px #392A0E;
-  border-left: solid 10px #392A0E;
-  border-right: solid 10px #392A0E;
-  border-bottom: solid 1px #392A0E;
+  border-top: solid 1px #390E1D;
+  border-left: solid 10px #390E1D;
+  border-right: solid 10px #390E1D;
+  border-bottom: solid 1px #390E1D;
   margin: 10px 20px;
   cursor: pointer;
 }
 
 button:hover, .hover {
-  background-color: #E8CFA1;
+  background-color: #E8A1BA;
 }
 
 button:active, .active {
-  background-color: #E8CFA1;
+  background-color: #E8A1BA;
 }
 
 /************** styles -> theme -> color set -> test **************/

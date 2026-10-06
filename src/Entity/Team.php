@@ -92,11 +92,25 @@ class Team
     #[ORM\OneToMany(targetEntity: ChampionshipRanking::class, mappedBy: 'team', orphanRemoval: true)]
     private Collection $championshipRankings;
 
+    /**
+     * @var Collection<int, EventSearchCriteria>
+     */
+    #[ORM\ManyToMany(targetEntity: EventSearchCriteria::class, mappedBy: 'teamPings')]
+    private Collection $pingedEvents;
+
+    /**
+     * @var Collection<int, EventSearchCriteria>
+     */
+    #[ORM\ManyToMany(targetEntity: EventSearchCriteria::class, mappedBy: 'eventPing')]
+    private Collection $eventPings;
+
     public function __construct()
     {
         $this->teamGames = new ArrayCollection();
         $this->logo = new EmbeddedFile();
         $this->championshipRankings = new ArrayCollection();
+        $this->pingedEvents = new ArrayCollection();
+        $this->eventPings = new ArrayCollection();
     }
 
     public function getId(): ?string
@@ -427,6 +441,60 @@ class Team
             if ($championshipRanking->getTeam() === $this) {
                 $championshipRanking->setTeam(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, EventSearchCriteria>
+     */
+    public function getPingedEvents(): Collection
+    {
+        return $this->pingedEvents;
+    }
+
+    public function addPingedEvent(EventSearchCriteria $pingedEvent): static
+    {
+        if (!$this->pingedEvents->contains($pingedEvent)) {
+            $this->pingedEvents->add($pingedEvent);
+            $pingedEvent->addTeamPing($this);
+        }
+
+        return $this;
+    }
+
+    public function removePingedEvent(EventSearchCriteria $pingedEvent): static
+    {
+        if ($this->pingedEvents->removeElement($pingedEvent)) {
+            $pingedEvent->removeTeamPing($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, EventSearchCriteria>
+     */
+    public function getEventPings(): Collection
+    {
+        return $this->eventPings;
+    }
+
+    public function addEventPing(EventSearchCriteria $eventPing): static
+    {
+        if (!$this->eventPings->contains($eventPing)) {
+            $this->eventPings->add($eventPing);
+            $eventPing->addEventPing($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEventPing(EventSearchCriteria $eventPing): static
+    {
+        if ($this->eventPings->removeElement($eventPing)) {
+            $eventPing->removeEventPing($this);
         }
 
         return $this;
