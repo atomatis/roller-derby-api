@@ -322,9 +322,11 @@ class Team
         return $this->club;
     }
 
-    public function setClub(Club $club): void
+    public function setClub(Club $club): self
     {
         $this->club = $club;
+
+        return $this;
     }
 
     /**

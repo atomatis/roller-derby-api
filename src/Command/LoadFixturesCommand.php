@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Command;
 
 use App\Dto\ClubIoDto;
-use App\Dto\TeamIoDto;
+use App\Dto\Team as TeamDto;
 use App\Entity\Club;
 use App\Entity\Game;
 use App\Entity\Team;
@@ -45,7 +45,7 @@ final class LoadFixturesCommand extends Command
             $this->entityManager->persist($club);
         }
 
-        $teamIoDtos = $this->serializer->deserialize(file_get_contents(Fixtures::TEAM_FILE), TeamIoDto::class.'[]', 'json');
+        $teamIoDtos = $this->serializer->deserialize(file_get_contents(Fixtures::TEAM_FILE), TeamDto::class.'[]', 'json');
 
         foreach ($teamIoDtos as $teamIoDto) {
             $team = $teamIoDto->toEntity();

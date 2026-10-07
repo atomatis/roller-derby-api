@@ -2,7 +2,7 @@
 
 namespace App\Action\Interleague\Team;
 
-use App\Dto\TeamByLevelDto;
+use App\Dto\TeamContainer;
 use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -43,7 +43,7 @@ final class ListAction extends AbstractController
 //            $filters[self::QUERY_PARAM_FILTERS_BY]
 //        }
 
-        $teams = TeamByLevelDto::fromEntities($teams);
+        $teams = TeamContainer::NewByCountrySubDivision($teams);
 
         return $this->render('interleague/team/list.html.twig', [
             'teamContainer' => $teams,

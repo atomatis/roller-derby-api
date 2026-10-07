@@ -1,6 +1,7 @@
 /************** style - theme - layout **************/
 
 @use 'color_set/color' as color;
+@use 'mixin/title' as title;
 @use 'mixin/background' as background;
 
 // *** Html ***
@@ -21,7 +22,6 @@ body {
   grid-template-columns: auto 250px 1024px 250px auto;
   grid-template-areas:
     'header header header header header'
-    '. . navigation . .'
     '. aside-left main aside-right .'
     'footer footer footer footer footer'
   ;
@@ -42,53 +42,40 @@ body::after {
 // *** Main ***
 
 main {
-  @include background.striped(color.$primary-light-2, color.$primary-medium-0);
+  @include background.striped(color.$primary-dark-0, color.$primary-medium-4);
   display: block;
-  width: 994px;
-  border: solid 2px color.$primary-dark-1;
+  width: 1024px;
+  border: solid 2px color.$border;
   margin: 0 auto;
-  padding: 15px;
   min-height: 900px;
   position: relative;
   z-index: 2;
   grid-area: main;
 }
 
-// *** Navigation ***
+// *** Content ***
 
-.navigation {
-    background-color: color.$primary-dark-1;
-    display: block;
-    width: 1024px;
-    border-top: solid 2px color.$primary-dark-1;
-    border-left: solid 2px color.$primary-dark-1;
-    border-right: solid 2px color.$primary-dark-1;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    grid-area: navigation;
+.lcdp-content-nav {
+    display: flex;
 
-    nav {
-        border-bottom: solid 2px color.$primary-dark-1;
+    a {
+        @include title.tile(color.$secondary-light-2, color.$primary-dark-0, color.$primary-medium-4, color.$primary-medium-2, color.$border);
+        flex: fit-content;
+        border-right: 2px solid color.$border;
 
         &:last-child {
-            border-bottom: none;
+            border-right: none;
         }
 
-        a {
-            background: color.$primary-medium-2;
-            background: linear-gradient(0deg, color.$primary-medium-3 0%, color.$primary-medium-2 50%);
+        &:hover {
+            @include title.tile(color.$primary-light-2, color.$secondary-dark-0, color.$secondary-medium-4, color.$secondary-medium-2, color.$border);
+        }
 
-            &:hover {
-                background: color.$secondary-medium-2;
-                background: linear-gradient(0deg, color.$secondary-medium-3 0%, color.$secondary-medium-2 50%);
-            }
+        &.active {
+            @include title.tile(color.$primary-light-2, color.$secondary-dark-0, color.$secondary-medium-4, color.$secondary-medium-2, color.$border);
         }
     }
 }
-
-
-// *** Content ***
 
 .content {
     @include background.light-shadowbox(color.$primary-medium-0);
@@ -98,7 +85,7 @@ main {
 
 aside {
     display: block;
-    border: solid 2px color.$primary-dark-1;
+    border: solid 2px color.$border;
     position: relative;
     z-index: 2;
     height: fit-content;
@@ -136,4 +123,37 @@ article {
   width: 48%;
   margin-left: 1%;
   margin-bottom: 5px;
+}
+
+// *** move to team ***
+
+.lcdp-itl-team-list-item {
+    display: grid;
+    grid-template-columns: 50px 1fr 15px;
+    grid-template-rows: 30px 20px;
+    grid-template-areas:
+        'logo title action'
+        'logo info action'
+    ;
+
+    img {
+        grid-area: logo;
+    }
+
+    h3 {
+        grid-area: title;
+    }
+
+    p {
+        grid-area: action;
+    }
+
+    .lcdp-cities {
+        grid-area: info;
+        width: 100%;
+
+        li {
+            display: inline;
+        }
+    }
 }

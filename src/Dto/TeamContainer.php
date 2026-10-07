@@ -2,27 +2,26 @@
 
 namespace App\Dto;
 
-use App\Entity\Team;
-use App\Helper\Common;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Team as TeamEntity;
+use App\Enum\CountrySubdivision;
 
-class TeamByAlphaDto
+class TeamContainer
 {
     private array $teams = [];
 
     private int $total = 0;
 
-    public static function fromEntities(Collection $teams): self
+    public static function NewByCountrySubDivision(array $teams): self
     {
-        $teamByAlphaDto = new self();
+        $self = new self();
 
-        /** @var Team $team */
+        /** @var TeamEntity $team */
         foreach ($teams as $team) {
-            $teamByAlphaDto->teams[Common::GetFirstLetter($team->getName())][] = TeamIoDto::fromEntity($team);
-            $teamByAlphaDto->total++;
+            $self->teams[CountrySubdivision::getName($team->getClub()->getCountrySubdivisionCode()->value)][] = Team::fromEntity($team);
+            $self->total++;
         }
 
-        return $teamByAlphaDto;
+        return $self;
     }
 
     public function getTeams(): array

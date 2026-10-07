@@ -51,20 +51,20 @@ input[type=number] {
 }
 html {
   font-family: "Raleway", Arial, sans-serif;
-  font-weight: bold;
-  color: #0E3339;
+  font-weight: normal;
+  color: #04433A;
 }
 
 h1 {
-  color: #E8CFA1;
-  text-shadow: #0E3339 2px 2px;
+  color: #EC9DBB;
+  text-shadow: #04433A 2px 2px;
   font-weight: bold;
 }
 
 main h2 {
-  color: #836120;
+  color: #881B45;
   position: relative;
-  text-shadow: #A87C29 1px 1px;
+  text-shadow: #AF2358 1px 1px;
   display: block;
   padding: 0 15px;
   width: fit-content;
@@ -76,7 +76,7 @@ main h2::after {
   display: block;
   width: 100%;
   height: 15px;
-  background-color: #D6AA57;
+  background-color: #DC5086;
   position: absolute;
   top: 50%;
   left: 0;
@@ -86,19 +86,19 @@ main h2::after {
 }
 
 aside h2 {
-  color: #E8CFA1;
-  border-bottom: 2px solid #0E3339;
-  background: linear-gradient(0, #0E3339 0%, #207483 50%, #57C3D6 100%);
+  color: #EC9DBB;
+  border-bottom: 2px solid #65F6E0;
+  background: linear-gradient(0, #066556 0%, #099A84 50%, #0EF1CF 100%);
   font-weight: bold;
   text-align: center;
-  text-shadow: #0E3339 1px 1px;
+  text-shadow: #066556 1px 1px;
   font-size: 20px;
   padding: 4px 0;
 }
 aside h3 {
-  color: #836120;
+  color: #881B45;
   position: relative;
-  text-shadow: #57C3D6 1px 1px;
+  text-shadow: #39F3D8 1px 1px;
   display: block;
   padding: 0 15px;
   width: fit-content;
@@ -110,7 +110,7 @@ aside h3::after {
   display: block;
   width: 100%;
   height: 15px;
-  background-color: #DFBC7C;
+  background-color: #E57BA4;
   position: absolute;
   top: 50%;
   left: 0;
@@ -122,29 +122,37 @@ aside h3 {
   margin: 0 auto 20px;
 }
 
+article h3 {
+  color: #EC9DBB;
+  text-shadow: #011815 1px 1px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
 a:active {
-  color: #D6AA57;
+  color: #DC5086;
 }
 a:visited {
-  color: #0E3339;
+  color: #04433A;
 }
 a:hover {
-  color: #D6AA57;
+  color: #DC5086;
 }
 
 ::selection {
-  background-color: #E8CFA1;
-  color: #0E3339;
+  background-color: #EC9DBB;
+  color: #04433A;
 }
 
 h2::selection {
-  text-shadow: #836120 2px 2px;
+  text-shadow: #881B45 2px 2px;
 }
 
 /************** styles -> theme -> color set -> test **************/
+/************** style - theme - title **************/
 /************** style - theme - background **************/
 html {
-  background-color: #207483;
+  background-color: #099A84;
 }
 
 body {
@@ -155,11 +163,11 @@ body {
   z-index: 0;
   display: grid;
   grid-template-columns: auto 250px 1024px 250px auto;
-  grid-template-areas: "header header header header header" ". . navigation . ." ". aside-left main aside-right ." "footer footer footer footer footer";
+  grid-template-areas: "header header header header header" ". aside-left main aside-right ." "footer footer footer footer footer";
 }
 
 body::after {
-  background: linear-gradient(0, rgba(32, 116, 131, 0.8) 0%, rgba(50, 182, 205, 0.6) 30%, rgba(87, 195, 214, 0.7) 40%, rgba(87, 195, 214, 0.7) 60%, rgba(50, 182, 205, 0.6) 70%, rgba(32, 116, 131, 0.8) 100%);
+  background: linear-gradient(0, rgba(9, 154, 132, 0.8) 0%, rgba(14, 241, 207, 0.6) 30%, rgba(57, 243, 216, 0.7) 40%, rgba(57, 243, 216, 0.7) 60%, rgba(14, 241, 207, 0.6) 70%, rgba(9, 154, 132, 0.8) 100%);
   content: "";
   display: block;
   width: 100%;
@@ -171,49 +179,54 @@ body::after {
 }
 
 main {
-  background-color: #A1DDE8;
+  background-color: #066556;
   background-size: 10px 10px;
-  background-image: repeating-linear-gradient(45deg, #7CD0DF 0, #7CD0DF 1px, #A1DDE8 0, #A1DDE8 50%);
+  background-image: repeating-linear-gradient(45deg, #099A84 0, #099A84 1px, #066556 0, #066556 50%);
   display: block;
-  width: 994px;
-  border: solid 2px #0E3339;
+  width: 1024px;
+  border: solid 2px #65F6E0;
   margin: 0 auto;
-  padding: 15px;
   min-height: 900px;
   position: relative;
   z-index: 2;
   grid-area: main;
 }
 
-.navigation {
-  background-color: #0E3339;
-  display: block;
-  width: 1024px;
-  border-top: solid 2px #0E3339;
-  border-left: solid 2px #0E3339;
-  border-right: solid 2px #0E3339;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-  grid-area: navigation;
+.lcdp-content-nav {
+  display: flex;
 }
-.navigation nav {
-  border-bottom: solid 2px #0E3339;
+.lcdp-content-nav a {
+  color: #EC9DBB;
+  border-bottom: 2px solid #65F6E0;
+  background: linear-gradient(0, #066556 0%, #099A84 50%, #0EF1CF 100%);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: #066556 1px 1px;
+  flex: fit-content;
+  border-right: 2px solid #65F6E0;
 }
-.navigation nav:last-child {
-  border-bottom: none;
+.lcdp-content-nav a:last-child {
+  border-right: none;
 }
-.navigation nav a {
-  background: #32B6CD;
-  background: linear-gradient(0deg, #2995A8 0%, #32B6CD 50%);
+.lcdp-content-nav a:hover {
+  color: #90F9E9;
+  border-bottom: 2px solid #65F6E0;
+  background: linear-gradient(0, #621331 0%, #881B45 50%, #D52A6C 100%);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: #621331 1px 1px;
 }
-.navigation nav a:hover {
-  background: #CD9732;
-  background: linear-gradient(0deg, #A87C29 0%, #CD9732 50%);
+.lcdp-content-nav a.active {
+  color: #90F9E9;
+  border-bottom: 2px solid #65F6E0;
+  background: linear-gradient(0, #621331 0%, #881B45 50%, #D52A6C 100%);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: #621331 1px 1px;
 }
 
 .content {
-  background-color: rgba(124, 208, 223, 0.5);
+  background-color: rgba(101, 246, 224, 0.5);
   padding: 10px;
   position: relative;
   z-index: 0;
@@ -222,29 +235,29 @@ main {
 
 aside {
   display: block;
-  border: solid 2px #0E3339;
+  border: solid 2px #65F6E0;
   position: relative;
   z-index: 2;
   height: fit-content;
 }
 aside.lcdp-aside-left {
-  background-color: #A1DDE8;
-  background-image: linear-gradient(#7CD0DF 2px, transparent 2px), linear-gradient(90deg, #7CD0DF 2px, transparent 2px), linear-gradient(#7CD0DF 1px, transparent 1px), linear-gradient(90deg, #7CD0DF 1px, #A1DDE8 1px);
+  background-color: #90F9E9;
+  background-image: linear-gradient(#65F6E0 2px, transparent 2px), linear-gradient(90deg, #65F6E0 2px, transparent 2px), linear-gradient(#65F6E0 1px, transparent 1px), linear-gradient(90deg, #65F6E0 1px, #90F9E9 1px);
   background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   grid-area: aside-left;
   margin-right: 25px;
 }
 aside.lcdp-aside-right {
-  background-color: #A1DDE8;
-  background-image: conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #57C3D6 0.5deg, #57C3D6 119.5deg, transparent 119.5deg, transparent 120deg);
+  background-color: #90F9E9;
+  background-image: conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg);
   background-position: 0 0, 10px 17px, 0 0, 10px 17px, 10px 0, 0 17px;
   background-size: 20px 34px;
   grid-area: aside-right;
   margin-left: 25px;
 }
 aside.lcdp-aside-right nav {
-  background-color: rgba(161, 221, 232, 0.5);
+  background-color: rgba(144, 249, 233, 0.5);
   padding: 10px;
   position: relative;
   z-index: 0;
@@ -264,6 +277,29 @@ article {
   width: 48%;
   margin-left: 1%;
   margin-bottom: 5px;
+}
+
+.lcdp-itl-team-list-item {
+  display: grid;
+  grid-template-columns: 50px 1fr 15px;
+  grid-template-rows: 30px 20px;
+  grid-template-areas: "logo title action" "logo info action";
+}
+.lcdp-itl-team-list-item img {
+  grid-area: logo;
+}
+.lcdp-itl-team-list-item h3 {
+  grid-area: title;
+}
+.lcdp-itl-team-list-item p {
+  grid-area: action;
+}
+.lcdp-itl-team-list-item .lcdp-cities {
+  grid-area: info;
+  width: 100%;
+}
+.lcdp-itl-team-list-item .lcdp-cities li {
+  display: inline;
 }
 
 /************** styles -> theme -> color set -> test **************/
@@ -309,13 +345,13 @@ header nav a {
   display: none;
 }
 header .lcdp-bar {
-  border-bottom: #7CD0DF double 10px;
+  border-bottom: #65F6E0 double 10px;
   height: 15px;
   margin: 0 10px;
 }
 /************** styles -> theme -> color set -> test **************/
 footer {
-  border-top: #7CD0DF double 10px;
+  border-top: #65F6E0 double 10px;
   margin-top: 50px;
   position: relative;
   z-index: 2;

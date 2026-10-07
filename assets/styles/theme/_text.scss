@@ -15,7 +15,7 @@
 
 html {
   font-family: "Raleway", Arial, sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   color: color.$primary-dark-1;
 }
 
@@ -33,7 +33,7 @@ main {
 
 aside {
     h2 {
-        @include title.tile(color.$secondary-light-2, color.$primary-dark-1, color.$primary-medium-4, color.$primary-medium-1, color.$border);
+        @include title.tile(color.$secondary-light-2, color.$primary-dark-0, color.$primary-medium-4, color.$primary-medium-2, color.$border);
         font-size: 20px;
         padding: 4px 0;
     }
@@ -41,6 +41,15 @@ aside {
     h3 {
         @include title.underline(color.$secondary-medium-4, color.$primary-medium-1, color.$secondary-medium-0);
         margin: 0 auto 20px;
+    }
+}
+
+article {
+    h3 {
+        color: color.$secondary-light-2;
+        text-shadow: color.$primary-dark-2 1px 1px;
+        margin-left: 10px;
+        font-weight: bold;
     }
 }
 

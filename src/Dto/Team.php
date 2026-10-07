@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Dto;
 
-use App\Entity\Team;
+use App\Entity\Team as TeamEntity;
 use Vich\UploaderBundle\Entity\File as EmbeddedFile;
 
 /** @author Alexandre Tomatis <alexandre.tomatis@gmail.com> */
-final class TeamIoDto
+final class Team
 {
     private ?string $id = null;
 
@@ -42,11 +42,13 @@ final class TeamIoDto
 
     private ?array $mediaLinks = null;
 
+    private ?array $cities = null;
+
     private ?EmbeddedFile $logo = null;
 
-    public function toEntity(): Team
+    public function toEntity(): TeamEntity
     {
-        return new Team()
+        return new TeamEntity()
             ->setId($this->id)
             ->setName($this->name)
             ->setEmail($this->email)
@@ -67,13 +69,13 @@ final class TeamIoDto
         ;
     }
 
-    public static function fromEntity(Team $team): self
+    public static function fromEntity(TeamEntity $team): self
     {
         return new self()
             ->setId($team->getId())
             ->setName($team->getName())
             ->setEmail($team->getEmail())
-            ->setCountryCode($team->getClub()->getCountryCode())
+            ->setCountryCode($team->getClub()->getCountryCode()->value)
             ->setCreatedAt($team->getCreatedAt())
             ->setMediaLinks($team->getMediaLinks())
             ->setLevel($team->getLevel())
@@ -87,6 +89,7 @@ final class TeamIoDto
             ->setInstagramId($team->getInstagramId())
             ->setFacebookId($team->getFacebookId())
             ->setLogo($team->getLogo())
+            ->setCities($team->getClub()->getCities())
         ;
     }
 
@@ -274,6 +277,18 @@ final class TeamIoDto
     public function setLogo(?EmbeddedFile $logo): self
     {
         $this->logo = $logo;
+        return $this;
+    }
+
+    public function getCities(): ?array
+    {
+        return $this->cities;
+    }
+
+    public function setCities(?array $cities): self
+    {
+        $this->cities = $cities;
+
         return $this;
     }
 }

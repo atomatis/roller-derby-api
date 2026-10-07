@@ -8,13 +8,14 @@ namespace App\Enum;
 enum TeamCategory: string
 {
     case WomenAndGenderMinorities = 'F+';
-    case Mixed = 'M';
-    case Junior = 'J';
+    case Open = 'O';
+    case JuniorWomenAndGenderMinorities = 'JF+';
+    case JuniorOpen = 'JO';
 
-    private const map = [
+    private const array map = [
         self::WomenAndGenderMinorities->value => 'F+',
-        self::Mixed->value => 'Mixte',
-        self::Junior->value => 'Junior',
+        self::Open->value => 'Open',
+        self::JuniorOpen->value => 'Junior',
     ];
 
     static function getName(string $category): string

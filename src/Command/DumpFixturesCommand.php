@@ -6,7 +6,7 @@ namespace App\Command;
 
 use App\Dto\ClubIoDto;
 use App\Dto\GameIoDto;
-use App\Dto\TeamIoDto;
+use App\Dto\Team;
 use App\Repository\ClubRepository;
 use App\Repository\GameRepository;
 use App\Repository\TeamRepository;
@@ -46,7 +46,7 @@ final class DumpFixturesCommand extends Command
         $teams = $this->teamRepository->findAll();
         $teamsIoDto = [];
         foreach ($teams as $team) {
-            $teamsIoDto[] = TeamIoDto::fromEntity($team);
+            $teamsIoDto[] = Team::fromEntity($team);
         }
 
         $json = $this->serializer->serialize($teamsIoDto, 'json');

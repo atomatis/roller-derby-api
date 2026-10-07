@@ -2,29 +2,29 @@
 
 // *** Base ***
 
-$primary-light-0: #EAF8FA;
-$primary-light-1: #C6EBF1;
-$primary-light-2: #A1DDE8;
-$primary-medium-0: #7CD0DF;
-$primary-medium-1: #57C3D6;
-$primary-medium-2: #32B6CD;
-$primary-medium-3: #2995A8;
-$primary-medium-4: #207483;
-$primary-dark-0: #17545E;
-$primary-dark-1: #0E3339;
-$primary-dark-2: #051215;
+$primary-light-0: #E7FEFA;
+$primary-light-1: #BCFBF2;
+$primary-light-2: #90F9E9;
+$primary-medium-0: #65F6E0;
+$primary-medium-1: #39F3D8;
+$primary-medium-2: #0EF1CF;
+$primary-medium-3: #0CC6AA;
+$primary-medium-4: #099A84;
+$primary-dark-0: #066556;
+$primary-dark-1: #04433A;
+$primary-dark-2: #011815;
 
-$secondary-light-0: #FAF5EA;
-$secondary-light-1: #F1E2C6;
-$secondary-light-2: #E8CFA1;
-$secondary-medium-0: #DFBC7C;
-$secondary-medium-1: #D6AA57;
-$secondary-medium-2: #CD9732;
-$secondary-medium-3: #A87C29;
-$secondary-medium-4: #836120;
-$secondary-dark-0: #5E4517;
-$secondary-dark-1: #392A0E;
-$secondary-dark-2: #150F05;
+$secondary-light-0: #FBEAF0;
+$secondary-light-1: #F3C3D6;
+$secondary-light-2: #EC9DBB;
+$secondary-medium-0: #E57BA4;
+$secondary-medium-1: #DC5086;
+$secondary-medium-2: #D52A6C;
+$secondary-medium-3: #AF2358;
+$secondary-medium-4: #881B45;
+$secondary-dark-0: #621331;
+$secondary-dark-1: #3C0C1E;
+$secondary-dark-2: #15040B;
 
 $tertiary-light-0: #FAEAF0;
 $tertiary-light-1: #F1C6D5;
@@ -53,8 +53,8 @@ $link: $primary-dark-1;
 $link-hover: $secondary-medium-1;
 
 // Border
-$border: $primary-dark-1;
-$border-highlight: $secondary-medium-1;
+$border: $primary-medium-0;
+$border-highlight: $secondary-medium-0;
 
 // Background
 $background: $primary-light-0;
