@@ -1,5 +1,24 @@
 /************** styles -> theme -> color set -> test **************/
 
+$dark-box-darker: #162B3B;
+$dark-box-lighter: #2E5C7C;
+
+$border: #5895bf;
+
+$background-dark: #0f202b;
+$background-light: #243D51;
+
+$text-white: #f3fbfd;
+$text-white-shadow: #292b2d;
+
+$text-grey: #bfdaec;
+$text-grey-shadow: #0c1215;
+
+$tile-lighter: #192e3e;
+$tile-darker: #1b384c;
+
+$light-box: #416D90;
+
 // *** Base ***
 
 $primary-light-0: #E7FEFA;
@@ -53,8 +72,8 @@ $link: $primary-dark-1;
 $link-hover: $secondary-medium-1;
 
 // Border
-$border: $primary-medium-0;
-$border-highlight: $secondary-medium-0;
+//$border: $primary-medium-0;
+//$border-highlight: $secondary-medium-0;
 
 // Background
 $background: $primary-light-0;

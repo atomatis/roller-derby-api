@@ -31,10 +31,10 @@
     }
 }
 
-@mixin tile($text-color, $background-color-dark, $background-color-medium, $background-color-light , $border-color) {
+@mixin tile($text-color, $background-color-dark, $background-color-light , $border-color) {
     color: $text-color;
     border-bottom: 2px solid $border-color;
-    background: linear-gradient(0, $background-color-dark 0%, $background-color-medium 50%, $background-color-light 100%);
+    background: linear-gradient(0, $background-color-light 0%, $background-color-dark 100%);
     font-weight: bold;
     text-align: center;
     text-shadow: $background-color-dark 1px 1px;

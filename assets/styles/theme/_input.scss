@@ -3,7 +3,7 @@
 @use 'color_set/color' as color;
 
 button  {
-  font-family: "Raleway", Arial, sans-serif;
+  font-family: $main-font, Arial, sans-serif;
   font-weight: bold;
   color: color.$tertiary-dark-1;
   background-color: color.$tertiary-medium-0;

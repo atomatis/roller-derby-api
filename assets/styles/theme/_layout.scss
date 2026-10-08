@@ -15,6 +15,8 @@ html {
 body {
   background-image: url('../images/test.jpg');
   background-repeat: repeat;
+  background-size: 415px;
+  background-position: 80px;
   margin : 0;
   position: relative;
   z-index: 0;
@@ -25,24 +27,24 @@ body {
     '. aside-left main aside-right .'
     'footer footer footer footer footer'
   ;
-}
 
-body::after {
-  @include background.vertical-gradian(color.$primary-medium-1, color.$primary-medium-2, color.$primary-medium-4);
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
+    &::after {
+        @include background.vertical-gradian(color.$dark-box-darker, color.$dark-box-lighter);
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
 }
 
 // *** Main ***
 
 main {
-  @include background.striped(color.$primary-dark-0, color.$primary-medium-4);
+  @include background.striped(color.$background-dark, color.$background-light);
   display: block;
   width: 1024px;
   border: solid 2px color.$border;
@@ -59,26 +61,30 @@ main {
     display: flex;
 
     a {
-        @include title.tile(color.$secondary-light-2, color.$primary-dark-0, color.$primary-medium-4, color.$primary-medium-2, color.$border);
+        @include title.tile(color.$secondary-light-2, #1b384c, #1a3243, color.$border);
         flex: fit-content;
         border-right: 2px solid color.$border;
+        padding: 10px 0;
 
         &:last-child {
             border-right: none;
         }
 
         &:hover {
-            @include title.tile(color.$primary-light-2, color.$secondary-dark-0, color.$secondary-medium-4, color.$secondary-medium-2, color.$border);
+            @include title.tile(color.$primary-light-2, #1b384c, #1a3243, color.$border);
         }
 
         &.active {
-            @include title.tile(color.$primary-light-2, color.$secondary-dark-0, color.$secondary-medium-4, color.$secondary-medium-2, color.$border);
+            @include title.tile(color.$primary-light-2, #1b384c, #1a3243, color.$border);
         }
     }
 }
 
+$c: 1em;
+$nc: calc(100% - $c);
+
 .content {
-    @include background.light-shadowbox(color.$primary-medium-0);
+    //@include background.light-shadowbox(#416D90);
 }
 
 // *** Aside ***
@@ -91,13 +97,13 @@ aside {
     height: fit-content;
 
     &.lcdp-aside-left {
-        @include background.paper(color.$primary-light-2, color.$primary-medium-0);
+        @include background.paper(color.$background-dark, color.$background-light);
         grid-area: aside-left;
         margin-right: 25px;
     }
 
     &.lcdp-aside-right {
-        @include background.honeycomb(color.$primary-light-2, color.$primary-medium-1);
+        @include background.honeycomb(color.$background-light, color.$background-dark);
         grid-area: aside-right;
         margin-left: 25px;
 
@@ -119,18 +125,19 @@ aside {
 }
 
 article {
-  background-color: color.$tertiary-medium-1;
   width: 48%;
   margin-left: 1%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 // *** move to team ***
 
+$interstice: 2px;
+
 .lcdp-itl-team-list-item {
     display: grid;
-    grid-template-columns: 50px 1fr 15px;
-    grid-template-rows: 30px 20px;
+    grid-template-columns: 50px 1fr 20px;
+    grid-template-rows: 28px 22px;
     grid-template-areas:
         'logo title action'
         'logo info action'
@@ -138,19 +145,36 @@ article {
 
     img {
         grid-area: logo;
+        border: solid 1px color.$border
     }
 
     h3 {
         grid-area: title;
+        margin-left: $interstice;
+        margin-bottom: $interstice;
+        padding-left: $interstice;
+        background-color: rgb(color.$light-box, 0.5);
+        border-top: solid 1px color.$border;
     }
 
     p {
         grid-area: action;
+        background-color: color.$border;
+        margin-left: $interstice;
+        clip-path: polygon(0 0, 0 100%, calc(100% - 10px) 100%, 100% calc(100% - 10px), 100% 0);
+        cursor: pointer;
+
+        &:hover {
+            background-color: color.$secondary-dark-1;
+        }
     }
 
     .lcdp-cities {
         grid-area: info;
-        width: 100%;
+        background-color: rgb(color.$light-box, 0.5);
+        border-bottom: solid 1px color.$border;
+        margin-left: $interstice;
+        margin-right: 0;
 
         li {
             display: inline;

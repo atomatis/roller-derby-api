@@ -13,15 +13,12 @@
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
-
-@mixin vertical-gradian($lightColor, $mediumColor, $darkColor) {
+@mixin vertical-gradian($darkColor, $lightColor) {
   background: linear-gradient(0 ,
-  rgba($darkColor, 0.8) 0%,
-  rgba($mediumColor, 0.6) 30%,
-  rgba($lightColor, 0.7) 40%,
-  rgba($lightColor, 0.7) 60%,
-  rgba($mediumColor, 0.6) 70%,
-  rgba($darkColor, 0.8) 100%
+    rgba($darkColor, 0.9) 0%,
+    rgba($lightColor, 0.8) 20%,
+    rgba($darkColor, 0.8) 80%,
+    rgba($darkColor, 0.9) 100%
   );
 }
 

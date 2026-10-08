@@ -5,16 +5,18 @@
 
 // *** Font ***
 
+$main-font: ShareTech;
+
 @font-face {
-  font-family: "Raleway";
-  src: url(../font/Raleway-VariableFont_wght.ttf) format("truetype");
+  font-family: $main-font;
+  src: url(../font/ShareTech-Regular.ttf) format("truetype");
   font-display: fallback;
 }
 
 // *** Default font ***
 
 html {
-  font-family: "Raleway", Arial, sans-serif;
+  font-family: $main-font, Arial, sans-serif;
   font-weight: normal;
   color: color.$primary-dark-1;
 }
@@ -22,7 +24,7 @@ html {
 // *** Title ***
 
 h1 {
-    @include title.main(color.$secondary-light-2, color.$primary-dark-1);
+    @include title.main(color.$text-white, color.$text-white-shadow);
 }
 
 main {
@@ -33,7 +35,7 @@ main {
 
 aside {
     h2 {
-        @include title.tile(color.$secondary-light-2, color.$primary-dark-0, color.$primary-medium-4, color.$primary-medium-2, color.$border);
+        @include title.tile(color.$secondary-light-2, #1b384c, #1a3243, color.$border);
         font-size: 20px;
         padding: 4px 0;
     }
@@ -46,8 +48,8 @@ aside {
 
 article {
     h3 {
-        color: color.$secondary-light-2;
-        text-shadow: color.$primary-dark-2 1px 1px;
+        color: color.$text-grey;
+        text-shadow: color.$text-grey-shadow 1px 1px;
         margin-left: 10px;
         font-weight: bold;
     }

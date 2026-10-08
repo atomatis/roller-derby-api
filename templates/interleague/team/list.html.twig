@@ -26,14 +26,14 @@
                 <section class="lcdp-article-box">
                     {% for team in teams %}
                         <article class="lcdp-itl-team-list-item">
-                            <img src="https://placehold.co/50x50">
+                            <img src="https://placehold.co/48x48">
                             <h3>{{ team.pronoun }}{{ team.name }}</h3>
                             <ul class="lcdp-cities">
                                 <li>{{ team.cities|join(', ') }}</li>
                                 {% if team.level != null %}<li>{{ team.level|trans }}</li>{% endif %}
                                 {% if team.type != 'A' %}<li>{{ team.type }}</li>{% endif %}
                             </ul>
-                            <p>.<br>.<br>.</p>
+                            <p>+</p>
                         </article>
                     {% endfor %}
                 </section>

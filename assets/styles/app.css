@@ -45,19 +45,19 @@ input[type=number] {
 /************** styles -> theme -> color set -> test **************/
 /************** style - theme - title **************/
 @font-face {
-  font-family: "Raleway";
-  src: url(../font/Raleway-VariableFont_wght.ttf) format("truetype");
+  font-family: ShareTech;
+  src: url(../font/ShareTech-Regular.ttf) format("truetype");
   font-display: fallback;
 }
 html {
-  font-family: "Raleway", Arial, sans-serif;
+  font-family: ShareTech, Arial, sans-serif;
   font-weight: normal;
   color: #04433A;
 }
 
 h1 {
-  color: #EC9DBB;
-  text-shadow: #04433A 2px 2px;
+  color: #f3fbfd;
+  text-shadow: #292b2d 2px 2px;
   font-weight: bold;
 }
 
@@ -87,11 +87,11 @@ main h2::after {
 
 aside h2 {
   color: #EC9DBB;
-  border-bottom: 2px solid #65F6E0;
-  background: linear-gradient(0, #066556 0%, #099A84 50%, #0EF1CF 100%);
+  border-bottom: 2px solid #5895bf;
+  background: linear-gradient(0, #1a3243 0%, #1b384c 100%);
   font-weight: bold;
   text-align: center;
-  text-shadow: #066556 1px 1px;
+  text-shadow: #1b384c 1px 1px;
   font-size: 20px;
   padding: 4px 0;
 }
@@ -123,8 +123,8 @@ aside h3 {
 }
 
 article h3 {
-  color: #EC9DBB;
-  text-shadow: #011815 1px 1px;
+  color: #bfdaec;
+  text-shadow: #0c1215 1px 1px;
   margin-left: 10px;
   font-weight: bold;
 }
@@ -158,6 +158,8 @@ html {
 body {
   background-image: url("../images/test.jpg");
   background-repeat: repeat;
+  background-size: 415px;
+  background-position: 80px;
   margin: 0;
   position: relative;
   z-index: 0;
@@ -165,9 +167,8 @@ body {
   grid-template-columns: auto 250px 1024px 250px auto;
   grid-template-areas: "header header header header header" ". aside-left main aside-right ." "footer footer footer footer footer";
 }
-
 body::after {
-  background: linear-gradient(0, rgba(9, 154, 132, 0.8) 0%, rgba(14, 241, 207, 0.6) 30%, rgba(57, 243, 216, 0.7) 40%, rgba(57, 243, 216, 0.7) 60%, rgba(14, 241, 207, 0.6) 70%, rgba(9, 154, 132, 0.8) 100%);
+  background: linear-gradient(0, rgba(22, 43, 59, 0.9) 0%, rgba(46, 92, 124, 0.8) 20%, rgba(22, 43, 59, 0.8) 80%, rgba(22, 43, 59, 0.9) 100%);
   content: "";
   display: block;
   width: 100%;
@@ -179,12 +180,12 @@ body::after {
 }
 
 main {
-  background-color: #066556;
+  background-color: #0f202b;
   background-size: 10px 10px;
-  background-image: repeating-linear-gradient(45deg, #099A84 0, #099A84 1px, #066556 0, #066556 50%);
+  background-image: repeating-linear-gradient(45deg, #243D51 0, #243D51 1px, #0f202b 0, #0f202b 50%);
   display: block;
   width: 1024px;
-  border: solid 2px #65F6E0;
+  border: solid 2px #5895bf;
   margin: 0 auto;
   min-height: 900px;
   position: relative;
@@ -197,60 +198,53 @@ main {
 }
 .lcdp-content-nav a {
   color: #EC9DBB;
-  border-bottom: 2px solid #65F6E0;
-  background: linear-gradient(0, #066556 0%, #099A84 50%, #0EF1CF 100%);
+  border-bottom: 2px solid #5895bf;
+  background: linear-gradient(0, #1a3243 0%, #1b384c 100%);
   font-weight: bold;
   text-align: center;
-  text-shadow: #066556 1px 1px;
+  text-shadow: #1b384c 1px 1px;
   flex: fit-content;
-  border-right: 2px solid #65F6E0;
+  border-right: 2px solid #5895bf;
+  padding: 10px 0;
 }
 .lcdp-content-nav a:last-child {
   border-right: none;
 }
 .lcdp-content-nav a:hover {
   color: #90F9E9;
-  border-bottom: 2px solid #65F6E0;
-  background: linear-gradient(0, #621331 0%, #881B45 50%, #D52A6C 100%);
+  border-bottom: 2px solid #5895bf;
+  background: linear-gradient(0, #1a3243 0%, #1b384c 100%);
   font-weight: bold;
   text-align: center;
-  text-shadow: #621331 1px 1px;
+  text-shadow: #1b384c 1px 1px;
 }
 .lcdp-content-nav a.active {
   color: #90F9E9;
-  border-bottom: 2px solid #65F6E0;
-  background: linear-gradient(0, #621331 0%, #881B45 50%, #D52A6C 100%);
+  border-bottom: 2px solid #5895bf;
+  background: linear-gradient(0, #1a3243 0%, #1b384c 100%);
   font-weight: bold;
   text-align: center;
-  text-shadow: #621331 1px 1px;
-}
-
-.content {
-  background-color: rgba(101, 246, 224, 0.5);
-  padding: 10px;
-  position: relative;
-  z-index: 0;
-  margin: 10px;
+  text-shadow: #1b384c 1px 1px;
 }
 
 aside {
   display: block;
-  border: solid 2px #65F6E0;
+  border: solid 2px #5895bf;
   position: relative;
   z-index: 2;
   height: fit-content;
 }
 aside.lcdp-aside-left {
-  background-color: #90F9E9;
-  background-image: linear-gradient(#65F6E0 2px, transparent 2px), linear-gradient(90deg, #65F6E0 2px, transparent 2px), linear-gradient(#65F6E0 1px, transparent 1px), linear-gradient(90deg, #65F6E0 1px, #90F9E9 1px);
+  background-color: #0f202b;
+  background-image: linear-gradient(#243D51 2px, transparent 2px), linear-gradient(90deg, #243D51 2px, transparent 2px), linear-gradient(#243D51 1px, transparent 1px), linear-gradient(90deg, #243D51 1px, #0f202b 1px);
   background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   grid-area: aside-left;
   margin-right: 25px;
 }
 aside.lcdp-aside-right {
-  background-color: #90F9E9;
-  background-image: conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #39F3D8 0.5deg, #39F3D8 119.5deg, transparent 119.5deg, transparent 120deg);
+  background-color: #243D51;
+  background-image: conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #0f202b 0.5deg, #0f202b 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 60deg at 56.25% 70.8333333333%, transparent 0deg, transparent 0.5deg, #0f202b 0.5deg, #0f202b 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #0f202b 0.5deg, #0f202b 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% 70.8333333333%, transparent 0deg, transparent 0.5deg, #0f202b 0.5deg, #0f202b 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #0f202b 0.5deg, #0f202b 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% 14.5833333333%, transparent 0deg, transparent 0.5deg, #0f202b 0.5deg, #0f202b 119.5deg, transparent 119.5deg, transparent 120deg);
   background-position: 0 0, 10px 17px, 0 0, 10px 17px, 10px 0, 0 17px;
   background-size: 20px 34px;
   grid-area: aside-right;
@@ -273,30 +267,45 @@ aside.lcdp-aside-right nav a {
 }
 
 article {
-  background-color: #D65783;
   width: 48%;
   margin-left: 1%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .lcdp-itl-team-list-item {
   display: grid;
-  grid-template-columns: 50px 1fr 15px;
-  grid-template-rows: 30px 20px;
+  grid-template-columns: 50px 1fr 20px;
+  grid-template-rows: 28px 22px;
   grid-template-areas: "logo title action" "logo info action";
 }
 .lcdp-itl-team-list-item img {
   grid-area: logo;
+  border: solid 1px #5895bf;
 }
 .lcdp-itl-team-list-item h3 {
   grid-area: title;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  padding-left: 2px;
+  background-color: rgba(65, 109, 144, 0.5);
+  border-top: solid 1px #5895bf;
 }
 .lcdp-itl-team-list-item p {
   grid-area: action;
+  background-color: #5895bf;
+  margin-left: 2px;
+  clip-path: polygon(0 0, 0 100%, calc(100% - 10px) 100%, 100% calc(100% - 10px), 100% 0);
+  cursor: pointer;
+}
+.lcdp-itl-team-list-item p:hover {
+  background-color: #3C0C1E;
 }
 .lcdp-itl-team-list-item .lcdp-cities {
   grid-area: info;
-  width: 100%;
+  background-color: rgba(65, 109, 144, 0.5);
+  border-bottom: solid 1px #5895bf;
+  margin-left: 2px;
+  margin-right: 0;
 }
 .lcdp-itl-team-list-item .lcdp-cities li {
   display: inline;
@@ -305,7 +314,7 @@ article {
 /************** styles -> theme -> color set -> test **************/
 /************** style - theme - input **************/
 button {
-  font-family: "Raleway", Arial, sans-serif;
+  font-family: ShareTech, Arial, sans-serif;
   font-weight: bold;
   color: #390E1D;
   background-color: #DF7C9E;
@@ -345,13 +354,13 @@ header nav a {
   display: none;
 }
 header .lcdp-bar {
-  border-bottom: #65F6E0 double 10px;
+  border-bottom: #5895bf double 10px;
   height: 15px;
   margin: 0 10px;
 }
 /************** styles -> theme -> color set -> test **************/
 footer {
-  border-top: #65F6E0 double 10px;
+  border-top: #5895bf double 10px;
   margin-top: 50px;
   position: relative;
   z-index: 2;
