@@ -15,25 +15,27 @@
         </aside>
     {% endblock %}
     {% block content %}
-        <main>
-            <nav class="lcdp-content-nav">
-                <a class="active" href="{{ path(routes.getRoutes.event.list) }}">F+</a>
-                <a href="{{ path(routes.getRoutes.event.list) }}">Open</a>
-            </nav>
+        <main id="lcdp-interleague-list-team" class="lcdp-content">
+            <h1>{{ 'teams'|trans }} ({{ teamContainer.total }})</h1>
             {% for sorting, teams in teamContainer.teams %}
-            <section class="content">
+            <section>
                 <h2>{{ sorting }} ({{ teams|length }})</h2>
-                <section class="lcdp-article-box">
+                <section class="lcdp-article-container">
                     {% for team in teams %}
                         <article class="lcdp-itl-team-list-item">
-                            <img src="https://placehold.co/48x48">
-                            <h3>{{ team.pronoun }}{{ team.name }}</h3>
-                            <ul class="lcdp-cities">
+{#                            <img class="lcdp-logo-team" alt="logo team" src="https://placehold.co/48x48">#}
+                            <img class="lcdp-logo-team" alt="logo team" src="https://placekittens.com/48/48">
+                            <header>
+                                {% if team.wftda %}<span><img class="lcdp-logo-wtda" alt="logo wtda" src="{{ asset('images/logo_wtfda.png') }}"></span>{% endif %}
+                                {% if team.mrda %}<span><img class="lcdp-logo-wtda" alt="logo wtda" src="{{ asset('images/logo_mrda.jpg') }}"></span>{% endif %}
+                                <h3 class="{% if team.level != null %}{{ team.level }}{% endif %}">{{ team.pronoun }}{{ team.name }}</h3>
+
+                            </header>
+                            <ul class="lcdp-info">
                                 <li>{{ team.cities|join(', ') }}</li>
-                                {% if team.level != null %}<li>{{ team.level|trans }}</li>{% endif %}
-                                {% if team.type != 'A' %}<li>{{ team.type }}</li>{% endif %}
+                                {% if team.type != 'A' %}<li class="lcdp-team-type">{{ team.type }}</li>{% endif %}
                             </ul>
-                            <p>+</p>
+                            <button>+</button>
                         </article>
                     {% endfor %}
                 </section>

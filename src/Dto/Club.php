@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace App\Dto;
 
-use App\Entity\Club;
+use App\Entity\Club as ClubEntity;
+use App\Enum\ClubGenderDiversityPolicy;
+use App\Enum\Country;
+use App\Enum\CountrySubdivision;
 
 /** @author Alexandre Tomatis <alexandre.tomatis@gmail.com> */
-final class ClubIoDto
+final class Club
 {
     private string $id;
 
@@ -30,6 +33,7 @@ final class ClubIoDto
     private array $teamIds;
 
     private ?string $genderDiversityPolicy = null;
+    private ?string $country = null;
 
     private ?\DateTimeImmutable $closedAt = null;
 
@@ -41,62 +45,52 @@ final class ClubIoDto
 
     private ?string $interleagueEmail = null;
 
-    private ?string $facebookId = null;
-
-    private ?string $instagramId = null;
-
-    private ?string $myRollerDerbyId = null;
-
     private ?string $logoName = null;
     private ?int $logoSize = null;
     private ?string $logoMimeType = null;
     private ?string $dimensions = null;
 
-    public function toEntity(): Club
+    public function toEntity(): ClubEntity
     {
-        return new Club()
+        return new ClubEntity()
             ->setId($this->id)
             ->setName($this->name)
             ->setEmail($this->email)
-            ->setCountrySubdivisionCode($this->countrySubdivisionCode)
+            ->setCountryCode(Country::from($this->country))
+            ->setCountrySubdivisionCode(CountrySubdivision::from($this->countrySubdivisionCode))
             ->setCreatedAt($this->createdAt)
             ->setUpdatedAt(new \DateTimeImmutable())
             ->setLegalName($this->legalName)
             ->setAlias($this->alias)
             ->setOverview($this->overview)
             ->setHistory($this->history)
-            ->setGenderDiversityPolicy($this->genderDiversityPolicy)
+            ->setGenderDiversityPolicy(ClubGenderDiversityPolicy::from($this->genderDiversityPolicy))
             ->setClosedAt($this->closedAt)
             ->setCities($this->cities)
             ->setWebsites($this->websites)
             ->setInterleagueEmail($this->interleagueEmail)
-            ->setFacebookId($this->facebookId)
-            ->setInstagramId($this->instagramId)
-            ->setMyRollerDerbyId($this->myRollerDerbyId)
             ->setMediaLinks($this->mediaLinks)
         ;
     }
 
-    public static function fromEntity(Club $club): self
+    public static function fromEntity(ClubEntity $club): self
     {
         $clubIoDto = new self()
             ->setId($club->getId())
             ->setName($club->getName())
             ->setEmail($club->getEmail())
-            ->setCountrySubdivisionCode($club->getCountrySubdivisionCode())
-            ->setCountrySubdivisionCode($club->getCountrySubdivisionCode())
+            ->setCountrySubdivisionCode($club->getCountrySubdivisionCode()->value)
+            ->setCountry($club->getCountryCode()->value)
             ->setCreatedAt($club->getCreatedAt())
             ->setLegalName($club->getLegalName())
             ->setAlias($club->getAlias())
             ->setOverview($club->getOverview())
             ->setHistory($club->getHistory())
-            ->setGenderDiversityPolicy($club->getGenderDiversityPolicy())
+            ->setGenderDiversityPolicy($club->getGenderDiversityPolicy()->value)
             ->setClosedAt($club->getClosedAt())
             ->setCities($club->getCities())
             ->setWebsites($club->getWebsites())
             ->setInterleagueEmail($club->getInterleagueEmail())
-            ->setFacebookId($club->getFacebookId())
-            ->setInstagramId($club->getInstagramId())
             ->setMediaLinks($club->getMediaLinks())
         ;
 
@@ -287,28 +281,6 @@ final class ClubIoDto
         return $this;
     }
 
-    public function getFacebookId(): ?string
-    {
-        return $this->facebookId;
-    }
-
-    public function setFacebookId(?string $facebookId): self
-    {
-        $this->facebookId = $facebookId;
-        return $this;
-    }
-
-    public function getInstagramId(): ?string
-    {
-        return $this->instagramId;
-    }
-
-    public function setInstagramId(?string $instagramId): self
-    {
-        $this->instagramId = $instagramId;
-        return $this;
-    }
-
     public function getLogoName(): ?string
     {
         return $this->logoName;
@@ -350,6 +322,17 @@ final class ClubIoDto
     public function setDimensions(?string $dimensions): self
     {
         $this->dimensions = $dimensions;
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?string $country): Club
+    {
+        $this->country = $country;
         return $this;
     }
 }

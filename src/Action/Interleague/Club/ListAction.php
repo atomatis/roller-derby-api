@@ -2,7 +2,7 @@
 
 namespace App\Action\Interleague\Club;
 
-use App\Dto\ClubByRegionDto;
+use App\Dto\ClubContainer;
 use App\Repository\ClubRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -48,7 +48,7 @@ class ListAction extends AbstractController
 //            }
 //        }
 
-        $clubs = ClubByRegionDto::fromEntities($clubs);
+        $clubs = ClubContainer::fromEntities($clubs);
 
         {
             return $this->render('interleague/club/list.html.twig', [

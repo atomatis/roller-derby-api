@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\Dto\ClubIoDto;
+use App\Dto\Club as ClubDto;
 use App\Dto\Team as TeamDto;
 use App\Entity\Club;
-use App\Entity\Game;
 use App\Entity\Team;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -31,13 +30,17 @@ final class LoadFixturesCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $clubMap = [];
-        $this->entityManager->getRepository(Game::class)->cleanAll();
-        $this->entityManager->getRepository(Team::class)->cleanAll();
-        $this->entityManager->getRepository(Club::class)->cleanAll();
+//        $this->entityManager->getRepository(Game::class)->cleanAll();
+//        $this->entityManager->getRepository(Team::class)->cleanAll();
+//        $this->entityManager->getRepository(Club::class)->cleanAll();
 
-        $clubIoDtos = $this->serializer->deserialize(file_get_contents(Fixtures::CLUB_FILE), ClubIoDto::class.'[]', 'json');
+        $clubDto = $this->serializer->deserialize(file_get_contents(Fixtures::CLUB_FILE), ClubDto::class.'[]', 'json');
 
-        foreach ($clubIoDtos as $clubIoDto) {
+        foreach ($clubDto as $clubIoDto) {
+            if ($this->entityManager->find(Club::class, $clubIoDto->getId()) !== null) {
+                continue;
+            }
+
             $club = $clubIoDto->toEntity();
             foreach ($clubIoDto->getTeamIds() as $teamId) {
                 $clubMap[$teamId][] = $club;
@@ -45,9 +48,13 @@ final class LoadFixturesCommand extends Command
             $this->entityManager->persist($club);
         }
 
-        $teamIoDtos = $this->serializer->deserialize(file_get_contents(Fixtures::TEAM_FILE), TeamDto::class.'[]', 'json');
+        $teamDto = $this->serializer->deserialize(file_get_contents(Fixtures::TEAM_FILE), TeamDto::class.'[]', 'json');
 
-        foreach ($teamIoDtos as $teamIoDto) {
+        foreach ($teamDto as $teamIoDto) {
+            if ($this->entityManager->find(Team::class, $teamIoDto->getId()) !== null) {
+                continue;
+            }
+
             $team = $teamIoDto->toEntity();
 
             // TODO FIX it

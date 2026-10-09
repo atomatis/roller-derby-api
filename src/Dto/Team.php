@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Dto;
 
 use App\Entity\Team as TeamEntity;
+use App\Enum\TeamCategory;
+use App\Enum\TeamLevel;
 use Vich\UploaderBundle\Entity\File as EmbeddedFile;
 
 /** @author Alexandre Tomatis <alexandre.tomatis@gmail.com> */
@@ -31,6 +33,9 @@ final class Team
     private ?string $type = null;
 
     private ?string $countryCode = null;
+    private bool $wftda = false;
+
+    private bool $mrda = false;
 
     private ?string $email = null;
 
@@ -54,7 +59,7 @@ final class Team
             ->setEmail($this->email)
             ->setCreatedAt($this->createdAt)
             ->setUpdatedAt(new \DateTimeImmutable())
-            ->setLevel($this->level)
+            ->setLevel(TeamLevel::from($this->level))
             ->setType($this->type)
             ->setFacebookId($this->facebookId)
             ->setInstagramId($this->instagramId)
@@ -65,7 +70,7 @@ final class Team
             ->setOverview($this->overview)
             ->setHistory($this->history)
             ->setFlatTrackStatsId($this->flatTrackStatsId)
-            ->setCategory($this->category)
+            ->setCategory(TeamCategory::from($this->category))
         ;
     }
 
@@ -78,9 +83,11 @@ final class Team
             ->setCountryCode($team->getClub()->getCountryCode()->value)
             ->setCreatedAt($team->getCreatedAt())
             ->setMediaLinks($team->getMediaLinks())
-            ->setLevel($team->getLevel())
+            ->setLevel($team->getLevel()->value)
             ->setType($team->getType())
-            ->setCategory($team->getCategory())
+            ->setWftda($team->isWftda())
+            ->setMrda($team->isMrda())
+            ->setCategory($team->getCategory()->value)
             ->setFlatTrackStatsId($team->getFlatTrackStatsId())
             ->setPronoun($team->getPronoun())
             ->setDisbandAt($team->getDisbandAt())
@@ -211,6 +218,28 @@ final class Team
     public function setCountryCode(?string $countryCode): self
     {
         $this->countryCode = $countryCode;
+        return $this;
+    }
+
+    public function isWftda(): bool
+    {
+        return $this->wftda;
+    }
+
+    public function setWftda(bool $wftda): Team
+    {
+        $this->wftda = $wftda;
+        return $this;
+    }
+
+    public function isMrda(): bool
+    {
+        return $this->mrda;
+    }
+
+    public function setMrda(bool $mrda): Team
+    {
+        $this->mrda = $mrda;
         return $this;
     }
 

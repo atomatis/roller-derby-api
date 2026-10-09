@@ -6,22 +6,30 @@
     {# block header #}
     {# block asidebefore #}
     {% block content %}
-        <main>
+        <main id="lcdp-interleague-list-club" class="lcdp-content">
+            <h1>{{ 'clubs'|trans }} ({{ clubContainer.total }})</h1>
+                <div class="lcdp-scroll">
             {% for sorting, clubs in clubContainer.clubs %}
-            <section class="content">
-                <h2>{{ sorting }} ({{ clubs|length }})</h2>
-                <section class="lcdp-article-box">
-                    {% for club in clubs %}
-                        <article>
-                            <a href="">
-                                <img src="https://placehold.co/50x50">
-                                <h3>{{ club.name }}</h3>
-                            </a>
-                        </article>
-                    {% endfor %}
-                </section>
-            </section>
+                    <section >
+                        <h2>{{ sorting }} ({{ clubs|length }})</h2>
+                        <div class="lcdp-article-container">
+                            {% for club in clubs %}
+                                <article class="lcdp-itl-club-list-item">
+                                    <img class="lcdp-logo-club" alt="logo club" src="https://placekittens.com/48/48">
+                                    <header>
+                                        <h3>{{ club.name }}{% if club.alias != null %} ({{ club.alias }}){% endif %}</h3>
+                                    </header>
+                                    <ul class="lcdp-info">
+                                        <li>{{ club.cities|join(', ') }}</li>
+                                        <li>{{ club.genderDiversityPolicy }}</li>
+                                    </ul>
+                                    <button>+</button>
+                                </article>
+                            {% endfor %}
+                        </div>
+                    </section>
             {% endfor %}
+                </div>
         </main>
     {% endblock %}
     {# block asideafter #}

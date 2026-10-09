@@ -2,10 +2,10 @@
 
 namespace App\Dto;
 
-use App\Entity\Club;
+use App\Entity\Club as ClubEntity;
 use App\Enum\CountrySubdivision;
 
-class ClubByRegionDto
+class ClubContainer
 {
     private array $clubs = [];
     private int $total = 0;
@@ -14,9 +14,9 @@ class ClubByRegionDto
     {
         $clubByAlphaDto = new self();
 
-        /** @var Club $club */
+        /** @var ClubEntity $club */
         foreach ($clubs as $club) {
-            $clubByAlphaDto->clubs[CountrySubdivision::getName($club->getCountrySubdivisionCode())][] = ClubIoDto::fromEntity($club);
+            $clubByAlphaDto->clubs[CountrySubdivision::getName($club->getCountrySubdivisionCode()->value)][] = Club::fromEntity($club);
             $clubByAlphaDto->total++;
         }
 

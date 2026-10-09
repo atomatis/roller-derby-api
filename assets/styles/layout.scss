@@ -1,0 +1,99 @@
+/************** style - theme - layout **************/
+
+@use 'theme/color_set/color' as color;
+@use 'theme/mixin/title' as title;
+@use 'theme/mixin/background' as background;
+
+// *** Html ***
+
+html {
+    background-color:  color.$background-dark;
+}
+
+// *** Body ***
+
+body {
+  background-image: url('../images/test.jpg');
+  background-repeat: repeat;
+  background-size: 415px;
+  background-position: 80px;
+  margin : 0;
+  position: relative;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: auto 250px 1024px 250px auto;
+  grid-template-areas:
+    'header header header header header'
+    '. aside-left main aside-right .'
+    'footer footer footer footer footer'
+  ;
+
+    &::after {
+        @include background.vertical-gradian(color.$dark-box-darker, color.$dark-box-lighter);
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+}
+
+// *** Main ***
+
+main {
+    @include background.striped(color.$background-dark, color.$background-light);
+    display: block;
+    width: 1024px;
+    border: solid 2px color.$border;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    grid-area: main;
+    height: 690px;
+}
+
+.lcdp-scroll {
+    overflow-y: scroll;
+    height: calc(100% - 39px);
+    padding-right: 5px;
+}
+
+// *** Aside ***
+
+aside {
+    display: block;
+    border: solid 2px color.$border;
+    position: relative;
+    z-index: 2;
+    height: fit-content;
+
+    &.lcdp-aside-left {
+        @include background.paper(color.$background-dark, color.$background-light);
+        grid-area: aside-left;
+        margin-right: 25px;
+    }
+
+    &.lcdp-aside-right {
+        @include background.honeycomb(color.$background-light, color.$background-dark);
+        grid-area: aside-right;
+        margin-left: 25px;
+
+        nav {
+            @include background.light-shadowbox(color.$light-box);
+
+            a {
+                display: block;
+            }
+        }
+    }
+}
+
+// *** Article ***
+
+.lcdp-article-container {
+    display: flex;
+    flex-wrap: wrap;
+}

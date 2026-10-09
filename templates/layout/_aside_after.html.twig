@@ -3,25 +3,24 @@
     {# block asidebefore #}
     {# block content #}
     <aside class="lcdp-aside-right">
-        <h2>Interleague</h2>
         <nav>
-            <h3>Calendrier</h3>
+            <h2>Calendrier</h2>
             <a href="{{ path(routes.getRoutes.event.list) }}">{{ 'events'|trans }}</a>
             <a>Championnats</a>
         </nav>
         <nav>
-            <h3>Recherche</h3>
+            <h2>Recherche</h2>
             <a>Match</a>
             <a>Arbitres</a>
             <a>UB</a>
         </nav>
         <nav>
-            <h3>Annuaire</h3>
-            <a href="{{ path(routes.getRoutes.team.list) }}">Associations</a>
-            <a>Équipes</a>
+            <h2>Annuaire</h2>
+            <a href="{{ path(routes.getRoutes.team.list) }}">Équipes</a>
+            <a href="{{ path(routes.getRoutes.club.list) }}">Associations</a>
         </nav>
         <nav>
-            <h3>Classements</h3>
+            <h2>Classements</h2>
             <a>Flat Track stats F+</a>
             <a>Flat Track stats Open</a>
             <a>WFTDA</a>

@@ -85,7 +85,7 @@
         "teamIds": [
             "de557e49-58bf-43c8-9820-3e7c13002714"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Angers"
@@ -114,7 +114,7 @@
         "country": "FRA",
         "history": null,
         "teamIds": [],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Aurillac"
@@ -146,7 +146,7 @@
             "9d5de024-79bd-4a34-b263-087414e6284d",
             "f4799692-bf3f-4b8a-95a1-bf57e94113fc"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Maromme"
@@ -180,7 +180,7 @@
             "24692f2c-34d5-470f-8542-e4b72c3b672f",
             "39c184c5-41d8-4515-b5a2-4f3d0588a008"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Clermont-Ferrand"
@@ -218,7 +218,7 @@
             "d872df89-0953-41fd-b1a1-4008778adc8f",
             "f5323062-196d-451f-8f21-9e9a347af331"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Angoul\u00eame"
@@ -250,7 +250,7 @@
             "55fc6aee-cad4-47f8-a5a3-07b035831962",
             "bab8ad64-ebe2-4517-b96c-fc8aa9ad6d69"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Annecy"
@@ -343,7 +343,7 @@
         "country": "FRA",
         "history": null,
         "teamIds": [],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Coutances"
@@ -376,7 +376,7 @@
             "cdac63a4-70cf-48c6-a7d9-33ccc5a088ac",
             "f0a0bece-b54b-417d-a234-dfb5925715a1"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Grenoble"
@@ -407,7 +407,7 @@
         "teamIds": [
             "5d3e9185-23e3-41e8-934f-8e5011a8c445"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Castres"
@@ -438,7 +438,7 @@
         "teamIds": [
             "e4c2387c-1dd0-4622-8a49-c6c8f14b1614"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Cherbourg"
@@ -470,7 +470,7 @@
             "285aa25c-4f1c-446c-89be-1a134a3d97b4",
             "3c53e7a8-5e19-4f0c-b80b-14c6fbacacef"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Aubenas"
@@ -540,7 +540,7 @@
             "d7baf72f-0b60-4638-818b-26c13c74f6e7",
             "9f6d95d4-68ad-4b04-bfcb-095c4e4966e3"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Bayonne"
@@ -571,7 +571,7 @@
         "teamIds": [
             "9e7e8320-aa16-4c02-aa81-35fbb04c7197"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Narbonne"
@@ -603,7 +603,7 @@
             "749acd01-cfc6-46be-bbe0-68600e596c4a",
             "86ed87cc-dc30-42fd-aa32-4dab72d38851"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Quimper"
@@ -636,7 +636,7 @@
             "de09a122-3ed4-46de-a788-a181570ba84f",
             "f5323062-196d-451f-8f21-9e9a347af331"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Limoges"
@@ -669,7 +669,7 @@
             "38eb6a3a-83e0-4f85-9105-94e9e20088e4",
             "368e7f69-def0-4e45-b976-f37ee6933d79"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Lomme"
@@ -700,7 +700,7 @@
         "teamIds": [
             "4dcb77f9-e090-40cb-9fe1-d81fb2271030"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Le Havre"
@@ -734,7 +734,7 @@
             "992c73c0-0ea2-4240-b05b-e6026e74afe3",
             "b52bede7-2e80-489e-bb97-5e7bd8ee673f"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Thonon-les-bains"
@@ -766,7 +766,7 @@
             "1f4e542a-8347-42d3-bda5-0e8d6dc550d1",
             "f9eeab83-0fa6-4eb3-aab8-184d8d67653d"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Paris"
@@ -799,7 +799,7 @@
             "a64efbdf-6754-4b10-aa9b-de7fb2610afa",
             "1c25cd26-e22f-422f-88d3-ae32ec276479"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Paris"
@@ -898,7 +898,7 @@
         "teamIds": [
             "2182b980-8d13-4fd5-a46e-4b058c2fe5dc"
         ],
-        "genderDiversityPolicy": "NMC",
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Marseille"
@@ -933,7 +933,7 @@
             "4198a592-088c-46b3-9c68-74ec49425e5a",
             "a65dd94f-6248-4e30-ab05-e14aff12aa96"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Nantes"
@@ -966,7 +966,7 @@
             "60057fce-8c01-4c18-acaa-0353d4d0897e",
             "7e28fc74-8420-4bf6-b288-0437daa7885d"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Montreuil"
@@ -998,7 +998,7 @@
             "f3085c30-d1c1-4a7b-b999-6f2fa819a523",
             "edb4a11d-b3b1-44cc-9ded-370d6341fdbc"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Nice"
@@ -1030,7 +1030,7 @@
             "2560484d-7890-4a33-9fb2-155a259efc0b",
             "7a971702-e3a4-416a-a468-17099116d96f"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Orl\u00e9ans"
@@ -1063,7 +1063,7 @@
             "743e0f30-7dc1-4616-abe5-635d15937df7",
             "321137a5-f92c-40a9-a9b0-6423503574d4"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Paris"
@@ -1094,7 +1094,7 @@
         "teamIds": [
             "5c090acf-4716-451c-be18-cddc6f95e4a0"
         ],
-        "genderDiversityPolicy": "NMC",
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Gennevilliers"
@@ -1127,7 +1127,7 @@
             "8ad768f6-69f7-4566-977f-bd750685b786",
             "66ff7d2b-f481-4799-b1c2-900559fdc0e8"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Brest"
@@ -1159,7 +1159,7 @@
             "043a4ac9-b394-44ab-b439-a7be9cdfb784",
             "7e067bd7-fc51-4b48-8c7b-059a43d9a75b"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Caen"
@@ -1194,7 +1194,7 @@
             "c97cc898-c3e8-47e6-8bcf-1c979640a190",
             "d28bf627-4076-4024-a8f9-ccd608324a58"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Calais"
@@ -1227,7 +1227,7 @@
             "7f57597a-f9e2-4081-b45f-52cc63619d08",
             "cfd96cce-ac03-465a-a521-4cc0d3027cc2"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             " Ch\u00e2lon sur Sa\u00f4ne"
@@ -1261,7 +1261,7 @@
             "a9e0dd5a-1725-4133-acef-9f12f0904b07",
             "d4234fa9-9c9f-4dbc-9473-97f64c901dd7"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Chamb\u00e9ry"
@@ -1292,7 +1292,7 @@
         "teamIds": [
             "073c71b4-fc13-402a-bfa2-7e35f8a0632c"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Compi\u00e8gne"
@@ -1360,7 +1360,7 @@
             "ddc77ea1-76d1-41c1-ac57-31719fb5fa51",
             "67a249f6-673e-42ca-a7bf-a5158630a476"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Dunkerque"
@@ -1391,7 +1391,7 @@
         "teamIds": [
             "628f768c-b19e-4959-a640-fa467014c7b1"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Gap"
@@ -1426,7 +1426,7 @@
             "7f57597a-f9e2-4081-b45f-52cc63619d08",
             "93347d60-3f58-4b33-8ab2-6b515198b5da"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "M\u00e2con"
@@ -1460,7 +1460,7 @@
             "6b915ea8-aacd-449d-b446-ecad44420724",
             "e89816c1-83df-47f2-91e2-6dd8414336f4"
         ],
-        "genderDiversityPolicy": "NMC",
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Rennes"
@@ -1491,7 +1491,7 @@
         "teamIds": [
             "977a7936-9c91-4f33-8ed2-4b334d810484"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Saint-Dizier"
@@ -1562,7 +1562,7 @@
         "teamIds": [
             "f135f68c-8014-47e9-8d5b-b43a15fef0c7"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Saint-Pierre-l\u00e8s-Elbeuf"
@@ -1594,7 +1594,7 @@
             "64f41a4b-ca33-4932-82b1-a14128e0b163",
             "02085eea-1907-46a5-8c6a-e1f1b9b8cbf7"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Reims"
@@ -1626,7 +1626,7 @@
             "63ca8917-a31a-4001-aaed-8c316adc8c0a",
             "1a05c7d4-e4e0-473a-b141-3bbc75fd3e73"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Bastia"
@@ -1658,7 +1658,7 @@
             "f3ce04c0-2ccd-4569-b462-e41dd6e7773f",
             "dd90bc29-87d4-4b32-a0dc-759f687a7102"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Remiremont"
@@ -1690,7 +1690,7 @@
             "f19b4703-ace6-433c-a1fb-847b4bd51539",
             "6999b94f-7c75-4ad1-bcb1-9e15a0514a09"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             " La Roche sur Yon"
@@ -1762,7 +1762,7 @@
             "00687287-ba25-4a31-80f6-f858bae5ab4e",
             "6a87279a-40e0-4561-8460-18a3c709d083"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Lorient"
@@ -1795,7 +1795,7 @@
         "teamIds": [
             "c5ac0d35-3494-4380-a94d-cb64c78d85fb"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "M\u00e9ry sur Oise"
@@ -1829,7 +1829,7 @@
             "1f084536-7b9a-4f6c-94e4-e859e55edbbc",
             "3900c839-0b4b-41ee-8690-9827b0b1db8a"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Nancy"
@@ -1861,7 +1861,7 @@
             "c0911811-438e-4a58-854c-52af7f8bb916",
             "24fec8d4-1f82-4d7c-a7f2-fae05ab4d8fa"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Pibrac"
@@ -1897,7 +1897,7 @@
             "fd65e73a-bb93-4f3f-9bdd-3a479a4034d3",
             "534c0d74-db8a-4e0b-bcb4-26e4d8529bf9"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Aix en Provence"
@@ -1932,7 +1932,7 @@
             "93b09769-cfe5-489f-960a-72f0112419e0",
             "1683ae30-703c-423d-a97a-4194242560bc"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Roanne"
@@ -1964,7 +1964,7 @@
             "1683ae30-703c-423d-a97a-4194242560bc",
             "cf8c1881-8cc5-4aee-bb18-fa93d4f8a437"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Saint-\u00c9tienne"
@@ -1997,7 +1997,7 @@
         "teamIds": [
             "661dfc01-a4bd-4a54-8fff-d4accd8ed309"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Toulon"
@@ -2065,7 +2065,7 @@
             "dacd18bf-ba54-48a5-b601-3faf7eae7e31",
             "81b41d20-81e7-4df8-a027-cfdb9a351ac6"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Valence"
@@ -2130,7 +2130,7 @@
             "a7203cf9-28b8-4a3e-b143-b1ed516cc0dc",
             "e432006f-9cf5-494f-a3cb-db5f77662182"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "M\u00e9rignac"
@@ -2162,7 +2162,7 @@
             "3b929d14-5125-48e3-9ce8-11ecd3e62521",
             "55cb8433-9b6e-456d-a7be-21da9c55fd8c"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Amiens"
@@ -2194,7 +2194,7 @@
             "9c00d334-15fc-48cd-b302-53b700e685f3",
             "e9221ae8-88b4-4e89-95c2-8c5cfb1e42dc"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "N\u00eemes"
@@ -2227,7 +2227,7 @@
         "teamIds": [
             "8ea21333-0620-4493-96b1-767b4d26fb19"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Villejuif"
@@ -2258,7 +2258,7 @@
         "teamIds": [
             "1a1e7935-74c7-4bc5-8ed0-75beedb8a291"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Cholet"
@@ -2289,7 +2289,7 @@
         "teamIds": [
             "b29ac516-00f4-40a6-8a55-b3c2317224de"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Perpignan"
@@ -2354,7 +2354,7 @@
             "bf8642b3-49d8-4510-9926-c243bd004ba8",
             "9121485c-1257-4044-9e56-a3e55216b0ad"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Strasbourg"
@@ -2387,7 +2387,7 @@
             "e63b00b5-6427-4cbb-a632-3ce50f7ff0ed",
             "678ab47b-0d14-46a1-b45c-93ceff002937"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Paris"
@@ -2416,7 +2416,7 @@
         "country": "FRA",
         "history": null,
         "teamIds": [],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Rodez"
@@ -2447,7 +2447,7 @@
         "teamIds": [
             "121a40b4-855e-4297-90ca-b4a22b26bbe0"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Ch\u00e2teauroux"
@@ -2479,7 +2479,7 @@
             "4a29bb45-1391-4732-b0e6-7301743900f9",
             "65955672-8a52-42a6-8917-752f86a0a44d"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Aubergenville"
@@ -2510,7 +2510,7 @@
         "teamIds": [
             "46b5f610-e6ad-46bc-ab73-fbf8e8e69cc9"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Pontarlier"
@@ -2606,7 +2606,7 @@
         "teamIds": [
             "5599765a-e4e1-418c-971e-c9fb7eafff88"
         ],
-        "genderDiversityPolicy": "NMC",
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Toulouse"
@@ -2639,7 +2639,7 @@
             "6a25d1cc-844d-4696-ac75-f63205fcc940",
             "67dfb1ea-c23b-407b-b1cd-5c528d107572"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Le Mans"
@@ -2670,7 +2670,7 @@
         "teamIds": [
             "880c6392-ad79-4aa8-a861-fb65451a854d"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Albi"
@@ -2704,7 +2704,7 @@
             "24ffd697-d0ce-4e9e-b94a-7c144f35fc82",
             "c37d68ae-2fd5-47bc-b496-2e5b237d750c"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Belfort"
@@ -2736,7 +2736,7 @@
             "170995af-1c32-48c7-a239-88be863f8d0d",
             "cd1e31af-d8ca-48f0-a440-9fa997e1bfea"
         ],
-        "genderDiversityPolicy": "NMC",
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Anglet "
@@ -2765,7 +2765,7 @@
         "country": "FRA",
         "history": null,
         "teamIds": [],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Fleurance"
@@ -2796,7 +2796,7 @@
         "teamIds": [
             "8042ea65-070c-4f75-bf81-1490c936d769"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Pau"
@@ -2830,7 +2830,7 @@
             "b1191e8d-3410-48e2-bb9c-8621b06db64e",
             "171ed605-06d9-48db-b622-9acf2d3e99c8"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Vannes"
@@ -2861,7 +2861,7 @@
         "country": "FRA",
         "history": null,
         "teamIds": [],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "L\u00e9on"
@@ -2890,7 +2890,7 @@
         "country": "FRA",
         "history": null,
         "teamIds": [],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Ajaccio"
@@ -2922,7 +2922,7 @@
             "ffc89c34-bff1-4856-908b-872db895ea56",
             "8df52ecb-7db7-4e2c-8da8-fb6cbb4ff97c"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Arras"
@@ -2953,7 +2953,7 @@
         "teamIds": [
             "7330c8c7-a856-4482-a4b1-79f3bf258c3b"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Auxerre"
@@ -2985,7 +2985,7 @@
             "90f79ed2-854d-449d-b65f-c3c2146c85cf",
             "53dcb232-0840-49fd-908c-c0b1e356ea2c"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Bordeaux"
@@ -3054,7 +3054,7 @@
         "teamIds": [
             "8e047150-25c0-41c6-b746-cbe7318d9472"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Lens"
@@ -3085,7 +3085,7 @@
         "teamIds": [
             "e6b9c1f2-b7a1-47d5-a090-b29091a227c1"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Melun"
@@ -3119,7 +3119,7 @@
             "81a58ffc-3e44-4ab0-91d8-5dc65d330b7e",
             "73dba460-bb8d-428d-92ad-caac459ff5b4"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Metz"
@@ -3150,7 +3150,7 @@
         "teamIds": [
             "225ee21a-bb0b-4e6a-8f25-dc9e1184e838"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Pamiers"
@@ -3186,7 +3186,7 @@
             "7b320e48-2d6e-4eae-af51-ea1bc4cc23e1",
             "17ac4f4a-a048-4b0c-b598-714f247df246"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Rouen"
@@ -3219,7 +3219,7 @@
         "teamIds": [
             "342b139a-7318-48ff-8330-0a35ad6e2f90"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Saint Nazaire"
@@ -3254,7 +3254,7 @@
             "2b9ec85e-e671-4d4b-88ff-317baf7481b3",
             "576c4a74-4a2f-4155-83dc-372d3542d9f5"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Saintes"
@@ -3286,7 +3286,7 @@
             "8d165822-d901-4067-9ccf-6faecd4f7cc7",
             "7d107e73-11f3-481a-801f-57d49f6567ef"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Sarreguemines"
@@ -3319,7 +3319,7 @@
         "teamIds": [
             "1a84f30c-fb65-49b2-900b-76c2b71ac4a1"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Sainte-Genevi\u00e8ve-des-Bois"
@@ -3353,7 +3353,7 @@
             "e158e51b-107e-4129-a995-73ba8af858ab",
             "5e39a854-48eb-4178-92ac-daa689f95676"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Vienne",
@@ -3385,7 +3385,7 @@
         "teamIds": [
             "20145549-ac16-4a31-884d-4061d38f0181"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2017-10-29T09:42:48+00:00",
         "cities": [
             "Al\u00e8s"
@@ -3418,7 +3418,7 @@
         "teamIds": [
             "303f8218-92a1-48b1-b5ee-0c8699bf8638"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2016-01-01T09:42:48+00:00",
         "cities": [
             "Berry"
@@ -3451,7 +3451,7 @@
         "teamIds": [
             "d5e2726d-e214-466f-b3b4-f7407b3c267e"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2017-10-29T09:42:48+00:00",
         "cities": [
             "Cannes"
@@ -3482,7 +3482,7 @@
         "teamIds": [
             "24b93826-8aaa-43e3-bee4-046d3c359886"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Guingamp"
@@ -3516,7 +3516,7 @@
         "teamIds": [
             "f8f7f7cb-44cd-4774-adb4-71c4c60f1877"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Voiron"
@@ -3551,7 +3551,7 @@
             "752dd977-76e0-418d-a486-62a8321cd5a4",
             "1683ae30-703c-423d-a97a-4194242560bc"
         ],
-        "genderDiversityPolicy": "NMC",
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Vienne"
@@ -3613,7 +3613,7 @@
         "teamIds": [
             "d88b10c0-ba87-4eb9-9e91-5c9fdafaf9bd"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2013-01-01T09:42:48+00:00",
         "cities": [
             "Longwy"
@@ -3710,7 +3710,7 @@
         "teamIds": [
             "945f7a5e-c581-41a1-b6ae-e3af470a6246"
         ],
-        "genderDiversityPolicy": "NMC",
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2015-12-09T09:42:48+00:00",
         "cities": [
             "Montpellier"
@@ -3741,7 +3741,7 @@
         "teamIds": [
             "396997e2-978b-4ea8-a6f0-c2d3c1cee4f5"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Hennebont "
@@ -3837,7 +3837,7 @@
             "b490edb0-f886-41f2-8fd1-15287ab787f4",
             "b33acc2e-6b10-46b8-8ffc-91a68f6b665e"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2018-08-01T09:42:48+00:00",
         "cities": [
             "Lyon"
@@ -3870,7 +3870,7 @@
             "4aa3ab1d-1130-4f27-b087-4fa9de47d86a",
             "484b5283-78c6-41a5-ba9b-d509a4196c17"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2018-08-01T09:42:48+00:00",
         "cities": [
             "Lyon"
@@ -3963,7 +3963,7 @@
         "teamIds": [
             "4442bfee-63fb-4726-89be-4b9a2d302002"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Lay-Saint-Christophe",
@@ -3995,7 +3995,7 @@
         "teamIds": [
             "9cbb65a6-b734-4870-aac8-739a1c0def5f"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2020-10-11T09:42:48+00:00",
         "cities": [
             "Niort"
@@ -4026,7 +4026,7 @@
         "teamIds": [
             "c153e4ce-b553-4db2-9135-5baf56f33ffb"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2020-04-30T09:42:48+00:00",
         "cities": [
             "Le Bourg-d'Oisans"
@@ -4059,7 +4059,7 @@
         "teamIds": [
             "135e2599-3ea7-4330-b3b8-fa49821458a4"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2017-04-27T09:42:48+00:00",
         "cities": [
             "Veuzain-sur-Loire"
@@ -4092,7 +4092,7 @@
         "teamIds": [
             "0a0a7120-52ba-4624-8ba1-0b4ae76b6e02"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2016-12-31T09:42:48+00:00",
         "cities": [
             "Argenteuil"
@@ -4123,7 +4123,7 @@
         "teamIds": [
             "c0263645-62e3-4cfb-a0f6-a919eba999bd"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2018-02-15T09:42:48+00:00",
         "cities": [
             "Lille"
@@ -4154,7 +4154,7 @@
         "teamIds": [
             "4989ec7d-907c-4924-a5e6-46192cc72bb1"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2020-04-30T09:42:48+00:00",
         "cities": [
             "Avignon"
@@ -4185,7 +4185,7 @@
         "teamIds": [
             "80b08c98-025c-4074-aada-5a4bc1b898b4"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2021-03-18T09:42:48+00:00",
         "cities": [
             "St Vallier"
@@ -4218,7 +4218,7 @@
             "db06f3fb-4b34-4202-a174-0bab428b7cef",
             "9bc24cb5-1390-4777-b79d-baee2528c71b"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Besan\u00e7on"
@@ -4249,7 +4249,7 @@
         "teamIds": [
             "5cd043a7-9441-4ca2-86fe-1cc3f60a9cec"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Bretenoux"
@@ -4280,7 +4280,7 @@
         "teamIds": [
             "bddf122d-62c8-495f-9b0d-04ff1b38e904"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2014-03-02T09:42:48+00:00",
         "cities": [
             "Clermont-Ferrand"
@@ -4313,7 +4313,7 @@
             "b10b315c-ece9-45bc-852a-26b896827654",
             "9c220e92-d920-46ab-8b57-e32c7336fc79"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2020-11-30T09:42:48+00:00",
         "cities": [
             "Creil"
@@ -4347,7 +4347,7 @@
         "teamIds": [
             "fd5a0cf3-0aa4-4cdc-8f8d-3677d761c2e6"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2013-01-01T09:42:48+00:00",
         "cities": [
             "Nogent-le-Roi"
@@ -4380,7 +4380,7 @@
             "2a3ca32d-5447-4b48-8176-c5f6b2158203",
             "c92acf7e-c3e9-439a-8156-a3188ad64522"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Meaux"
@@ -4413,7 +4413,7 @@
             "2c2cefa7-1f73-49c8-a414-3e65e9648de8",
             "33ae4517-355a-48b8-9fc6-908045be7618"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2023-07-15T09:42:48+00:00",
         "cities": [
             "Saint-Gratien"
@@ -4444,7 +4444,7 @@
         "teamIds": [
             "d5d1983b-aae0-4c1e-820d-5e564ef59b0b"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2020-04-30T09:42:48+00:00",
         "cities": [
             "Rochefort sur Mer"
@@ -4475,7 +4475,7 @@
         "country": "FRA",
         "history": null,
         "teamIds": [],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2014-09-08T09:42:48+00:00",
         "cities": [
             "Saint-Beno\u00eet"
@@ -4506,7 +4506,7 @@
         "teamIds": [
             "d4dac010-6549-415f-97b8-8f028c161fbe"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Saint-\u00c9tienne"
@@ -4538,7 +4538,7 @@
             "51d3149a-747b-439b-9ecb-289fd3353ade",
             "8c26ca24-97ec-4b63-a2ee-6e477693138d"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Tarbes"
@@ -4571,7 +4571,7 @@
         "teamIds": [
             "b213bc89-5bb2-4226-ae91-352c01820d47"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Tourcoing"
@@ -4602,7 +4602,7 @@
         "teamIds": [
             "44da73dd-0178-49db-bda9-f6528882351b"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Valenciennes"
@@ -4636,7 +4636,7 @@
             "dc41e826-e816-4f83-8515-637f69655210",
             "22a834e0-da91-413a-9a19-fa2a839dcfee"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": null,
         "cities": [
             "Troyes"
@@ -4667,7 +4667,7 @@
         "teamIds": [
             "2f2ec7dc-6994-49ab-a2ba-57ff7d4ee585"
         ],
-        "genderDiversityPolicy": null,
+        "genderDiversityPolicy": "CNM",
         "closedAt": "2023-03-30T09:42:48+00:00",
         "cities": [
             "Saint-Paul"

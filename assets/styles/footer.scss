@@ -1,9 +1,23 @@
 @use 'theme/color_set/color' as color;
+@use 'theme/mixin/geo' as geo;
 
-footer {
-  border-top: color.$border double 10px;
-  margin-top: 50px;
-  position: relative;
-  z-index: 2;
-  grid-area: footer;
+#lcdp-main-footer {
+    margin-top: 50px;
+    padding-bottom: 60px;
+    position: relative;
+    z-index: 2;
+    grid-area: footer;
+
+    .lcdp-bar {
+        @include geo.double-skewed-bar(color.$border);
+        margin: 9px 20px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }

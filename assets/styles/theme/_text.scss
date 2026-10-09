@@ -18,30 +18,24 @@ $main-font: ShareTech;
 html {
   font-family: $main-font, Arial, sans-serif;
   font-weight: normal;
-  color: color.$primary-dark-1;
+  color: color.$text-white;
 }
 
 // *** Title ***
 
-h1 {
-    @include title.main(color.$text-white, color.$text-white-shadow);
-}
-
 main {
+    h1 {
+        @include title.tile(color.$text-white, #1b384c, #1a3243, color.$border);
+    }
+
     h2 {
-        @include title.underline(color.$secondary-medium-4, color.$secondary-medium-3, color.$secondary-medium-1);
+        @include title.underline(color.$text-white, color.$text-white-shadow, color.$text-white);
     }
 }
 
 aside {
     h2 {
-        @include title.tile(color.$secondary-light-2, #1b384c, #1a3243, color.$border);
-        font-size: 20px;
-        padding: 4px 0;
-    }
-
-    h3 {
-        @include title.underline(color.$secondary-medium-4, color.$primary-medium-1, color.$secondary-medium-0);
+        @include title.underline(color.$text-grey, color.$text-grey-shadow, color.$text-white);
         margin: 0 auto 20px;
     }
 }

@@ -1,0 +1,28 @@
+/************** style - theme - mixin **************/
+
+@mixin one-flat-corner($size) {
+    clip-path: polygon(0 0, 0 100%, calc(100% - $size) 100%, 100% calc(100% - $size), 100% 0);
+}
+
+@mixin skewed-bar($color) {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: $color;
+    transform: skew(35deg);
+}
+
+@mixin double-skewed-bar($color) {
+    position: relative;
+    height: 11px;
+
+    &:before {
+        @include skewed-bar($color);
+    }
+
+    &:after {
+        bottom: 0;
+        @include skewed-bar($color);
+    }
+}

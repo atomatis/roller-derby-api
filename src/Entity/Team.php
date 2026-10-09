@@ -8,6 +8,7 @@ use App\Enum\TeamType;
 use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Types\UuidType;
 use Symfony\Component\HttpFoundation\File\File;
@@ -43,14 +44,20 @@ class Team
     #[ORM\Column(nullable: true)]
     private ?int $flatTrackStatsId = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $category = null;
+    #[ORM\Column(type: Types::ENUM, enumType: TeamCategory::class)]
+    private TeamCategory $category;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $level = null;
+    #[ORM\Column(type: Types::ENUM, enumType: TeamLevel::class)]
+    private TeamLevel $level;
 
     #[ORM\Column(length: 255)]
     private ?string $type = null;
+
+    #[ORM\Column(type: Types::BOOLEAN)]
+    private bool $wftda = false;
+
+    #[ORM\Column(type: Types::BOOLEAN)]
+    private bool $mrda = false;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $email = null;
@@ -220,33 +227,25 @@ class Team
         return $this;
     }
 
-    public function getCategory(): ?string
+    public function getCategory(): TeamCategory
     {
         return $this->category;
     }
 
-    public function setCategory(string|TeamCategory $category): static
+    public function setCategory(TeamCategory $category): static
     {
-        if ($category InstanceOf TeamCategory) {
-            $category = $category->value;
-        }
-
         $this->category = $category;
 
         return $this;
     }
 
-    public function getLevel(): ?string
+    public function getLevel(): TeamLevel
     {
         return $this->level;
     }
 
-    public function setLevel(null|string|TeamLevel $level): static
+    public function setLevel(TeamLevel $level): static
     {
-        if ($level InstanceOf TeamLevel) {
-            $level = $level->value;
-        }
-
         $this->level = $level;
 
         return $this;
@@ -277,6 +276,30 @@ class Team
     public function setPronoun(?string $pronoun): static
     {
         $this->pronoun = $pronoun;
+
+        return $this;
+    }
+
+    public function isWftda(): bool
+    {
+        return $this->wftda;
+    }
+
+    public function setWftda(bool $wftda): Team
+    {
+        $this->wftda = $wftda;
+
+        return $this;
+    }
+
+    public function isMrda(): bool
+    {
+        return $this->mrda;
+    }
+
+    public function setMrda(bool $mrda): Team
+    {
+        $this->mrda = $mrda;
 
         return $this;
     }
@@ -487,7 +510,7 @@ class Team
     {
         if (!$this->eventPings->contains($eventPing)) {
             $this->eventPings->add($eventPing);
-            $eventPing->addEventPing($this);
+            $eventPing->addTeamPing($this);
         }
 
         return $this;

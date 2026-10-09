@@ -30,6 +30,7 @@ class Team
             ->setCategory(TeamCategory::JuniorOpen)
             ->setType(TeamType::TeamA)
             ->setClub($clubs[Club::DIJON])
+            ->setLevel(TeamLevel::RankOne)
             ->setPronoun('Les ')
             ->setCreatedAt(new \DateTimeImmutable())
             ->setUpdatedAt(new \DateTimeImmutable())
@@ -72,6 +73,7 @@ class Team
             ->setLevel(TeamLevel::RankTwo)
             ->setClub($clubs[Club::DIJON])
             ->setFlatTrackStatsId(111444)
+            ->setMrda(true)
             ->setCreatedAt(new \DateTimeImmutable("2019-09-21T09:42:48+00:00"))
             ->setUpdatedAt(new \DateTimeImmutable("2019-09-21T09:42:48+00:00"))
         ;
@@ -86,6 +88,7 @@ class Team
             ->setClub($clubs[Club::DIJON])
             ->setFlatTrackStatsId(87004)
             ->setPronoun('Les ')
+            ->setWftda(true)
             ->setCreatedAt(new \DateTimeImmutable("2013-06-01T09:42:48+00:00"))
             ->setUpdatedAt(new \DateTimeImmutable("2013-06-01T09:42:48+00:00"))
         ;
@@ -99,7 +102,7 @@ class Team
             ->setLevel(TeamLevel::RankThree)
             ->setClub($clubs[Club::MRS])
             ->setFlatTrackStatsId(114234)
-            ->setPronoun('Les')
+            ->setPronoun('Les ')
             ->setCreatedAt(new \DateTimeImmutable("2022-06-19T09:42:48+00:00"))
             ->setUpdatedAt(new \DateTimeImmutable("2022-06-19T09:42:48+00:00"))
         ;

@@ -3,6 +3,7 @@
 namespace App\Action\Interleague\Team;
 
 use App\Dto\TeamContainer;
+use App\Enum\TeamCategory;
 use App\Repository\TeamRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -35,7 +36,7 @@ final class ListAction extends AbstractController
 //        $this->bindFilterByCriteria($request, $criteria);
 //        // $this->bindOrderByCriteria($request, $criteria);
 //
-        $teams = $this->teamRepository->findAll();
+        $teams = $this->teamRepository->findBy(['category' => TeamCategory::WomenAndGenderMinorities->value], ['club' => 'ASC']);
 
 
 //        $filters = $request->query->get('filters') ?? [];
