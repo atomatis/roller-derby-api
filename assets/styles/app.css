@@ -367,4 +367,16 @@ footer {
   grid-area: footer;
 }
 
+/************** styles -> theme -> color set -> test **************/
+#lcdp-game-search section {
+  display: flex;
+  flex-wrap: wrap;
+}
+#lcdp-game-search section article {
+  width: 32%;
+  margin-left: 1%;
+  margin-bottom: 10px;
+  background-color: cadetblue;
+}
+
 /*# sourceMappingURL=app.css.map */

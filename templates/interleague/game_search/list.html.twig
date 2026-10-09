@@ -1,0 +1,38 @@
+{% extends 'body.html.twig' %}
+
+
+{% block title %}Recherche de match{% endblock %}
+
+{# body #}
+    {# block header #}
+    {# block asidebefore #}
+    {% block content %}
+        <main id="lcdp-game-search">
+            <h1>Recherche de match</h1>
+            <section>
+                {% for criteria in eventSearchCriteria %}
+                    <article>
+                        <h2>{{ criteria.event.name }}</h2>
+                        <p>club organisateur</p>
+                        <p>date</p>
+                        <p>ville</p>
+                        <p>nombre d'équipes recherché</p>
+                        <p>category</p>
+
+                        <h3>Critères</h3>
+                        <ul>
+                            <li>lvls</li>
+                            <li>fts min / max</li>
+                            <li>wftda?</li>
+                            <li>wftda min / max</li>
+                            <li>mrda?</li>
+                            <li>mrda min / max</li>
+                        </ul>
+                    </article>
+                {% endfor %}
+            </section>
+        </main>
+    {% endblock %}
+    {# block asideafter #}
+    {# block footer #}
+{# /body #}

@@ -1,0 +1,15 @@
+@use '../theme/color_set/color' as color;
+
+#lcdp-game-search {
+    section {
+        display: flex;
+        flex-wrap: wrap;
+
+        article {
+            width: 32%;
+            margin-left: 1%;
+            margin-bottom: 10px;
+            background-color: cadetblue;
+        }
+    }
+}
