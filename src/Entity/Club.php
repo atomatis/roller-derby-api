@@ -45,9 +45,9 @@ class Club
     private ClubGenderDiversityPolicy $genderDiversityPolicy;
 
     /**
-     * @var Collection<int, Club>
+     * @var Collection<int, Event>
      */
-    #[ORM\OneToMany(targetEntity: Club::class, mappedBy: 'club', cascade: ['persist', 'remove'])]
+    #[ORM\OneToMany(targetEntity: Event::class, mappedBy: 'club', cascade: ['persist', 'remove'])]
     private Collection $events;
 
     /**
@@ -85,9 +85,6 @@ class Club
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $instagramId = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $myRollerDerbyId = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $logo = null;
@@ -207,7 +204,7 @@ class Club
     }
 
     /**
-     * @return Collection<int, Club>
+     * @return Collection<int, Event>
      */
     public function getEvents(): Collection
     {
@@ -372,18 +369,6 @@ class Club
     public function setInstagramId(?string $instagramId): static
     {
         $this->instagramId = $instagramId;
-
-        return $this;
-    }
-
-    public function getMyRollerDerbyId(): ?string
-    {
-        return $this->myRollerDerbyId;
-    }
-
-    public function setMyRollerDerbyId(?string $myRollerDerbyId): static
-    {
-        $this->myRollerDerbyId = $myRollerDerbyId;
 
         return $this;
     }

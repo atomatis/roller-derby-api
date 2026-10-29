@@ -10,6 +10,11 @@ html {
     background-color:  color.$background-dark;
 }
 
+.lcdp-flex{
+    display: flex;
+    flex-flow: wrap;
+}
+
 // *** Body ***
 
 body {
@@ -97,3 +102,5 @@ aside {
     display: flex;
     flex-wrap: wrap;
 }
+
+

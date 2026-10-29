@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Dto;
+namespace App\Model;
 
 use App\Entity\Team as TeamEntity;
 use App\Enum\TeamCategory;

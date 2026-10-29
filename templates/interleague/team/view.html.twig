@@ -1,0 +1,54 @@
+{% extends 'body.html.twig' %}
+
+{% block title %}{{ team.name }}{% endblock %}
+
+{# lcdp = "la croisé des platine" prefix #}
+{# itl = "interleague" prefix #}
+
+{# body #}
+    {# block header #}
+    {# block asidebefore #}
+    {% block content %}
+        <main id="lcdp-itl-team-view" class="lcdp-content">
+            <h1>{{ team.name }}</h1>
+            <div class="lcdp-flex">
+                <img class="lcdp-logo-club" src="https://placekittens.com/200/200" />
+                <section class="lcdp-team-card">
+                    <h2>Informations générales</h2>
+                    <ul>
+                        <li>Association: <a href="{{ path(routes.getRoutes.club.view, {'id': team.club.id}) }}">team.club.name</a></li>
+                        <li>pays: {{ team.club.countryCode.value }}</li>
+                        <li>ville(s): {{ team.club.cities|join(', ') }}</li>
+                        <li>Category: {{ team.category.value }}</li>
+                        <li>Niveau: {{ team.level.value }}</li>
+                        <li>Type: {{ team.type }}</li>
+                        {% if team.FlatTrackStatsId != null %}
+                            <li><a href="https://www.flattrackstats.com/teams/marseille-roller-derby-club-womens/" target="_blank">FlatTrackStats</a></li>
+                            <li>Classement Fts: 520</li>
+                            <li>Classement WFTDA: 340</li>
+                        {% endif %}
+                    </ul>
+                </section>
+                <section class="lcdp-team-card">
+                    <h2>Association</h2>
+                </section>
+                <section class="lcdp-team-previous-game">
+                    <h2>Derniers matchs</h2>
+                    <section>
+
+                    </section>
+                </section>
+                <section class="lcdp-team-next-game">
+                    <h2>Prochains Match</h2>
+                </section>
+            </div>
+
+            <nav>
+                <a href="{{ path(routes.getRoutes.team.list, {scroll_to: team.id}) }}"><< Retour à la liste des équipes</a>
+                <a href="#">Consulter les archives</a>
+            </nav>
+        </main>
+    {% endblock %}
+    {# block asideafter #}
+    {# block footer #}
+{# /body #}

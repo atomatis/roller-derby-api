@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\Dto\GameIoDto;
+use App\Model\GameIoDto;
 use App\Entity\TeamGame;
 use App\Repository\TeamRepository;
 use Doctrine\ORM\EntityManagerInterface;

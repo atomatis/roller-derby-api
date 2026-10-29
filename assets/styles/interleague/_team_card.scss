@@ -1,0 +1,93 @@
+/************** style - interleague - team card **************/
+
+@use '../theme/color_set/color' as color;
+@use '../theme/mixin/title' as title;
+@use '../theme/mixin/background' as background;
+@use '../theme/mixin/button' as button;
+
+@mixin team-card($interstice: 2px) {
+    display: grid;
+    grid-template-columns: 50px 1fr 30px;
+    grid-template-rows: 28px 22px;
+    grid-template-areas:
+        'logo title action'
+        'logo info action'
+    ;
+
+    > img {
+        grid-area: logo;
+        border: solid 1px color.$border
+    }
+
+    header {
+        grid-area: title;
+        display: flex;
+
+        span {
+            background-color: rgb(color.$light-box, 0.5);
+            border-top: solid 1px color.$border;
+            margin-left: $interstice;
+            margin-bottom: $interstice;
+            padding: 2px 0 2px 2px;
+
+            img {
+                height: 22px;
+            }
+        }
+
+
+        h3 {
+            margin-left: $interstice;
+            margin-bottom: $interstice;
+            padding-left: $interstice;
+            background-color: rgb(color.$light-box, 0.5);
+            border-top: solid 1px color.$border;
+            width: 100%;
+
+            &.RK1 {
+                color: color.$rk1;
+            }
+            &.RK2 {
+                color: color.$rk2;
+            }
+            &.RK3 {
+                color: color.$rk3;
+            }
+            &.RK4 {
+                color: color.$rk4;
+            }
+            &.CAS {
+                color: color.$casual;
+            }
+        }
+    }
+
+    > a {
+        margin-left: $interstice;
+        grid-area: action;
+        @include button.article-button(color.$text-white, color.$text-white-shadow, color.$border)
+    }
+
+    >ul {
+        grid-area: info;
+        margin-left: $interstice;
+        margin-right: 0;
+        display: flex;
+
+        li {
+            background-color: rgb(color.$light-box, 0.5);
+            border-bottom: solid 1px color.$border;
+            width: 100%;
+            color: color.$text-grey;
+            text-shadow: color.$text-grey-shadow;
+            padding-left: 2px;
+
+            &.lcdp-team-type {
+                width: 10px;
+                padding: 2px 5px;
+                margin-left: $interstice;
+            }
+        }
+    }
+}
+

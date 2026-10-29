@@ -4,6 +4,14 @@
  * This file will be included onto the page via the importmap() Twig function,
  * which should already be in your base.html.twig.
  */
+
+import './stimulus_bootstrap.js'
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+document.addEventListener("turbo:load", function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('scroll_to')) {
+        const element = document.getElementById(params.get('scroll_to'));
+        if (element) element.scrollIntoView();
+    }
+});

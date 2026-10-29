@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\Dto\Club;
-use App\Dto\GameIoDto;
-use App\Dto\Team;
+use App\Model\Club;
+use App\Model\GameIoDto;
+use App\Model\Team;
 use App\Repository\ClubRepository;
 use App\Repository\GameRepository;
 use App\Repository\TeamRepository;

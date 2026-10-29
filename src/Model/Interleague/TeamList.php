@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Dto;
+namespace App\Model\Interleague;
 
 use App\Entity\Team as TeamEntity;
 use App\Enum\CountrySubdivision;
+use App\Model\Interleague\ListableTeam;
 
-class TeamContainer
+class TeamList
 {
     private array $teams = [];
 
@@ -17,7 +18,7 @@ class TeamContainer
 
         /** @var TeamEntity $team */
         foreach ($teams as $team) {
-            $self->teams[CountrySubdivision::getName($team->getClub()->getCountrySubdivisionCode()->value)][] = Team::fromEntity($team);
+            $self->teams[CountrySubdivision::getName($team->getClub()->getCountrySubdivisionCode()->value)][] = ListableTeam::fromEntity($team);
             $self->total++;
         }
 

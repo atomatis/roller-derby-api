@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Dto;
+namespace App\Model;
 
 use App\Entity\Club as ClubEntity;
 use App\Enum\CountrySubdivision;

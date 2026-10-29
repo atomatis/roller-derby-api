@@ -2,7 +2,7 @@
 
 namespace App\Action\Interleague\Club;
 
-use App\Dto\ClubContainer;
+use App\Model\ClubContainer;
 use App\Repository\ClubRepository;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 class ListAction extends AbstractController
 {
-    const string ROUTE_NAME = 'club_list';
+    const string ROUTE_NAME = 'interleague_club_list';
     private const string QUERY_PARAM_SORT_VIEW = 'sort_view';
     private const string SORT_VIEW_REGION = 'region';
     private const string SORT_VIEW_ALPHANUMERIC = 'alpha';
@@ -30,10 +30,13 @@ class ListAction extends AbstractController
     public function list(Request $request): Response
     {
         $criteria = new Criteria();
-        $this->bindFilterByCriteria($request, $criteria);
-        $this->bindOrderByCriteria($request, $criteria);
+//        $this->bindFilterByCriteria($request, $criteria);
+//        $this->bindOrderByCriteria($request, $criteria);
 
-        $clubs = $this->clubRepository->findAll();
+        $criteria->andWhere(Criteria::expr()->isNull('closedAt'));
+        $criteria->orderBy(["name" => "ASC"]);
+
+        $clubs = $this->clubRepository->matching($criteria);
         $sortedClubs = [];
 
 //        /** @var Club $club */
@@ -48,7 +51,7 @@ class ListAction extends AbstractController
 //            }
 //        }
 
-        $clubs = ClubContainer::fromEntities($clubs);
+        $clubs = ClubContainer::fromEntities($clubs->toArray());
 
         {
             return $this->render('interleague/club/list.html.twig', [

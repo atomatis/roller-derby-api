@@ -42,3 +42,29 @@
         background-color: color.$casual;
     }
 }
+
+@mixin test(
+    $background: color.$background,
+    $border: color.$border,
+    $font: color.$text,
+    $background-hover: color.$background-light,
+    $border-hover: color.$border,
+    $font-hover: color.$link-hover,
+    $shadow: color.$primary-dark-1,
+) {
+    background-color: $background;
+    border: $border solid;
+    color: $font;
+    text-shadow: $background 2px 2px 1px;
+    border-width: 1px 6px;
+    padding: 6px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+        border-color: $border-hover;
+        color: $font-hover;
+        background-color: $background-hover;
+    }
+}

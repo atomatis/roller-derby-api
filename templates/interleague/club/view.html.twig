@@ -1,0 +1,61 @@
+{% extends 'body.html.twig' %}
+
+{% block title %}{{ club.name }}{% endblock %}
+
+{# lcdp = "la croisé des platine" prefix #}
+{# itl = "interleague" prefix #}
+
+{# body #}
+    {# block header #}
+    {# block asidebefore #}
+    {% block content %}
+        <main id="lcdp-itl-club-view" class="lcdp-content">
+            <h1>{{ club.name }}{% if club.alias != null %} ({{ club.alias }}){% endif %}</h1>
+            <div class="lcdp-flex">
+                <img class="lcdp-logo-club" src="https://placekittens.com/200/200" />
+                <section class="lcdp-club-card">
+                    <h2>Informations générales</h2>
+                    <ul>
+                        <li>pays: {{ club.countryCode }}</li>
+                        <li>ville(s): {{ club.cities|join(', ') }}</li>
+                        <li>Politique de mixité: {{ club.genderDiversityPolicy }}</li>
+                    </ul>
+                </section>
+                <section class="lcdp-club-card">
+                    <h2>Contacts</h2>
+                    <ul>
+                        <li>email: xxxxxxx</li>
+                        <li><a href="facebook">Facebook</a></li>
+                    </ul>
+                </section>
+                <section class="lcdp-club-teams">
+                    <h2>Équipes</h2>
+                    <section>
+                        {% for team in club.teams %}
+                            {% if team.disbandAt == null %}{% include 'interleague/team/_team_card.html.twig' with {'teamInfo': team.category } %}{% endif %}
+                        {% endfor %}
+                    </section>
+                </section>
+                <section class="lcdp-club-events">
+                    <h2>Prochains événements</h2>
+                    {% if club.events|length == 0 %}
+                    <p>Aucun événement de prévus pour le moment</p>
+                    {% else %}
+                    <section>
+                        {% for event in club.events %}
+                            <article>{{ event.name }}</article>
+                        {% endfor %}
+                    </section>
+                    {% endif %}
+                </section>
+            </div>
+
+            <nav>
+                <a href="{{ path(routes.getRoutes.club.list, {scroll_to: club.id}) }}"><< Retour à la liste des clubs</a>
+                <a href="#">Consulter les archives</a>
+            </nav>
+        </main>
+    {% endblock %}
+    {# block asideafter #}
+    {# block footer #}
+{# /body #}

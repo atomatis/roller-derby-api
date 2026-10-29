@@ -1,0 +1,71 @@
+/************** style - interleague - club view **************/
+
+@use '../theme/color_set/color' as color;
+@use '../theme/mixin/title' as title;
+@use '../theme/mixin/background' as background;
+@use '../theme/mixin/button' as button;
+@use '../interleague/team_card' as team_card;
+
+$interstice: 2px;
+
+#lcdp-itl-club-view {
+    .lcdp-logo-club {
+        border: solid 1px color.$border;
+        margin: 10px 10px 0 10px;
+        height: 200px;
+        width: 200px;
+    }
+
+    div {
+        margin-top: 10px;
+    }
+
+    .lcdp-club-card {
+        width: 38%;
+        height: 200px;
+        margin-right: 10px;
+
+        ul {
+            padding: 10px;
+            height: calc(100% - 86px);
+            background-color: rgb(color.$light-box, 0.5);
+        }
+    }
+
+    .lcdp-club-teams {
+        width: 49%;
+        margin-left: 1%;
+        .lcdp-itl-team-card {
+            @include team_card.team-card();
+            margin-bottom: 10px;
+        }
+    }
+
+    .lcdp-club-events {
+        width: 49%;
+        margin-left: 1%;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    nav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 50px;
+        width: calc(100% - 20px);
+        padding: 0 10px;
+
+        a {
+            @include button.test();
+            display: block;
+            float: left;
+
+            &:last-child {
+                float: right;
+            }
+        }
+    }
+}

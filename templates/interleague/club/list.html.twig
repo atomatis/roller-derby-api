@@ -9,12 +9,12 @@
         <main id="lcdp-interleague-list-club" class="lcdp-content">
             <h1>{{ 'clubs'|trans }} ({{ clubContainer.total }})</h1>
                 <div class="lcdp-scroll">
-            {% for sorting, clubs in clubContainer.clubs %}
+                {% for sorting, clubs in clubContainer.clubs %}
                     <section >
                         <h2>{{ sorting }} ({{ clubs|length }})</h2>
                         <div class="lcdp-article-container">
                             {% for club in clubs %}
-                                <article class="lcdp-itl-club-list-item">
+                                <article id="{{ club.id }}" class="lcdp-itl-club-list-item">
                                     <img class="lcdp-logo-club" alt="logo club" src="https://placekittens.com/48/48">
                                     <header>
                                         <h3>{{ club.name }}{% if club.alias != null %} ({{ club.alias }}){% endif %}</h3>
@@ -23,12 +23,13 @@
                                         <li>{{ club.cities|join(', ') }}</li>
                                         <li>{{ club.genderDiversityPolicy }}</li>
                                     </ul>
-                                    <button>+</button>
+                                    <a href="{{ path(routes.getRoutes.club.view, {id: club.id}) }}">+</a>
+{#                                    <turbo-frame id="club_{{ club.id }}" src="{{ path(routes.getRoutes.club.view, {id: club.id}) }}"></turbo-frame>#}
                                 </article>
                             {% endfor %}
                         </div>
                     </section>
-            {% endfor %}
+                {% endfor %}
                 </div>
         </main>
     {% endblock %}

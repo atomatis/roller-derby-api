@@ -17,7 +17,7 @@ $interstice: 2px;
     grid-template-areas:
         'logo title action'
         'logo info action'
-;
+    ;
 
     .lcdp-logo-club {
         grid-area: logo;
@@ -51,7 +51,7 @@ $interstice: 2px;
         }
     }
 
-    button {
+    a {
         margin-left: $interstice;
         grid-area: action;
         @include button.article-button(color.$text-white, color.$text-white-shadow, color.$border)

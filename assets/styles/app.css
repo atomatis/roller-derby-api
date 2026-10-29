@@ -45,7 +45,7 @@ input[type=number] {
 /************** style - theme - mixin **************/
 #lcdp-main-header {
   margin-bottom: 50px;
-  padding-top: 60px;
+  padding-top: 25px;
   position: relative;
   z-index: 2;
   display: grid;
@@ -136,6 +136,11 @@ input[type=number] {
 /************** style - theme - background **************/
 html {
   background-color: #0f202b;
+}
+
+.lcdp-flex {
+  display: flex;
+  flex-flow: wrap;
 }
 
 body {
@@ -334,38 +339,37 @@ h2::selection {
 }
 
 /************** styles -> theme -> color set -> test **************/
+/************** style - theme - layout **************/
 /************** style - theme - title **************/
 /************** style - theme - background **************/
+/************** style - interleague - team card **************/
 /************** style - theme - mixin **************/
 /************** style - theme - background **************/
-.lcdp-itl-team-list-item {
-  width: 48.5%;
-  margin-left: 1%;
-  margin-bottom: 10px;
+#lcdp-itl-list-team .lcdp-itl-team-card {
   display: grid;
   grid-template-columns: 50px 1fr 30px;
   grid-template-rows: 28px 22px;
   grid-template-areas: "logo title action" "logo info action";
 }
-.lcdp-itl-team-list-item .lcdp-logo-team {
+#lcdp-itl-list-team .lcdp-itl-team-card > img {
   grid-area: logo;
   border: solid 1px #5895bf;
 }
-.lcdp-itl-team-list-item header {
+#lcdp-itl-list-team .lcdp-itl-team-card header {
   grid-area: title;
   display: flex;
 }
-.lcdp-itl-team-list-item header span {
+#lcdp-itl-list-team .lcdp-itl-team-card header span {
   background-color: rgba(39, 68, 94, 0.5);
   border-top: solid 1px #5895bf;
   margin-left: 2px;
   margin-bottom: 2px;
   padding: 2px 0 2px 2px;
 }
-.lcdp-itl-team-list-item header span img {
+#lcdp-itl-list-team .lcdp-itl-team-card header span img {
   height: 22px;
 }
-.lcdp-itl-team-list-item header h3 {
+#lcdp-itl-list-team .lcdp-itl-team-card header h3 {
   margin-left: 2px;
   margin-bottom: 2px;
   padding-left: 2px;
@@ -373,22 +377,22 @@ h2::selection {
   border-top: solid 1px #5895bf;
   width: 100%;
 }
-.lcdp-itl-team-list-item header h3.RK1 {
+#lcdp-itl-list-team .lcdp-itl-team-card header h3.RK1 {
   color: #a7734c;
 }
-.lcdp-itl-team-list-item header h3.RK2 {
+#lcdp-itl-list-team .lcdp-itl-team-card header h3.RK2 {
   color: #497ab7;
 }
-.lcdp-itl-team-list-item header h3.RK3 {
+#lcdp-itl-list-team .lcdp-itl-team-card header h3.RK3 {
   color: #31e0ff;
 }
-.lcdp-itl-team-list-item header h3.RK4 {
+#lcdp-itl-list-team .lcdp-itl-team-card header h3.RK4 {
   color: #f3fbfd;
 }
-.lcdp-itl-team-list-item header h3.CAS {
+#lcdp-itl-list-team .lcdp-itl-team-card header h3.CAS {
   color: #fef660;
 }
-.lcdp-itl-team-list-item button {
+#lcdp-itl-list-team .lcdp-itl-team-card > a {
   margin-left: 2px;
   grid-area: action;
   color: #f3fbfd;
@@ -401,16 +405,16 @@ h2::selection {
   font-size: 28px;
   clip-path: polygon(0 0, 0 100%, calc(100% - 10px) 100%, 100% calc(100% - 10px), 100% 0);
 }
-.lcdp-itl-team-list-item button:hover {
+#lcdp-itl-list-team .lcdp-itl-team-card > a:hover {
   background-color: #fef660;
 }
-.lcdp-itl-team-list-item .lcdp-info {
+#lcdp-itl-list-team .lcdp-itl-team-card > ul {
   grid-area: info;
   margin-left: 2px;
   margin-right: 0;
   display: flex;
 }
-.lcdp-itl-team-list-item .lcdp-info li {
+#lcdp-itl-list-team .lcdp-itl-team-card > ul li {
   background-color: rgba(39, 68, 94, 0.5);
   border-bottom: solid 1px #5895bf;
   width: 100%;
@@ -418,10 +422,15 @@ h2::selection {
   text-shadow: #0c1215;
   padding-left: 2px;
 }
-.lcdp-itl-team-list-item .lcdp-info li.lcdp-team-type {
+#lcdp-itl-list-team .lcdp-itl-team-card > ul li.lcdp-team-type {
   width: 10px;
   padding: 2px 5px;
   margin-left: 2px;
+}
+#lcdp-itl-list-team .lcdp-itl-team-card {
+  width: 48.5%;
+  margin-left: 1%;
+  margin-bottom: 10px;
 }
 
 /************** styles -> theme -> color set -> test **************/
@@ -465,7 +474,7 @@ h2::selection {
   border-top: solid 1px #5895bf;
   width: 100%;
 }
-.lcdp-itl-club-list-item button {
+.lcdp-itl-club-list-item a {
   margin-left: 2px;
   grid-area: action;
   color: #f3fbfd;
@@ -478,7 +487,7 @@ h2::selection {
   font-size: 28px;
   clip-path: polygon(0 0, 0 100%, calc(100% - 10px) 100%, 100% calc(100% - 10px), 100% 0);
 }
-.lcdp-itl-club-list-item button:hover {
+.lcdp-itl-club-list-item a:hover {
   background-color: #fef660;
 }
 .lcdp-itl-club-list-item .lcdp-info {
@@ -499,6 +508,161 @@ h2::selection {
   width: 10px;
   padding: 2px 5px;
   margin-left: 2px;
+}
+
+/************** styles -> theme -> color set -> test **************/
+/************** style - theme - title **************/
+/************** style - theme - background **************/
+/************** style - theme - mixin **************/
+/************** style - theme - background **************/
+/************** style - theme - layout **************/
+/************** style - interleague - team card **************/
+/************** style - interleague - club view **************/
+#lcdp-itl-club-view .lcdp-logo-club {
+  border: solid 1px #5895bf;
+  margin: 10px 10px 0 10px;
+  height: 200px;
+  width: 200px;
+}
+#lcdp-itl-club-view div {
+  margin-top: 10px;
+}
+#lcdp-itl-club-view .lcdp-club-card {
+  width: 38%;
+  height: 200px;
+  margin-right: 10px;
+}
+#lcdp-itl-club-view .lcdp-club-card ul {
+  padding: 10px;
+  height: calc(100% - 86px);
+  background-color: rgba(39, 68, 94, 0.5);
+}
+#lcdp-itl-club-view .lcdp-club-teams {
+  width: 49%;
+  margin-left: 1%;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card {
+  display: grid;
+  grid-template-columns: 50px 1fr 30px;
+  grid-template-rows: 28px 22px;
+  grid-template-areas: "logo title action" "logo info action";
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card > img {
+  grid-area: logo;
+  border: solid 1px #5895bf;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card header {
+  grid-area: title;
+  display: flex;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card header span {
+  background-color: rgba(39, 68, 94, 0.5);
+  border-top: solid 1px #5895bf;
+  margin-left: 2px;
+  margin-bottom: 2px;
+  padding: 2px 0 2px 2px;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card header span img {
+  height: 22px;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card header h3 {
+  margin-left: 2px;
+  margin-bottom: 2px;
+  padding-left: 2px;
+  background-color: rgba(39, 68, 94, 0.5);
+  border-top: solid 1px #5895bf;
+  width: 100%;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card header h3.RK1 {
+  color: #a7734c;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card header h3.RK2 {
+  color: #497ab7;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card header h3.RK3 {
+  color: #31e0ff;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card header h3.RK4 {
+  color: #f3fbfd;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card header h3.CAS {
+  color: #fef660;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card > a {
+  margin-left: 2px;
+  grid-area: action;
+  color: #f3fbfd;
+  text-shadow: #292b2d;
+  background-color: #5895bf;
+  cursor: pointer;
+  padding-left: 5px;
+  padding-top: 8px;
+  font-weight: bold;
+  font-size: 28px;
+  clip-path: polygon(0 0, 0 100%, calc(100% - 10px) 100%, 100% calc(100% - 10px), 100% 0);
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card > a:hover {
+  background-color: #fef660;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card > ul {
+  grid-area: info;
+  margin-left: 2px;
+  margin-right: 0;
+  display: flex;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card > ul li {
+  background-color: rgba(39, 68, 94, 0.5);
+  border-bottom: solid 1px #5895bf;
+  width: 100%;
+  color: #bfdaec;
+  text-shadow: #0c1215;
+  padding-left: 2px;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card > ul li.lcdp-team-type {
+  width: 10px;
+  padding: 2px 5px;
+  margin-left: 2px;
+}
+#lcdp-itl-club-view .lcdp-club-teams .lcdp-itl-team-card {
+  margin-bottom: 10px;
+}
+#lcdp-itl-club-view .lcdp-club-events {
+  width: 49%;
+  margin-left: 1%;
+}
+#lcdp-itl-club-view .lcdp-club-events p {
+  text-align: center;
+}
+#lcdp-itl-club-view nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: calc(100% - 20px);
+  padding: 0 10px;
+}
+#lcdp-itl-club-view nav a {
+  background-color: #E7FEFA;
+  border: #5895bf solid;
+  color: #04433A;
+  text-shadow: #E7FEFA 2px 2px 1px;
+  border-width: 1px 6px;
+  padding: 6px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+#lcdp-itl-club-view nav a:hover {
+  border-color: #5895bf;
+  color: #DC5086;
+  background-color: #243D51;
+}
+#lcdp-itl-club-view nav a {
+  display: block;
+  float: left;
+}
+#lcdp-itl-club-view nav a:last-child {
+  float: right;
 }
 
 /*# sourceMappingURL=app.css.map */

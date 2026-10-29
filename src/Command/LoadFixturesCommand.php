@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\Dto\Club as ClubDto;
-use App\Dto\Team as TeamDto;
+use App\Model\Club as ClubDto;
+use App\Model\Team as TeamDto;
 use App\Entity\Club;
 use App\Entity\Team;
 use Doctrine\ORM\EntityManagerInterface;
