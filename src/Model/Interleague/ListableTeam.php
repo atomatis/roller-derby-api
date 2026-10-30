@@ -36,12 +36,9 @@ final class ListableTeam
             ->setName($team->getPronoun().$team->getName())
             ->setCountryCode($team->getClub()->getCountryCode()->value)
             ->setLevel($team->getLevel()->value)
-            ->setType($team->getType())
-            ->setWftda($team->isWftda())
-            ->setMrda($team->isMrda())
+            ->setType($team->getType()->value)
             ->setCategory($team->getCategory()->value)
             ->setDisbandAt($team->getDisbandAt())
-//            ->setLogo($team->getLogo())
             ->setCities(implode(', ', $team->getClub()->getCities()))
         ;
     }

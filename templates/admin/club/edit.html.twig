@@ -1,0 +1,32 @@
+{% extends 'body.html.twig' %}
+
+{% block title %}{{ club.name }}{% endblock %}
+{% block section %}Admin{% endblock %}
+
+{# lcdp = "la croisé des platine" prefix #}
+
+{# body #}
+    {# block header #}
+    {# block asidebefore #}
+    {% block content %}
+        <main id="lcdp-admin-club-view" class="lcdp-content">
+            <h1>{{ club.name }}{% if club.alias != null %} ({{ club.alias }}){% endif %}</h1>
+            <div class="lcdp-flex">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                <h3>Informations générales</h3>
+                <section id="section_info" class="rda-edit-section rda-edit-section-visible">
+                    <ul>
+                        <li>{{ form_row(form.name) }}</li>
+                        <li>{{ form_row(form.alias) }}</li>
+                        <li>{{ form_row(form.genderDiversityPolicy) }}</li>
+                    </ul>
+                </section>
+
+                {{ form_end(form) }}
+            </div>
+        </main>
+    {% endblock %}
+    {# block asideafter #}
+    {# block footer #}
+{# /body #}

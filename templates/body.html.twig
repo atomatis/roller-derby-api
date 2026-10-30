@@ -2,7 +2,7 @@
 
 {% block body %}
     <body>
-    {{ include('./layout/_header.html.twig', {title: block('title')}) }}
+    {{ include('./layout/_header.html.twig', {section: block('section')}) }}
 
     {% block asidebefore %}{% endblock %}
     {% block content %}{% endblock %}

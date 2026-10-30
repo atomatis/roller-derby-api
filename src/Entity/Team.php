@@ -21,28 +21,28 @@ class Team
 {
     #[ORM\Id]
     #[ORM\Column(type: UuidType::NAME, unique: true)]
-    private ?string $id = null;
+    private string $id;
 
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    #[ORM\Column(type: Types::TEXT)]
+    private string $name;
 
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $pronoun = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $overview = null;
 
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $history = null;
 
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column(type: Types::DATE_IMMUTABLE, nullable: true)]
     private ?\DateTimeImmutable $disbandAt = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::DATE_IMMUTABLE)]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::DATE_IMMUTABLE)]
     private ?\DateTimeImmutable $updatedAt = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $flatTrackStatsId = null;
 
     #[ORM\Column(type: Types::ENUM, enumType: TeamCategory::class)]
     private TeamCategory $category;
@@ -50,29 +50,8 @@ class Team
     #[ORM\Column(type: Types::ENUM, enumType: TeamLevel::class)]
     private TeamLevel $level;
 
-    #[ORM\Column(length: 255)]
-    private ?string $type = null;
-
-    #[ORM\Column(type: Types::BOOLEAN)]
-    private bool $wftda = false;
-
-    #[ORM\Column(type: Types::BOOLEAN)]
-    private bool $mrda = false;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $email = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $facebookId = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $instagramId = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $pronoun = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?array $mediaLinks = null;
+    #[ORM\Column(type: Types::ENUM)]
+    private TeamType $type;
 
     #[ORM\ManyToOne(targetEntity: Club::class, cascade: ['persist', 'remove'], inversedBy: 'team')]
     private Club $club;
@@ -91,7 +70,7 @@ class Team
     private ?File $logoFile = null;
 
     #[ORM\OneToOne(mappedBy: 'team', cascade: ['persist', 'remove'])]
-    private ?FlatTrackStatsRanking $flatTrackRanking = null;
+    private ?FlatTrackStats $flatTrackStats = null;
 
     /**
      * @var Collection<int, ChampionshipRanking>
@@ -144,6 +123,18 @@ class Team
         return $this;
     }
 
+    public function getPronoun(): ?string
+    {
+        return $this->pronoun;
+    }
+
+    public function setPronoun(?string $pronoun): static
+    {
+        $this->pronoun = $pronoun;
+
+        return $this;
+    }
+
     public function getOverview(): ?string
     {
         return $this->overview;
@@ -164,18 +155,6 @@ class Team
     public function setHistory(?string $history): static
     {
         $this->history = $history;
-
-        return $this;
-    }
-
-    public function getMediaLinks(): ?array
-    {
-        return $this->mediaLinks;
-    }
-
-    public function setMediaLinks(?array $mediaLinks): static
-    {
-        $this->mediaLinks = $mediaLinks;
 
         return $this;
     }
@@ -215,18 +194,6 @@ class Team
         return $this;
     }
 
-    public function getFlatTrackStatsId(): ?int
-    {
-        return $this->flatTrackStatsId;
-    }
-
-    public function setFlatTrackStatsId(?int $flatTrackStatsId): static
-    {
-        $this->flatTrackStatsId = $flatTrackStatsId;
-
-        return $this;
-    }
-
     public function getCategory(): TeamCategory
     {
         return $this->category;
@@ -251,92 +218,14 @@ class Team
         return $this;
     }
 
-    public function getType(): ?string
+    public function getType(): TeamType
     {
         return $this->type;
     }
 
-    public function setType(string|TeamType $type): static
+    public function setType(TeamType $type): static
     {
-        if ($type InstanceOf TeamType) {
-            $type = $type->value;
-        }
-
         $this->type = $type;
-
-        return $this;
-    }
-
-
-    public function getPronoun(): ?string
-    {
-        return $this->pronoun;
-    }
-
-    public function setPronoun(?string $pronoun): static
-    {
-        $this->pronoun = $pronoun;
-
-        return $this;
-    }
-
-    public function isWftda(): bool
-    {
-        return $this->wftda;
-    }
-
-    public function setWftda(bool $wftda): Team
-    {
-        $this->wftda = $wftda;
-
-        return $this;
-    }
-
-    public function isMrda(): bool
-    {
-        return $this->mrda;
-    }
-
-    public function setMrda(bool $mrda): Team
-    {
-        $this->mrda = $mrda;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(?string $email): static
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    public function getFacebookId(): ?string
-    {
-        return $this->facebookId;
-    }
-
-    public function setFacebookId(?string $facebookId): static
-    {
-        $this->facebookId = $facebookId;
-
-        return $this;
-    }
-
-    public function getInstagramId(): ?string
-    {
-        return $this->instagramId;
-    }
-
-    public function setInstagramId(?string $instagramId): static
-    {
-        $this->instagramId = $instagramId;
-
         return $this;
     }
 
@@ -424,19 +313,19 @@ class Team
         return $this->logo->getName();
     }
 
-    public function getFlatTrackRanking(): ?FlatTrackStatsRanking
+    public function getFlatTrackStats(): ?FlatTrackStats
     {
-        return $this->flatTrackRanking;
+        return $this->flatTrackStats;
     }
 
-    public function setFlatTrackRanking(FlatTrackStatsRanking $flatTrackRanking): static
+    public function setFlatTrackRanking(FlatTrackStats $flatTrackStats): static
     {
         // set the owning side of the relation if necessary
-        if ($flatTrackRanking->getTeam() !== $this) {
-            $flatTrackRanking->setTeam($this);
+        if ($flatTrackStats->getTeam() !== $this) {
+            $flatTrackStats->setTeam($this);
         }
 
-        $this->flatTrackRanking = $flatTrackRanking;
+        $this->flatTrackStats = $flatTrackStats;
 
         return $this;
     }

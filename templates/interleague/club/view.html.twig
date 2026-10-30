@@ -1,6 +1,7 @@
 {% extends 'body.html.twig' %}
 
 {% block title %}{{ club.name }}{% endblock %}
+{% block section %}Interligue{% endblock %}
 
 {# lcdp = "la croisé des platine" prefix #}
 {# itl = "interleague" prefix #}
@@ -52,6 +53,7 @@
 
             <nav>
                 <a href="{{ path(routes.getRoutes.club.list, {scroll_to: club.id}) }}"><< Retour à la liste des clubs</a>
+                <a href="{{ path('admin_club_edit', {id: club.id}) }}">Éditer</a>
                 <a href="#">Consulter les archives</a>
             </nav>
         </main>
