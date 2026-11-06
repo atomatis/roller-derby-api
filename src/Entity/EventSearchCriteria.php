@@ -39,13 +39,13 @@ class EventSearchCriteria
     private ?int $wftdaRankMax = null;
 
     #[ORM\Column(type: Types::BOOLEAN)]
-    private bool $mrda = false;
+    private bool $iorda = false;
 
     #[ORM\Column(type: Types::INTEGER, nullable: true)]
-    private ?int $mrdaRankMin = null;
+    private ?int $iordaRankMin = null;
 
     #[ORM\Column(type: Types::INTEGER, nullable: true)]
-    private ?int $mrdaRankMax = null;
+    private ?int $iordaRankMax = null;
 
     #[ORM\Column(type: Types::JSON, nullable: true)]
     private array $categories = [];
@@ -154,38 +154,38 @@ class EventSearchCriteria
         return $this;
     }
 
-    public function getMrdaRankMin(): ?int
+    public function getIordaRankMin(): ?int
     {
-        return $this->mrdaRankMin;
+        return $this->iordaRankMin;
     }
 
-    public function setMrdaRankMin(?int $mrdaRankMin): self
+    public function setIordaRankMin(?int $iordaRankMin): self
     {
-        $this->mrdaRankMin = $mrdaRankMin;
+        $this->iordaRankMin = $iordaRankMin;
 
         return $this;
     }
 
-    public function isMrda(): bool
+    public function isIorda(): bool
     {
-        return $this->mrda;
+        return $this->iorda;
     }
 
-    public function setMrda(bool $mrda): self
+    public function setIorda(bool $iorda): self
     {
-        $this->mrda = $mrda;
+        $this->iorda = $iorda;
 
         return $this;
     }
 
-    public function getMrdaRankMax(): ?int
+    public function getIordaRankMax(): ?int
     {
-        return $this->mrdaRankMax;
+        return $this->iordaRankMax;
     }
 
-    public function setMrdaRankMax(?int $mrdaRankMax): self
+    public function setIordaRankMax(?int $iordaRankMax): self
     {
-        $this->mrdaRankMax = $mrdaRankMax;
+        $this->iordaRankMax = $iordaRankMax;
 
         return $this;
     }

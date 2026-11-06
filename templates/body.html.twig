@@ -2,7 +2,19 @@
 
 {% block body %}
     <body>
-    {{ include('./layout/_header.html.twig', {section: block('section')}) }}
+        <header id="lcdp-main-header" class="{{ navHeaderClass|default('lcdp-without-nav-header') }}">
+            <span class="lcdp-bar"></span>
+            {% block section %}{% endblock %}
+            <span class="lcdp-bar"></span>
+            {% block navheader %}{% endblock %}
+            <nav class="lcdp-main-menu">
+                <a>{{ 'events'|trans }}</a>
+                <a>Annuaire des associations</a>
+                <a>Équipe disponible</a>
+                <a>Arbitrage</a>
+            </nav>
+            <span class="lcdp-bar"></span>
+        </header>
 
     {% block asidebefore %}{% endblock %}
     {% block content %}{% endblock %}

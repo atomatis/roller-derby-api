@@ -149,7 +149,7 @@ readonly class GameScraper
     private function extractSanctioning($element): ?string {
         return match ($element->getChildren()[1]->getAttribute('tooltip')) {
             'Sanctioned By WFTDA' => 'WFTDA',
-            'Sanctioned By MRDA' => 'MRDA',
+            'Sanctioned By IORDA' => 'IORDA',
             default => null,
         };
     }

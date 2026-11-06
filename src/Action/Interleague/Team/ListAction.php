@@ -48,7 +48,7 @@ final class ListAction extends AbstractController
 
         return $this->render('interleague/team/list.html.twig', [
             'teamContainer' => $teams,
-            'filters' => ['filters[category]' => 'M']
+            'filters' => ['filters[category]' => 'M'],
         ]);
     }
 

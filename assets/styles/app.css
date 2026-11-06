@@ -49,16 +49,28 @@ input[type=number] {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 60px max-content auto max-content auto 40px 60px;
   grid-area: header;
 }
-#lcdp-main-header nav {
+#lcdp-main-header.lcdp-without-nav-header {
+  grid-template-columns: 60px max-content auto 40px 60px;
+}
+#lcdp-main-header.lcdp-with-nav-header {
+  grid-template-columns: 60px max-content auto max-content auto 40px 60px;
+}
+#lcdp-main-header .lcdp-main-menu {
   background-image: url("../images/menu.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
-#lcdp-main-header nav a {
+#lcdp-main-header .lcdp-main-menu a {
   display: none;
+}
+#lcdp-main-header .lcdp-nav-header a {
+  clip-path: polygon(0 10px, 0 calc(100% - 10px), 10px 100%, calc(100% - 10px) 100%, 100% calc(100% - 10px), 100% 10px, calc(100% - 10px) 0, 10px 0);
+  background-color: #04433A;
+  padding: 10px 20px;
+  position: relative;
+  border: 1px solid #5895bf;
 }
 #lcdp-main-header .lcdp-bar {
   position: relative;

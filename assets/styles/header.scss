@@ -7,16 +7,33 @@
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 60px max-content auto max-content auto 40px 60px;
     grid-area: header;
 
-    nav {
+    &.lcdp-without-nav-header {
+        grid-template-columns: 60px max-content auto 40px 60px;
+    }
+
+    &.lcdp-with-nav-header {
+        grid-template-columns: 60px max-content auto max-content auto 40px 60px;
+    }
+
+    .lcdp-main-menu {
         background-image: url("../images/menu.svg");
         background-size: contain;
         background-repeat: no-repeat;
 
         a {
           display: none;
+        }
+    }
+
+    .lcdp-nav-header{
+        a {
+            @include geo.four-flat-corner(10px);
+            background-color: color.$primary-dark-1;
+            padding: 10px 20px;
+            position: relative;
+            border: 1px solid color.$border;
         }
     }
 

@@ -1,15 +1,24 @@
-{% extends 'body.html.twig' %}
+{% extends 'interleague/layout.html.twig' %}
 
 {# lcdp = "la croisé des platine" prefix #}
 {# itl = "interleague" prefix #}
 
 {% set route = constant('App\\Action\\Interleague\\Team\\ListAction::ROUTE_NAME') %}
+{% set navHeaderClass = 'lcdp-with-nav-header' %}
 
 {% block title %}{{ 'teams'|trans }} ({{ teamContainer.total }}){% endblock %}
-{% block section %}Interligue{% endblock %}
 
 {# body #}
     {# header #}
+        {% block navheader %}
+            <nav class="lcdp-nav-header">
+                <a>F+</a>
+                <a>Open</a>
+                <a>Junior</a>
+            </nav>
+            <span class="lcdp-bar"></span>
+        {% endblock %}
+    {# /header #}
     {% block asidebefore %}
         <aside class="lcdp-aside-left">
             <h2>Filtres</h2>

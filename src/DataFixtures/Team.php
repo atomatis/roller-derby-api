@@ -73,7 +73,7 @@ class Team
             ->setLevel(TeamLevel::RankTwo)
             ->setClub($clubs[Club::DIJON])
             ->setFlatTrackStatsId(111444)
-            ->setMrda(true)
+            ->setIorda(true)
             ->setCreatedAt(new \DateTimeImmutable("2019-09-21T09:42:48+00:00"))
             ->setUpdatedAt(new \DateTimeImmutable("2019-09-21T09:42:48+00:00"))
         ;

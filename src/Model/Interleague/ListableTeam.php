@@ -23,7 +23,7 @@ final class ListableTeam
 
     private bool $wftda = false;
 
-    private bool $mrda = false;
+    private bool $iorda = false;
 
     private string $cities;
 
@@ -131,14 +131,14 @@ final class ListableTeam
         return $this;
     }
 
-    public function isMrda(): bool
+    public function isIorda(): bool
     {
-        return $this->mrda;
+        return $this->iorda;
     }
 
-    public function setMrda(bool $mrda): ListableTeam
+    public function setIorda(bool $iorda): ListableTeam
     {
-        $this->mrda = $mrda;
+        $this->iorda = $iorda;
         return $this;
     }
 

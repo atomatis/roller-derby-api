@@ -23,7 +23,7 @@ class FlatTrackStats
     private float $wftdaRank;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 6, scale: 1)]
-    private float $mrdaRank;
+    private float $iordaRank;
 
     #[ORM\OneToOne(inversedBy: 'flatTrackStats', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
@@ -74,14 +74,14 @@ class FlatTrackStats
         return $this;
     }
 
-    public function getMrdaRank(): float
+    public function getIordaRank(): float
     {
-        return $this->mrdaRank;
+        return $this->iordaRank;
     }
 
-    public function setMrdaRank(float $mrdaRank): FlatTrackStats
+    public function setIordaRank(float $iordaRank): FlatTrackStats
     {
-        $this->mrdaRank = $mrdaRank;
+        $this->iordaRank = $iordaRank;
         return $this;
     }
 

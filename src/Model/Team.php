@@ -35,7 +35,7 @@ final class Team
     private ?string $countryCode = null;
     private bool $wftda = false;
 
-    private bool $mrda = false;
+    private bool $iorda = false;
 
     private ?string $email = null;
 
@@ -86,7 +86,7 @@ final class Team
             ->setLevel($team->getLevel()->value)
             ->setType($team->getType())
             ->setWftda($team->isWftda())
-            ->setMrda($team->isMrda())
+            ->setIorda($team->isIorda())
             ->setCategory($team->getCategory()->value)
             ->setFlatTrackStatsId($team->getFlatTrackStatsId())
             ->setPronoun($team->getPronoun())
@@ -232,14 +232,14 @@ final class Team
         return $this;
     }
 
-    public function isMrda(): bool
+    public function isIorda(): bool
     {
-        return $this->mrda;
+        return $this->iorda;
     }
 
-    public function setMrda(bool $mrda): Team
+    public function setIorda(bool $iorda): Team
     {
-        $this->mrda = $mrda;
+        $this->iorda = $iorda;
         return $this;
     }
 

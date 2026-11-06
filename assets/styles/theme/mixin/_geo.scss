@@ -1,7 +1,28 @@
 /************** style - theme - mixin **************/
 
 @mixin one-flat-corner($size) {
-    clip-path: polygon(0 0, 0 100%, calc(100% - $size) 100%, 100% calc(100% - $size), 100% 0);
+    // Each line is a -Y/X coordinate
+    clip-path: polygon(
+        0 0, // top-left
+        0 100%, // top-right
+        calc(100% - $size) 100%, // bottom-right-up-cut
+        100% calc(100% - $size), // bottom-right-down-cut
+        100% 0 // bottom-left
+    );
+}
+
+@mixin four-flat-corner($size) {
+    // Each line is a -Y/X coordinate
+    clip-path: polygon(
+        0 $size, // top-left-left-cut
+        0 calc(100% - $size), // top-right-left-cut
+        $size 100%, // top-right-down-cut
+        calc(100% - $size) 100%, // bottom-right-up-cut
+        100% calc(100% - $size), // bottom-right-down-cut
+        100% $size, // bottom-left-right-cut
+        calc(100% - $size) 0, // bottom-left-up-cut
+        $size 0 // top-left-down-cut
+    );
 }
 
 @mixin skewed-bar($color) {
